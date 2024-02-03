@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #A2C2C9;
+    line-height: 1.8;
+    margin: 20px;
+}
+
+
+.title-font {
+    font-family: "Segoe Script", sans-serif;
+}
+
+.main-title{
+    /*font-family: "Segoe Script", sans-serif;*/
+    font-size: 50px;
+    text-align: left;
+    /*text-transform: uppercase;*/
+}
+
+.text-font {
+    font-family: "Segoe UI", sans-serif;
+}
+
+nav {
+    /*border: black 2px solid;*/
+    font-size: 20px;
+}
+
+.flex-navbar {
+    /*background-color: rgba(0, 0, 0, 0.75);*/
+    background-color: #8E8E8E;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.flex-navbar a {
+    /*background-color: #8E8E8E;*/
+    /*border-radius: 20px;*/
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    flex-basis: 600px;
+    padding: 10px;
+    margin: 10px;
+    /*height: 300px;*/
+
+}
+
+.flex-navbar a:nth-child(1){
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+
+}
+
+.flex-navbar a:hover {
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+    color: #8E8E8E;
+}
+
+.flex-navbar a:active {
+    color: #A2C2C9;
+
+}
+
+/*.navbar a:visited {*/
+/*    color: #8E8E8E;*/
+/*}*/
+
