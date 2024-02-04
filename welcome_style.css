@@ -3,62 +3,115 @@
     padding: 0;
 }
 
-body {
-    background-color: #A2C2C9;
-    line-height: 1.8;
-    margin: 20px;
-}
-
-.box-model {
-    text-align: center;
-    max-width: 90%;
-    margin: auto;
-    padding: 100px 10px;
-    border-radius: 20px;
-
-    /*border:black 3px solid ;*/
-}
-
-
 .title{
     font-family: "Segoe Script", sans-serif;
     font-size: 50px;
     /*text-transform: uppercase;*/
 }
 
-.content{
-    /*border:black 3px solid ;*/
-
-    font-family: "Segoe UI", sans-serif;
-    border-radius: 20px;
-    margin: auto;
-
-}
-
-#goal {
+h2 {
+    /*#goal {*/
     background-color: #8E8E8E;
+    margin: 20px 250px;
+    font-family: "Segoe UI", sans-serif;
     font-size: 35px;
-    margin-top: 20px;
-    max-width: 80%;
+    border-radius: 20px;
 
-}
+    border: #f700ff 5px solid ;
 
-aside {
-    border: black 2px solid;
-    width: 500px;
-    text-align: left;
-}
+/*    max-width: 80%;*/
 
-#information {
-    background-color: #D9D9D9;
-    font-size: 25px;
-    margin-top: 20px;
-    max-width: 75%;
-
+/*}*/
 }
 
 
-.btn {
+body {
+    background-color: #A2C2C9;
+    line-height: 1.8;
+    margin: 20px;
+
+
+}
+
+.box-model {
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    padding: 200px 30px;
+
+    border-radius: 20px;
+    border:red 5px solid ;
+}
+
+
+
+.content {
+    border:black 5px solid ;
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: "Segoe UI", sans-serif;
+    margin: 20px 250px;
+    align-items: center;
+    /*justify-content: center;*/
+    /*display: grid;*/
+    /*grid-template-areas:*/
+    /*""*/
+    /*""*/
+    /*""*/
+    /*""*/
+    /*""*/
+
+    ;
+
+    /*border-radius: 20px;*/
+}
+
+.item {
+    border:blue 5px solid ;
+    border-radius: 20px;
+    margin: 10px;
+    /*padding: 60px;*/
+
+}
+
+
+.item:nth-child(1) {
+    background: #D9D9D9;
+    flex-basis: 50%;
+    padding: 100px 10px;
+
+}
+
+.item:nth-child(2){
+    flex-basis: 40%;
+}
+
+.form h3 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.form .form-fields {
+    padding-bottom: 20px;
+}
+
+.form-fields{
+    display: block;
+}
+
+.form-fields label {
+    /*border: brown 4px solid;*/
+    margin: 10px;
+}
+
+.form-fields input {
+    padding: 5px;
+    width: 50%;
+    border-radius: 20px;
+    background-color: #8E8E8E;
+}
+
+.form .btn {
     display: inline-block;
     background-color: #D9D9D9;
     color: black;
@@ -70,9 +123,46 @@ aside {
     margin-left: 70px; /*???????*/
 }
 
-a:hover {
+.form a:hover {
     color: #8E8E8E;
 }
+
+
+/*.item:nth-child(1){*/
+/*    background-color: #8E8E8E;*/
+/*    margin: 10px;*/
+/*    font-size: 35px;*/
+/*    !*flex-basis: 200px;*!*/
+/*}*/
+
+/*.item:nth-child(2){*/
+/*    background-color: #D9D9D9;*/
+/*    font-size: 25px;*/
+/*    margin: 20px 40px 20px 600px;*/
+/*    padding: 30px;*/
+/*}*/
+
+/*aside {*/
+/*    !*border: black 2px solid;*!*/
+/*    width: 600px;*/
+/*    height: 300px;*/
+/*    text-align: center;*/
+
+/*}*/
+
+/*#information {*/
+/*    background-color: #D9D9D9;*/
+/*    font-size: 25px;*/
+/*    margin-top: 20px;*/
+/*    margin-right: 300px;*/
+/*    padding: 40px;*/
+/*    !*max-width: 70%;*!*/
+/*    float: right;*/
+
+/*}*/
+
+
+
 
 /*a:visited{*/
 /*    color: cadetblue;*/
