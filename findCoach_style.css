@@ -1,0 +1,40 @@
+
+.flex-navbar a:nth-child(1){
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+}
+
+
+/*.flex-navbar a:active {*/
+/*    color: #A2C2C9;*/
+/*}*/
+
+/*.navbar a:visited {*/
+/*    color: #8E8E8E;*/
+/*}*/
+
+/*------------------------------page content style--------------------*/
+
+.search-form {
+    /*margin-top: 20px;*/
+    display: flex;
+    flex-direction: row;
+    /*align-items: center;*/
+    margin: 40px;
+}
+
+#search-results {
+    margin-top: 20px;
+}
+
+.coach-row {
+    margin-bottom: 10px;
+}
+
+.coach-info {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+
