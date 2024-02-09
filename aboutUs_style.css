@@ -1,7 +1,32 @@
+/* aboutUs_style.css */
 
+.flex-navbar a:nth-child(4){
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius:20px;
+}
+/* Styles for the container */
+.container {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between; /* Space between content and images */
+    align-items: flex-start; /* Align items at the top */
+    margin: 20px; /* Add margin around the container */
+}
 
-.page-title {
-    font-size: 50px;
-    text-align: center;
+/* Styles for the about-us-content */
+.about-us-content {
+    flex-basis: 60%; /* Set width for content */
+}
 
+/* Styles for the about-us-images */
+.about-us-images {
+    flex-basis: 30%; /* Set width for images */
+}
+
+/* Styles for the images */
+.about-us-images img {
+    width: 100%; /* Make images take full width of container */
+    max-width: 300px; /* Limit maximum width of images */
+    display: block; /* Prevent inline spacing */
+    margin-top: 20px; /* Add margin between images */
 }

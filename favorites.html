@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="default_style.css">
+    <link rel="stylesheet" href="favorites_style.css">
+</head>
+<body>
+    <header class="title-font main-title">
+        <h1>My Favorite Coaches</h1>
+    </header>
+
+    <nav class="text-font flex-navbar">
+        <a href="findCoach.html">Find Coach</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="my_account.html">My Account</a>
+        <a href="about_us.html">About Us</a>
+        <a href="welcome.html">Sign Out</a>
+    </nav>
+
+    <div id="favorites-list">
+        <!-- Favorite coaches will be displayed here -->
+    </div>
+
+    <!-- Modal -->
+    <!-- Favorites page HTML as before -->
+<!-- Include modal markup at the end of the body -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="main-title">Coach Details</h1>
+        <div class="coach-info">
+            <h2 id="coach-name">Coach Name</h2>
+            <div class="rating" id="rating-container">
+                <!-- Rating stars will be added dynamically -->
+            </div>
+            <p class="text-font">Type of Coach: <span id="coach-type"></span></p>
+            <p class="text-font">Experience: <span id="coach-experience"></span></p>
+            <p class="text-font">Certification: <span id="coach-certification"></span></p>
+        </div>
+        <div class="studio-info">
+            <h2>Studio Address</h2>
+            <!-- Add other coach details here -->
+        </div>
+    </div>
+</div>
+
+
+    <script src="favorites.js"></script>
+</body>
+</html>

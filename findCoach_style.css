@@ -36,5 +36,59 @@
     margin-right: 10px;
 }
 
+/*---------------------------after click-------------------*/
 
+/* Style for coach row */
+.coach-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
+/* Style for checkbox */
+.coach-row input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Style for coach name and rating */
+.coach-info {
+    display: flex;
+    align-items: center;
+}
+
+.coach-info span {
+    margin-right: 10px;
+}
+
+/* Style for stars */
+.coach-info span::before {
+    content: "★";
+    color: gold;
+}
+
+/* Style for buttons */
+.coach-info button {
+    margin-right: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.coach-info button:hover {
+    background-color: #45a049;
+}
+
+/* Style for "Choose" button */
+.coach-row button:last-child {
+    background-color: #008CBA;
+}
+
+.coach-row button:last-child:hover {
+    background-color: #006F9F;
+}

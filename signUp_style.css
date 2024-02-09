@@ -1,104 +1,314 @@
+/*!* signUp_style.css *!*/
+
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*body {*/
+/*    background-color: #A2C2C9;*/
+/*    line-height: 1.8;*/
+/*    margin: 20px;*/
+/*}*/
+
+/*.title-font {*/
+/*    font-family: "Segoe Script", sans-serif;*/
+/*}*/
+
+/*.main-title {*/
+/*    font-size: 50px;*/
+/*    text-align: left;*/
+/*}*/
+
+/*.container {*/
+/*    font-family: "Segoe UI", sans-serif;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    height: 600px;*/
+/*}*/
+
+/*.item {*/
+/*    margin: 200px;*/
+/*}*/
+
+/*.item:nth-child(1) {*/
+/*    padding-left: 20px;*/
+/*    padding-right: 200px;*/
+/*    border: #8E8E8E 5px solid;*/
+/*    border-radius: 20px;*/
+/*}*/
+
+/*.item:nth-child(1) h3 {*/
+/*    font-size: 30px;*/
+/*    padding: 30px;*/
+/*    margin-left: 150px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.item:nth-child(1) div {*/
+/*    display: block;*/
+/*    margin: 10px;*/
+/*    text-align: left;*/
+/*}*/
+
+/*.form-fields label {*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*.form-fields input {*/
+/*    border-radius: 20px;*/
+/*    background-color: #8E8E8E;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.form-btn input {*/
+/*    background-color: #D9D9D9;*/
+/*    font-size: 20px;*/
+/*    color: black;*/
+/*    text-decoration: none;*/
+/*    padding: 5px;*/
+/*    border: #8E8E8E 3px solid;*/
+/*    border-radius: 20px;*/
+/*    margin: 0 150px 10px 150px;*/
+/*}*/
+
+/*.form-btn input:hover {*/
+/*    color: #8E8E8E;*/
+/*}*/
+
+/*.item:nth-child(2) {*/
+/*    display: grid;*/
+/*}*/
+
+/*!* Styling for the images *!*/
+/*.pic-grid {*/
+/*    background-color: #D9D9D9;*/
+/*    border-radius: 10px;*/
+/*    margin: 10px;*/
+/*    text-align: center;*/
+/*    padding: 20px;*/
+/*}*/
+
+
+/* signUp_style.css */
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    background-color: #A2C2C9;
-    line-height: 1.8;
-    margin: 20px;
-}
-
-.title-font {
-    font-family: "Segoe Script", sans-serif;
-}
-
-.main-title{
-    /*font-family: "Segoe Script", sans-serif;*/
-    font-size: 50px;
-    text-align: left;
-    /*text-transform: uppercase;*/
-}
-
-h3 {
-
-}
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f4f4f4;*/
+/*    padding: 20px;*/
+/*}*/
 
 .container {
-    font-family: "Segoe UI", sans-serif;
-    border: red 5px solid;
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    /*margin: 20px 200px;*/
-    align-items: center;
-    height: 600px;
-
-
+    justify-content: space-between;
 }
 
 .item {
-    /*border: darkblue 5px solid;*/
-    align-items: center;
-    margin: 200px;
-
-}
-
-.item:nth-child(1) {
-    padding-left:  20px;
-    padding-right:  200px;
-    /*background-image: url("pics/coach_field pic.png");*/
-    border: #8E8E8E 5px solid;
+    flex: 1;
+    padding: 20px;
     border-radius: 20px;
+}
 
+.item:nth-child(1){
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(217, 217, 217, 0.41);
 
 }
 
-.item:nth-child(1) h3 {
-    font-size: 30px;
-    /*text-transform: uppercase;*/
-    padding: 30px;
-    margin-left: 150px;
-    /*border: red 5px solid;*/
-    text-align: center;
+.item:first-child {
+    margin-right: 20px;
 }
 
-.item:nth-child(1) div {
-    /*border: darkblue 10px solid;*/
-    /*background-color: #8E8E8E;*/
-    /*border-radius: 20px;*/
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-fields {
+    margin-bottom: 20px;
+}
+
+.form-fields label {
     display: block;
-    margin: 10px;
-    text-align: left;
+    margin-bottom: 5px;
 }
 
-.form-fields label{
+.form-fields input[type="text"],
+.form-fields input[type="password"],
+.form-fields input[type="email"],
+.form-fields input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #8E8E8E;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.form-fields input[type="checkbox"] {
     margin-right: 5px;
 }
 
-.form-fields input{
-    border-radius: 20px;
-    background-color: #8E8E8E;
-    text-align: center;
-
-}
-
-.form-btn input {
+.form-btn input[type="submit"] {
+    width: 100%;
+    padding: 10px;
     background-color: #D9D9D9;
-    font-size: 20px;
     color: black;
-    text-decoration: none;
-    padding: 5px;
-    border: #8E8E8E 3px solid;
+    border: none;
     border-radius: 20px;
-    margin: 0 150px 10px 150px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.form-btn input:hover {
-    color: #8E8E8E;
-
+.form-btn input[type="submit"]:hover {
+    background-color: rgba(128, 128, 128, 0.33);
 }
 
-.item:nth-child(2) {
-    display: grid;
-
+.pic-grid {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
 }
+
+.pic-grid img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.pic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pic-grid {
+    /* Adjust the width and height based on your requirement */
+    width: 300px;
+    height: 110px;
+    background-color: lightblue;
+    border: 2px solid #ccc;
+    margin-bottom: 10px; /* Adjust the margin based on your preference */
+}
+
+.pic-container .pic-grid:nth-child(even) {
+    margin-left: auto;
+}
+
+
+/*-------------------------SHIRAZ----------------------*/
+
+
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*body {*/
+/*    background-color: #A2C2C9;*/
+/*    line-height: 1.8;*/
+/*    margin: 20px;*/
+/*}*/
+
+/*.title-font {*/
+/*    font-family: "Segoe Script", sans-serif;*/
+/*}*/
+
+/*.main-title{*/
+/*    !*font-family: "Segoe Script", sans-serif;*!*/
+/*    font-size: 50px;*/
+/*    text-align: left;*/
+/*    !*text-transform: uppercase;*!*/
+/*}*/
+
+/*h3 {*/
+
+/*}*/
+
+/*.container {*/
+/*    font-family: "Segoe UI", sans-serif;*/
+/*    border: red 5px solid;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    !*margin: 20px 200px;*!*/
+/*    align-items: center;*/
+/*    height: 600px;*/
+
+
+/*}*/
+
+/*.item {*/
+/*    !*border: darkblue 5px solid;*!*/
+/*    align-items: center;*/
+/*    margin: 200px;*/
+
+/*}*/
+
+/*.item:nth-child(1) {*/
+/*    padding-left:  20px;*/
+/*    padding-right:  200px;*/
+/*    !*background-image: url("pics/coach_field pic.png");*!*/
+/*    border: #8E8E8E 5px solid;*/
+/*    border-radius: 20px;*/
+
+
+/*}*/
+
+/*.item:nth-child(1) h3 {*/
+/*    font-size: 30px;*/
+/*    !*text-transform: uppercase;*!*/
+/*    padding: 30px;*/
+/*    margin-left: 150px;*/
+/*    !*border: red 5px solid;*!*/
+/*    text-align: center;*/
+/*}*/
+
+/*.item:nth-child(1) div {*/
+/*    !*border: darkblue 10px solid;*!*/
+/*    !*background-color: #8E8E8E;*!*/
+/*    !*border-radius: 20px;*!*/
+/*    display: block;*/
+/*    margin: 10px;*/
+/*    text-align: left;*/
+/*}*/
+
+/*.form-fields label{*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*.form-fields input{*/
+/*    border-radius: 20px;*/
+/*    background-color: #8E8E8E;*/
+/*    text-align: center;*/
+
+/*}*/
+
+/*.form-btn input {*/
+/*    background-color: #D9D9D9;*/
+/*    font-size: 20px;*/
+/*    color: black;*/
+/*    text-decoration: none;*/
+/*    padding: 5px;*/
+/*    border: #8E8E8E 3px solid;*/
+/*    border-radius: 20px;*/
+/*    margin: 0 150px 10px 150px;*/
+/*}*/
+
+/*.form-btn input:hover {*/
+/*    color: #8E8E8E;*/
+
+/*}*/
+
+/*.item:nth-child(2) {*/
+/*    display: grid;*/
+
+/*}*/

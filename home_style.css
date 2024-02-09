@@ -1,0 +1,177 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  background-color: #8E8E8E;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.header .logo {
+  font-size: 24px;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #A2C2C9;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #D9D9D9;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* How It Works Section Styles */
+.how-it-works {
+  padding: 100px 0;
+}
+
+.how-it-works h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Benefits Section Styles */
+.benefits {
+  padding: 100px 0;
+}
+
+.benefits h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.benefits ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* About Us Section Styles */
+.about {
+  padding: 100px 0;
+}
+
+.about h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Testimonials Section Styles */
+.testimonials {
+  padding: 100px 0;
+}
+
+.testimonials h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.testimonials blockquote {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonials blockquote p {
+  font-size: 18px;
+}
+
+.testimonials blockquote footer {
+  font-weight: bold;
+}
+
+/* Contact Section Styles */
+.contact {
+  padding: 100px 0;
+}
+
+.contact h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.contact p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #8E8E
+}
+
+/* Sign-in Form Styles */
+.signin-form {
+  display: flex;
+  align-items: center;
+}
+
+.signin-form form {
+  display: flex;
+}
+
+.signin-form input[type="email"],
+.signin-form input[type="password"] {
+  padding: 8px;
+  margin-right: 5px;
+}
+
+.signin-form button {
+  padding: 8px 15px;
+  background-color: #D9D9D9;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.signin-form button:hover {
+  background-color: #8E8E8E;
+  color: #fff;
+}
