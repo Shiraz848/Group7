@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="all combines first update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/default_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/home_style.css" afterDir="false" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="favorites-learn_more-rate update">
+      <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/myAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/signIn.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +78,7 @@
       <workItem from="1706879340406" duration="55209000" />
       <workItem from="1707074759160" duration="40168000" />
       <workItem from="1707512376717" duration="1190000" />
+      <workItem from="1707636442859" duration="21627000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -156,7 +160,39 @@
       <option name="project" value="LOCAL" />
       <updated>1707493191539</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="all combines first update">
+      <option name="closed" value="true" />
+      <created>1707636584954</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707636584954</updated>
+    </task>
+    <task id="LOCAL-00012" summary="mt account added">
+      <option name="closed" value="true" />
+      <created>1707643625351</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707643625351</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated from sunday session">
+      <option name="closed" value="true" />
+      <created>1707649806840</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707649806840</updated>
+    </task>
+    <task id="LOCAL-00014" summary="favorites-learn_more-rate update">
+      <option name="closed" value="true" />
+      <created>1707687896039</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707687896039</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +205,9 @@
     <MESSAGE value="welcome final+sign up" />
     <MESSAGE value="sign up update" />
     <MESSAGE value="all combines first update" />
-    <option name="LAST_COMMIT_MESSAGE" value="all combines first update" />
+    <MESSAGE value="mt account added" />
+    <MESSAGE value="updated from sunday session" />
+    <MESSAGE value="favorites-learn_more-rate update" />
+    <option name="LAST_COMMIT_MESSAGE" value="favorites-learn_more-rate update" />
   </component>
 </project>

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 event.preventDefault(); // Prevent the form from submitting normally
 
                 // Redirect to the welcome page
-                window.location.href = "welcome.html";
+                window.location.href = "signIn.html";
             });
         });
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
