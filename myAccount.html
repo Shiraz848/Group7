@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="default_style.css">
+    <link rel="stylesheet" href="myAccount_style.css">
+</head>
+<body>
+
+    <header class="main-title">
+        <h1>Find My Coach</h1>
+    </header>
+
+    <nav class="nav-text-font flex-navbar">
+    <a href="findCoach.html">Find Coach</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="myAccount.html">My Account</a>
+    <a href="about_us.html">About Us</a>
+    <a href="welcome.html">Sign Out</a>
+    </nav>
+
+    <div class="second-title">
+            <h2>My Account Details</h2>
+    </div>
+<!--    ------------------------------------------------->
+
+    <div class="content text-font">
+        <form action="#" method="post" class="account-form">
+            <div class="form-fields">
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <div>
+                        <input type="email" id="email" name="email" disabled>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                </div>
+                <div class="input-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                </div>
+                <div class="input-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <input type="submit" value="Update Details">
+            </div>
+        </form>
+    </div>
+
+    <script src="myAccount.js"></script>
+</body>
+</html>
