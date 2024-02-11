@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +16,24 @@ body {
     /*text-transform: uppercase;*/
 }
 
+.nav-text-font {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 20px;
+}
+
 .text-font {
     font-family: "Segoe UI", sans-serif;
+    font-size: 15px;
+}
+
+.second-title {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
 
 nav {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .flex-navbar {

@@ -31,9 +31,10 @@ function searchCoaches() {
 
         // Create stars based on rating
         const stars = document.createElement("span");
-        for (let i = 0; i < coach.rating; i++) {
+        stars.classList.add("stars");
+        for (let i = 0; i < 5; i++) {
             const star = document.createElement("span");
-            star.textContent = "★";
+            star.textContent = i < coach.rating ? "★" : "☆";
             stars.appendChild(star);
         }
         coachInfo.appendChild(stars);
@@ -49,11 +50,6 @@ function searchCoaches() {
         coachInfo.appendChild(addToFavoritesButton);
 
         coachRow.appendChild(coachInfo);
-
-        // // Create "Choose" button
-        // const chooseButton = document.createElement("button");
-        // chooseButton.textContent = "Choose";
-        // coachRow.appendChild(chooseButton);
 
         searchResultsDiv.appendChild(coachRow);
     });

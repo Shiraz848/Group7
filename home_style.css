@@ -1,179 +1,194 @@
-/* Reset CSS */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Global Styles */
 body {
-  font-family: "Segoe UI", sans-serif;
-  line-height: 1.6;
+    font-family: Segoe UI, sans-serif;
+    background-color: #A2C2C9;
+    color: #090808;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    float: right;
+    width: 200px; /* Set the width to the desired size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 200px; /* Adjust the value as needed */
 }
 
 /* Header Styles */
 .header {
-  background-color: #8E8E8E;
-  color: #fff;
-  padding: 20px 0;
+    background-color: #8E8E8E;
+    color: #fff;
+    padding: 20px 0;
 }
 
 .header .logo {
-  font-family: "Segoe Script", sans-serif;
-  font-size: 24px;
+    font-size: 24px;
 }
 
 .navbar ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .navbar ul li {
-  display: inline-block;
-  margin-right: 20px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .navbar ul li a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Hero Section Styles */
 .hero {
-  background-color: #A2C2C9;
-  color: #fff;
-  padding: 100px 0;
-  text-align: center;
+    background-color: #A2C2C9;
+    color: #090808;
+    padding: 100px 0;
+    text-align: center;
 }
 
 .hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .hero .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #D9D9D9;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D9D9D9;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 /* How It Works Section Styles */
 .how-it-works {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 .how-it-works h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
 /* Benefits Section Styles */
 .benefits {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 .benefits h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
 .benefits ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-/* About Us Section Styles */
-.about {
-  padding: 100px 0;
-}
-
-.about h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 /* Testimonials Section Styles */
 .testimonials {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 .testimonials h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
 .testimonials blockquote {
-  font-style: italic;
-  margin-bottom: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
 .testimonials blockquote p {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .testimonials blockquote footer {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /* Contact Section Styles */
 .contact {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 .contact h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
 .contact p {
-  font-size: 18px;
-  margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 /* Footer Styles */
 .footer {
-    background-color: #8E8E
+    background-color: #8E8E8E;
+    color: #090808;
+    padding: 20px 0;
 }
 
-/* Sign-in Form Styles */
-.signin-form {
-  display: flex;
-  align-items: center;
+/* Add this CSS to apply flip animation on hover */
+.section-image img {
+    transition: transform 0.5s ease;
 }
 
-.signin-form form {
-  display: flex;
+.section-title h3:hover + .section-wrapper .section-image img {
+    transform: rotateY(180deg);
 }
 
-.signin-form input[type="email"],
-.signin-form input[type="password"] {
-  padding: 8px;
-  margin-right: 5px;
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #8E8E8E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.signin-form button {
-  padding: 8px 15px;
-  background-color: #D9D9D9;
-  border: none;
-  color: #000;
-  cursor: pointer;
+.register-block {
+    margin-top: 10px;
 }
 
-.signin-form button:hover {
-  background-color: #8E8E8E;
-  color: #fff;
+.register-btn {
+    font-size: 16px;
+    color: #A2C2C9;
+    text-decoration: none;
+}
+
+.register-btn:hover {
+    text-decoration: underline;
+}
+
+/* Add this CSS to apply flip animation on hover */
+.section-title {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.section-title h3 {
+    transition: transform 0.5s ease;
+}
+
+.section-title:hover h3 {
+    transform: rotateY(180deg);
 }

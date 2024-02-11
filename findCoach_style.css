@@ -1,42 +1,20 @@
+/* Use Segoe font for all elements */
+body {
+    font-family: Segoe UI, sans-serif;
+}
 
 .flex-navbar a:nth-child(1){
     background-color: rgba(0, 0, 0, 50%);
     border-radius: 20px;
 }
 
-
-/*.flex-navbar a:active {*/
-/*    color: #A2C2C9;*/
-/*}*/
-
-/*.navbar a:visited {*/
-/*    color: #8E8E8E;*/
-/*}*/
-
-/*------------------------------page content style--------------------*/
-
+/* Style for search form */
 .search-form {
-    /*margin-top: 20px;*/
     display: flex;
-    flex-direction: row;
-    /*align-items: center;*/
+    justify-content: space-between; /* Space evenly between elements */
+    align-items: center;
     margin: 40px;
 }
-
-#search-results {
-    margin-top: 20px;
-}
-
-.coach-row {
-    margin-bottom: 10px;
-}
-
-.coach-info {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-/*---------------------------after click-------------------*/
 
 /* Style for coach row */
 .coach-row {
@@ -50,20 +28,24 @@
     margin-right: 10px;
 }
 
-/* Style for coach name and rating */
+/* Style for coach info */
 .coach-info {
     display: flex;
     align-items: center;
 }
 
+/* Style for coach name */
 .coach-info span {
     margin-right: 10px;
 }
 
-/* Style for stars */
-.coach-info span::before {
-    content: "★";
-    color: gold;
+/* Style for rating stars */
+.coach-info .stars {
+    margin-right: 10px;
+}
+
+.coach-info .stars span {
+    color: #ffd700; /* Set star color */
 }
 
 /* Style for buttons */
@@ -78,6 +60,7 @@
     display: inline-block;
     font-size: 14px;
     cursor: pointer;
+    font-family: Segoe UI, Arial, sans-serif; /* Apply Segoe font */
 }
 
 .coach-info button:hover {
@@ -91,4 +74,31 @@
 
 .coach-row button:last-child:hover {
     background-color: #006F9F;
+}
+
+/* Style for coach name */
+.coach-info span {
+    margin-right: 10px;
+    width: 80px; /* Set a fixed width for consistent spacing */
+}
+
+/* Style for stars */
+.coach-info .stars {
+    margin-right: 10px;
+    width: 100px; /* Set a fixed width for consistent spacing */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.search-form div {
+    margin-right: 10px; /* Add spacing between search parameters */
+}
+
+.search-form button {
+    margin-left: 10px; /* Add spacing between search parameters and search button */
 }

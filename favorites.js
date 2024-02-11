@@ -74,18 +74,22 @@ function displayFavoriteCoaches() {
 }
 
 // Function to display modal with coach details
+// Your existing JavaScript code
+// Add the function to display the coach's address in the modal
 function displayCoachDetails(coach) {
     const modal = document.getElementById("myModal");
     const coachName = document.getElementById("coach-name");
     const coachType = document.getElementById("coach-type");
     const coachExperience = document.getElementById("coach-experience");
     const coachCertification = document.getElementById("coach-certification");
+    const coachAddress = document.getElementById("coach-address"); // New element for coach address
     const ratingContainer = document.getElementById("rating-container");
 
     coachName.textContent = coach.name;
     coachType.textContent = coach.classType;
     coachExperience.textContent = "Experience: " + coach.experience;
     coachCertification.textContent = "Certification: " + coach.certification;
+    coachAddress.textContent = coach.address; // Set coach address
 
     // Clear previous stars
     ratingContainer.innerHTML = '';
@@ -113,6 +117,7 @@ function displayCoachDetails(coach) {
         }
     };
 }
+
 
 // Call the function to display favorite coaches when the page loads
 displayFavoriteCoaches();

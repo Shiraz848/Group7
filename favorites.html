@@ -8,43 +8,63 @@
 </head>
 <body>
     <header class="title-font main-title">
-        <h1>My Favorite Coaches</h1>
+        <h1>Find My Coach</h1>
     </header>
 
     <nav class="text-font flex-navbar">
         <a href="findCoach.html">Find Coach</a>
         <a href="favorites.html">Favorites</a>
-        <a href="my_account.html">My Account</a>
+        <a href="myAccount.html">My Account</a>
         <a href="about_us.html">About Us</a>
         <a href="welcome.html">Sign Out</a>
     </nav>
+
+    <div class="second-title">
+            <h2>Your Favorite Coaches</h2>
+    </div>
 
     <div id="favorites-list">
         <!-- Favorite coaches will be displayed here -->
     </div>
 
     <!-- Modal -->
-    <!-- Favorites page HTML as before -->
-<!-- Include modal markup at the end of the body -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h1 class="main-title">Coach Details</h1>
-        <div class="coach-info">
-            <h2 id="coach-name">Coach Name</h2>
-            <div class="rating" id="rating-container">
-                <!-- Rating stars will be added dynamically -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="content-section">
+                    <h1 class="main-title">Coach Details</h1>
+                    <div class="coach-info">
+                        <h2 id="coach-name">Coach Name</h2>
+                        <div class="rating" id="rating-container">
+                            <!-- Rating stars will be added dynamically -->
+                        </div>
+                        <p class="text-font">Type of Coach: <span id="coach-type"></span></p>
+                        <p class="text-font">Experience: <span id="coach-experience"></span></p>
+                        <p class="text-font">Certification: <span id="coach-certification"></span></p>
+                        <p class="text-font">Address: <span id="coach-address"></span></p>
+                    <div class="modal-buttons">
+                        <button class="rate-button">Rate Coach Now</button>
+                        <button class="close-button">Close</button>
+                    </div>
+
+
+
+                    </div>
+                </div>
+                <div class="map-section">
+                    <!-- Google Maps will be displayed here -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16026481.292452138!2d-113.69097373006465!3d37.06403983542398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d964f1b7c4c227%3A0xb3516bc6f81112f!2sUnited%20States!5e0!3m2!1sen!2sus!4v1644360631144!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
-            <p class="text-font">Type of Coach: <span id="coach-type"></span></p>
-            <p class="text-font">Experience: <span id="coach-experience"></span></p>
-            <p class="text-font">Certification: <span id="coach-certification"></span></p>
         </div>
-        <div class="studio-info">
-            <h2>Studio Address</h2>
-            <!-- Add other coach details here -->
-        </div>
+<!--        <div class="modal-footer">-->
+
+<!--        </div>-->
+
     </div>
-</div>
 
 
     <script src="favorites.js"></script>
