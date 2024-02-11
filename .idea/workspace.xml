@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="sign up update">
-      <change afterPath="$PROJECT_DIR$/favorites.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favorites.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favorites_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sign_up.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/welcome.js" afterDir="false" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="all combines first update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aboutUs_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/aboutUs_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/default_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/default_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findCoach_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signUp_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/signUp_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/sign_up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/welcome_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/home_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +73,8 @@
       <updated>1706102522034</updated>
       <workItem from="1706102529206" duration="4010000" />
       <workItem from="1706879340406" duration="55209000" />
-      <workItem from="1707074759160" duration="39840000" />
+      <workItem from="1707074759160" duration="40168000" />
+      <workItem from="1707512376717" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -162,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707413210482</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="all combines first update">
+      <option name="closed" value="true" />
+      <created>1707493191539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707493191539</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +168,7 @@
     <MESSAGE value="welcome edit" />
     <MESSAGE value="welcome final+sign up" />
     <MESSAGE value="sign up update" />
-    <option name="LAST_COMMIT_MESSAGE" value="sign up update" />
+    <MESSAGE value="all combines first update" />
+    <option name="LAST_COMMIT_MESSAGE" value="all combines first update" />
   </component>
 </project>
