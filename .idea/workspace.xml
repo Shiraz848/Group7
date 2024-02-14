@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="find-coach style update">
-      <change afterPath="$PROJECT_DIR$/pics/fitness-concept-with-blue-jumping-rope.jpg" afterDir="false" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="styles update">
+      <change afterPath="$PROJECT_DIR$/pics/059.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/Career Tennis Coach in California.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/Jovon Bouknight _  University of Kentucky Wide Receivers Coach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/Pat Riley on the Remarkable Power of Getting 1% Better.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/What Does A Team Parent Do_ 17 Ways To Stop A Coaches Headache _ Rookie Mentor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/Why I'm Glad I Trained with a Run Coach for My First Marathon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/a7579bee-b88e-4f5a-9054-7a665b37d38a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/field-fixed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pics/field.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorites_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/favorites_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findCoach_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signIn_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/signIn_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/default_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +87,7 @@
       <workItem from="1707512376717" duration="1190000" />
       <workItem from="1707636442859" duration="21897000" />
       <workItem from="1707726550061" duration="211000" />
-      <workItem from="1707739001282" duration="21267000" />
+      <workItem from="1707739001282" duration="26162000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -219,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707906159546</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="styles update">
+      <option name="closed" value="true" />
+      <created>1707908464552</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1707908464552</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +252,7 @@
     <MESSAGE value="favorites-learn_more-rate update + name-change" />
     <MESSAGE value="find-coach and favorites update and connection" />
     <MESSAGE value="find-coach style update" />
-    <option name="LAST_COMMIT_MESSAGE" value="find-coach style update" />
+    <MESSAGE value="styles update" />
+    <option name="LAST_COMMIT_MESSAGE" value="styles update" />
   </component>
 </project>

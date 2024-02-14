@@ -9,10 +9,21 @@ body {
     margin: 20px;
 }
 
+header {
+    background-image: url('pics/field-fixed.jpg'); /* Add the path to your background image */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+
 .main-title{
     font-family: "Segoe Script", sans-serif;
     font-size: 30px;
     text-align: left;
+    padding-left: 20px;
     /*text-transform: uppercase;*/
 }
 
