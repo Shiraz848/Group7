@@ -20,7 +20,7 @@
     </nav>
 
     <div class="second-title">
-            <h2>Choose the coaches you are interested with so they can contact you:</h2>
+            <h2>Choose the coaches you are interested with, so they can contact you:</h2>
     </div>
 <!----------------------------------------------------------->
     <div class="search-form text-font">
@@ -47,13 +47,106 @@
             <option value="advanced">Advanced</option>
         </select><br>
 
-        <button onclick="searchCoaches()">Search</button> <!-- Move the search button here -->
+        <button class="search-button">Search</button>
     </div>
 
-    <div id="search-results">
+    <div id="search-results-list">
         <!-- Results will be displayed here -->
     </div>
 
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="content-section">
+                    <h1 class="main-title">Coach Details</h1>
+                    <div class="coach-info">
+                        <h2 id="coach-name">Coach Name</h2>
+                        <div class="rating" id="rating-container">
+                            <!-- Rating stars will be added dynamically -->
+                        </div>
+                        <p class="text-font">Type of Coach: <span id="coach-type"></span></p>
+                        <p class="text-font">Experience: <span id="coach-experience"></span></p>
+                        <p class="text-font">Certification: <span id="coach-certification"></span></p>
+                        <p class="text-font">Address: <span id="coach-address"></span></p>
+                    <div class="modal-buttons">
+                        <button class="rate-button">Rate Coach Now</button>
+                        <button class="close-button">Close</button>
+                    </div>
+
+
+
+                    </div>
+                </div>
+                <div class="map-section">
+                    <!-- Google Maps will be displayed here -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16026481.292452138!2d-113.69097373006465!3d37.06403983542398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d964f1b7c4c227%3A0xb3516bc6f81112f!2sUnited%20States!5e0!3m2!1sen!2sus!4v1644360631144!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+<!--        <div class="modal-footer">-->
+
+<!--        </div>-->
+
+    </div>
+
+    <!-- Rating Modal -->
+    <div id="ratingModal" class="rating-modal">
+        <div class="rating-modal-content">
+            <span class="close">&times;</span>
+            <h1 class="main-title">Rate Coach</h1>
+            <!-- Add a container for the stars -->
+            <!-- Add a container for the stars -->
+        <div id="ratingStars">
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+
+            <button class="submit-rating">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        // Dummy data for demonstration
+    const coaches = [
+        {
+            name: "John Doe",
+            rating: 4,
+            classType: "Cardio",
+            trainingTime: "Afternoon / Evening",
+            trainingLevel:"Beginner",
+            experience: "5 years",
+            certification: "ACE Certified",
+            address: "7 rubin reuven st. Beer-sheva"
+        },
+        {
+            name: "Jane Smith",
+            rating: 5,
+            classType: "Weight Lifting",
+            trainingTime: "Afternoon / Evening",
+            trainingLevel:"Advanced",
+            experience: "8 years",
+            certification: "NASM Certified",
+            address: "124 rager st. Beer-sheva"
+        },
+        {
+            name: "Inbal Epshtein",
+            rating: 2,
+            classType: "Pilates",
+            trainingTime: "Morning",
+            trainingLevel:"Beginner",
+            experience: "10 years",
+            certification: "Wingate Certified",
+            address: "133 rager st. Beer-sheva"
+        }
+        // Add more coaches as needed
+    ];
+    </script>
     <script src="findCoach.js"></script>
 </body>
 </html>

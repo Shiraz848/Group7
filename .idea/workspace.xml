@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="favorites-learn_more-rate update">
-      <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.html" afterDir="false" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="favorites-learn_more-rate update + name-change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/myAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/signIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,9 @@
       <workItem from="1706879340406" duration="55209000" />
       <workItem from="1707074759160" duration="40168000" />
       <workItem from="1707512376717" duration="1190000" />
-      <workItem from="1707636442859" duration="21627000" />
+      <workItem from="1707636442859" duration="21897000" />
+      <workItem from="1707726550061" duration="211000" />
+      <workItem from="1707739001282" duration="18059000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -192,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707687896039</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="favorites-learn_more-rate update + name-change">
+      <option name="closed" value="true" />
+      <created>1707689051927</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707689051927</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +217,7 @@
     <MESSAGE value="mt account added" />
     <MESSAGE value="updated from sunday session" />
     <MESSAGE value="favorites-learn_more-rate update" />
-    <option name="LAST_COMMIT_MESSAGE" value="favorites-learn_more-rate update" />
+    <MESSAGE value="favorites-learn_more-rate update + name-change" />
+    <option name="LAST_COMMIT_MESSAGE" value="favorites-learn_more-rate update + name-change" />
   </component>
 </project>
