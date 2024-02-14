@@ -5,16 +5,32 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #A2C2C9;
-    color: #8E8E8E;
+    font-family: "Segoe UI", sans-serif;
+    color: black;
+    /*
+    Photo by <a href="https://unsplash.com/@yellowteapot?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Meghan Holmes</a> on <a href="https://unsplash.com/photos/two-person-inside-gym-exercising-buWcS7G1_28?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    */
+    background-image: url('pics/meghan-holmes-buWcS7G1_28-unsplash.jpg'); /* Add the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+/*.container {*/
+/*    max-width: 800px;*/
+/*    margin: 50px auto;*/
+/*    padding: 20px;*/
+/*    background-color: #D9D9D9;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
 
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #D9D9D9;
+    /*background-color: #D9D9D9;*/
+    background-color: rgba(162, 194, 201, 0.76);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -28,12 +44,12 @@ body {
 
 h1 {
     font-size: 36px;
-    color: #8E8E8E;
+    color: black;
 }
 
 h2 {
     font-size: 24px;
-    color: #8E8E8E;
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -91,22 +107,25 @@ h3 {
     cursor: pointer;
 }
 
+.btn:hover {
+    background-color: rgb(121, 121, 121);
+
+}
+
 .register-block {
     margin-top: 10px;
 }
 
 .register-btn {
     font-size: 16px;
-    color: #A2C2C9;
+    color: #8E8E8E;
     text-decoration: none;
 }
 
 .register-btn:hover {
     text-decoration: underline;
+    color: rgb(121, 121, 121);
 }
-
-
-
 
 /*---------------------SHIRAZ----------------*/
 /** {*/
