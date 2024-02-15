@@ -17,6 +17,12 @@
     margin: 0 auto;
 }
 
+.msg {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 .form-fields {
     margin-bottom: 15px;
     border-radius: 20px;
