@@ -3,29 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="default_style.css">
+<!--    <link rel="stylesheet" href="default_style.css">-->
     <link rel="stylesheet" href="signUp_style.css">
-    <style>
-        /* CSS for centering the title */
-        .title-font.main-title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
 </head>
 <body>
-    <header class="title-font main-title">
-        <h1>Find My Coach</h1>
-        <h2>Sign Up</h2> <!-- Added Sign Up title -->
+    <header class="main-title">
+        <h1>Welcome to find my coach!</h1>
     </header>
+
+    <div class="second-title">
+            <h2>Register now to enjoy our services:</h2>
+    </div>
 
     <div class="container text-font">
 
         <div class="item">
             <form id="registrationForm" action="" method="get">
-                <h3>Registration</h3>
+                <div class="msg"></div>
                 <div class="form-fields">
                     <label>First Name:</label>
                     <input type="text" name="firstName" placeholder="Enter your first name" required minlength="3" pattern="[A-Za-z]+" title="First name must be more than 3 characters and contain only English letters">

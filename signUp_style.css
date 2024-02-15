@@ -4,9 +4,40 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Segoe UI", sans-serif;
+    color: black;
+    /*
+    Photo by <a href="https://unsplash.com/@yellowteapot?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Meghan Holmes</a> on <a href="https://unsplash.com/photos/two-person-inside-gym-exercising-buWcS7G1_28?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    */
+    background-image: url('pics/Premium Photo _ Black dumbbell set_ close up many metal dumbbells on rack in sport fitness center.jpg'); /* Add the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-title{
+    font-family: "Segoe Script", sans-serif;
+    color: #D9D9D9;
+    font-size: 30px;
+    /*text-align: left;*/
+    padding-left: 20px;
+    /*text-transform: uppercase;*/
+    margin: 0 auto;
+}
+
+.second-title {
+    font-family: "Segoe UI", sans-serif;
+    color: #D9D9D9;
+    font-size: 20px;
+    /*text-align: center;*/
+    margin-left: 70px;
+
+}
+
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 15px auto;
     display: flex;
     justify-content: space-between;
 }
@@ -18,17 +49,18 @@
 }
 
 .item:nth-child(1) {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(217, 217, 217, 0.41);
-}
-
-.item:first-child {
+    background-color: rgba(162, 194, 201, 0.85);
     margin-right: 20px;
+    margin-top: 30px;
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+/*.item:nth-child(2){*/
+/*    background-color: rgba(217, 217, 217, 0.54);*/
+/*}*/
+
+.msg {
+    color: red;
+    font-size: 20px;
 }
 
 .form-fields {
@@ -72,10 +104,10 @@ h2 {
 }
 
 .pic-grid {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.56);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     margin-bottom: 20px; /* Increase margin bottom for spacing */
 }
