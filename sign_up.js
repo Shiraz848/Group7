@@ -1,16 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     const signInForm = document.querySelector(".form");
-//
-//     signInForm.addEventListener("submit", (event) => {
-//         event.preventDefault(); // Prevent the form from submitting normally
-//
-//         // Redirect to the sign-in page if all fields are correctly filled
-//         if (validateForm()) {
-//             window.location.href = "signIn.html";
-//         }
-//     });
-// });
-
 class User {
     constructor(firstName, lastName, email, phoneNumber, city, password, locationAccess) {
         this.firstName = firstName;
@@ -35,22 +22,22 @@ const validateForm = () => {
 
     // Validate form fields
     if (!firstName || !lastName || !email || !phoneNumber || !city || !password || !confirmPassword) {
-        displayError("Please fill in all fields");
+        displayError("Please fill in all fields!");
         return null;
     }
 
     if (password !== confirmPassword) {
-        displayError("Passwords do not match");
+        displayError("Passwords do not match!");
         return null;
     }
 
     if (!isValidEmail(email)) {
-        displayError("Please enter a valid email address");
+        displayError("Please enter a valid email address!");
         return null;
     }
 
     if (!isValidPhoneNumber(phoneNumber)) {
-        displayError("Please enter a valid phone number");
+        displayError("Please enter a valid phone number!");
         return null;
     }
 
@@ -88,6 +75,7 @@ const handleSubmit = (event) => {
     if (user) {
         // Do something with the user object, like sending it to a server
         console.log(user);
+        localStorage.setItem('user', JSON.stringify(user));
         alert("Registration successful!");
         document.getElementById("registrationForm").reset();
         window.location.href = "signIn.html"; // Redirect to sign-in page
