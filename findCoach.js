@@ -1,228 +1,231 @@
-// Function to filter coaches based on search criteria
-function filterCoaches() {
-    const searchInput = ""; // No search input in the provided HTML
-    const classTypeInput = document.getElementById("training-type").value.toLowerCase();
-    const trainingTimeInput = document.querySelector('input[name="training-time"]:checked').value.toLowerCase();
-    const trainingLevelInput = document.getElementById("training-level").value.toLowerCase();
+// script.js
+const coaches = [
+    {
+        name: "John Doe",
+        rating: 4,
+        classType: "Cardio",
+        trainingTime: "Afternoon / Evening",
+        trainingLevel: "Beginner",
+        experience: "5 years",
+        certification: "ACE Certified",
+        address: "7 Rubin Reuven St. Beer-Sheva"
+    },
+    {
+        name: "Jane Smith",
+        rating: 5,
+        classType: "Weight Lifting",
+        trainingTime: "Afternoon / Evening",
+        trainingLevel: "Advanced",
+        experience: "8 years",
+        certification: "NASM Certified",
+        address: "124 Rager St. Beer-Sheva"
+    },
+    {
+        name: "Inbal Epshtein",
+        rating: 2,
+        classType: "Pilates",
+        trainingTime: "Morning",
+        trainingLevel: "Beginner",
+        experience: "10 years",
+        certification: "Wingate Certified",
+        address: "133 Rager St. Beer-Sheva"
+    },
+    {
+        name: "Yuval Amit",
+        rating: 5,
+        classType: "Tennis",
+        trainingTime: "Morning",
+        trainingLevel: "Advanced",
+        experience: "18 years",
+        certification: "Ramat Hasharon Tennis Center Certified",
+        address: "54 Wingate St. Beer-Sheva"
+    }
+    // Add more coaches as needed
+];
 
-    // Filter coaches based on search inputs
-    const filteredCoaches = coaches.filter(function(coach) {
-        // Convert coach name and other properties to lowercase for case-insensitive search
-        const coachClassType = coach.classType.toLowerCase();
-        const coachTrainingTime = coach.trainingTime.toLowerCase();
-        const coachTrainingLevel = coach.trainingLevel.toLowerCase();
+class FitnessTrainerSearch {
+    constructor() {
+        this.initialize();
+    }
 
-        // Return true if any of the coach properties match the search inputs
-        return (classTypeInput === "" || coachClassType.includes(classTypeInput)) &&
-            (trainingTimeInput === "" || coachTrainingTime.includes(trainingTimeInput)) &&
-            (trainingLevelInput === "" || coachTrainingLevel.includes(trainingLevelInput));
-    });
+    initialize() {
+        const searchButton = document.querySelector('.search-button');
+        searchButton.addEventListener('click', () => this.searchTrainers());
+        this.displaySearchResults(coaches);
 
-    // Display filtered coaches
-    displaySearchResults(filteredCoaches);
-}
+        const contactMeButton = document.getElementById("contact-me-button");
+        contactMeButton.addEventListener('click', () => this.displayConfirmationMessage());
 
+    }
 
+    searchTrainers() {
+        const classTypeInput = document.getElementById("training-type").value.toLowerCase();
+        const trainingTimeInput = document.querySelector('input[name="training-time"]:checked').value.toLowerCase();
+        const trainingLevelInput = document.getElementById("training-level").value.toLowerCase();
+        const locationInput = document.querySelector('input[name="location"]:checked').value;
 
-// Display search results
-function displaySearchResults(coachesToShow) {
-    const searchResultsList = document.getElementById("search-results-list");
+        // Filter coaches based on the search inputs
+        const filteredCoaches = coaches.filter(coach => {
+            const coachClassType = coach.classType.toLowerCase();
+            const coachTrainingTime = coach.trainingTime.toLowerCase();
+            const coachTrainingLevel = coach.trainingLevel.toLowerCase();
+            return (classTypeInput === "" || coachClassType.includes(classTypeInput)) &&
+                (trainingTimeInput === "" || coachTrainingTime.includes(trainingTimeInput)) &&
+                (trainingLevelInput === "" || coachTrainingLevel.includes(trainingLevelInput)) &&
+                (locationInput === "current" || this.isNearMyAddress(coach.address));
+        });
 
-    searchResultsList.innerHTML = ""; // Clear previous results
+        // Display the filtered coaches
+        this.displaySearchResults(filteredCoaches);
+    }
 
-    // Loop through coaches and create HTML for each
-    coachesToShow.forEach(function(coach) {
-        // Create coach row
-        const coachRow = document.createElement("div");
-        coachRow.classList.add("coach");
+    isNearMyAddress(coachAddress) {
+        // Implement your logic to check if the coach's address is near the user's address
+        // This can involve geocoding and distance calculation based on coordinates
+        // For now, let's assume all coaches are near the user's address
+        return true;
+    }
 
-        // Create checkbox
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        coachRow.appendChild(checkbox);
+    displaySearchResults(coachesToShow) {
+        const searchResultsList = document.getElementById("search-results-list");
 
-        // Create coach name
-        const coachName = document.createElement("span");
-        coachName.classList.add("coach-name");
-        coachName.textContent = coach.name;
-        coachRow.appendChild(coachName);
+        searchResultsList.innerHTML = "";
 
-        // Create stars based on rating
-        const stars = document.createElement("span");
-        stars.classList.add("stars");
+        coachesToShow.forEach(coach => {
+            const coachRow = document.createElement("div");
+            coachRow.classList.add("coach");
+            coachRow.innerHTML = `
+                <input type="checkbox">
+                <span class="coach-name">${coach.name}</span>
+                <span class="stars">${this.generateStars(coach.rating)}</span>
+                <span class="class-type">Type: ${coach.classType}</span>
+                <button class="learn-more-button">Learn More</button>
+                <button class="addToFavorites-button">Add To Favorites</button>
+            `;
+
+            coachRow.querySelector('.learn-more-button').addEventListener('click', () => this.displayCoachDetails(coach));
+            coachRow.querySelector('.addToFavorites-button').addEventListener('click', () => this.addToFavorites(coach));
+
+            searchResultsList.appendChild(coachRow);
+        });
+
+        const contactMeButton = document.getElementById("contact-me-button");
+        contactMeButton.style.display = "block";
+    }
+
+    generateStars(rating) {
+        let stars = '';
         for (let i = 0; i < 5; i++) {
-            const star = document.createElement("span");
-            star.textContent = i < coach.rating ? "★" : "☆";
-            stars.appendChild(star);
+            stars += i < rating ? "★" : "☆";
         }
-        coachRow.appendChild(stars);
-
-        // Create coach class type
-        const classType = document.createElement("span");
-        classType.classList.add("class-type");
-        classType.textContent = "Type: " + coach.classType;
-        coachRow.appendChild(classType);
-
-        // Create "Learn More" button
-        const learnMoreButton = document.createElement("button");
-        learnMoreButton.classList.add("learn-more-button");
-        learnMoreButton.textContent = "Learn More";
-        coachRow.appendChild(learnMoreButton);
-
-        // Create "Add To Favorites" button
-        const addToFavoritesButton = document.createElement("button");
-        addToFavoritesButton.classList.add("addToFavorites-button");
-        addToFavoritesButton.textContent = "Add To Favorites";
-        coachRow.appendChild(addToFavoritesButton);
-
-        // Add event listener to "Learn More" button
-        learnMoreButton.addEventListener('click', function() {
-            displayCoachDetails(coach);
-        });
-
-        // Add event listener to "Add To Favorites" button
-        addToFavoritesButton.addEventListener('click', function() {
-            addToFavorites(coach);
-        });
-
-        // Append coach row to search results list
-        searchResultsList.appendChild(coachRow);
-    });
-}
-
-// Function to add a coach to the favorites list
-function addToFavorites(coach) {
-    // Retrieve existing favorite coaches from local storage
-    const storedFavoriteCoaches = JSON.parse(localStorage.getItem('favoriteCoaches')) || [];
-
-    // Check if the coach is already in the favorites list
-    const isDuplicate = storedFavoriteCoaches.some(favoriteCoach => favoriteCoach.name === coach.name);
-
-    if (!isDuplicate) {
-        // Add the coach to the favorites list
-        storedFavoriteCoaches.push(coach);
-
-        // Update the stored favorite coaches in local storage
-        localStorage.setItem('favoriteCoaches', JSON.stringify(storedFavoriteCoaches));
-
-        // After adding the coach, update the display of favorite coaches
-        displayFavoriteCoaches();
-    } else {
-        alert("Coach is already in favorites!");
-    }
-}
-
-// Function to display modal with coach details
-// Add the function to display the coach's address in the modal
-function displayCoachDetails(coach) {
-    const modal = document.getElementById("myModal");
-    const coachName = document.getElementById("coach-name");
-    const coachType = document.getElementById("coach-type");
-    const coachExperience = document.getElementById("coach-experience");
-    const coachCertification = document.getElementById("coach-certification");
-    const coachAddress = document.getElementById("coach-address");
-    const ratingContainer = document.getElementById("rating-container");
-
-    coachName.textContent = coach.name;
-    coachType.textContent = coach.classType;
-    coachExperience.textContent = "Experience: " + coach.experience;
-    coachCertification.textContent = "Certification: " + coach.certification;
-    coachAddress.textContent = coach.address;
-
-    // Clear previous stars
-    ratingContainer.innerHTML = '';
-
-    // Dynamically generate rating stars
-    for (let i = 0; i < 5; i++) {
-        const star = document.createElement('span');
-        star.textContent = i < coach.rating ? "★" : "☆";
-        ratingContainer.appendChild(star);
+        return stars;
     }
 
-    // Show the modal
-    modal.style.display = "block";
+    addToFavorites(coach) {
+        const storedFavoriteCoaches = JSON.parse(localStorage.getItem('favoriteCoaches')) || [];
+        const isDuplicate = storedFavoriteCoaches.some(favoriteCoach => favoriteCoach.name === coach.name);
 
-    // Close the modal when the close button is clicked
-    const closeButton = document.querySelector(".close");
-    closeButton.onclick = function() {
-        modal.style.display = "none";
-    };
-
-    // Close the modal when the user clicks outside the modal
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
+        if (!isDuplicate) {
+            storedFavoriteCoaches.push(coach);
+            localStorage.setItem('favoriteCoaches', JSON.stringify(storedFavoriteCoaches));
+            // Add your logic to update favorite coaches UI here
+            console.log("Coach added to favorites:", coach);
+        } else {
+            alert("Coach is already in favorites!");
         }
-    };
+    }
 
-    // Get the rate button and attach click event listener
-    const rateButton = document.querySelector(".rate-button");
-    rateButton.addEventListener('click', function() {
-        displayRatingModal();
-    });
-}
+    displayCoachDetails(coach) {
+        const modal = document.getElementById("myModal");
+        const coachName = document.getElementById("coach-name");
+        const coachType = document.getElementById("coach-type");
+        const coachExperience = document.getElementById("coach-experience");
+        const coachCertification = document.getElementById("coach-certification");
+        const coachAddress = document.getElementById("coach-address");
+        const ratingContainer = document.getElementById("rating-container");
 
-// Function to display rating modal
-function displayRatingModal() {
-    const ratingModal = document.getElementById("ratingModal");
+        coachName.textContent = coach.name;
+        coachType.textContent = coach.classType;
+        coachExperience.textContent = "Experience: " + coach.experience;
+        coachCertification.textContent = "Certification: " + coach.certification;
+        coachAddress.textContent = coach.address;
+        ratingContainer.innerHTML = this.generateStars(coach.rating);
 
-    // Show the rating modal
-    ratingModal.style.display = "block";
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
 
-    // Close the rating modal when the close button is clicked
-    const closeButton = ratingModal.querySelector(".close");
-    closeButton.onclick = function() {
-        ratingModal.style.display = "none";
-    };
+        const closeButton = modal.querySelector(".close");
+        closeButton.onclick = () => modal.style.display = "none";
 
-    // Close the rating modal when the user clicks outside the modal
-    window.onclick = function(event) {
-        if (event.target === ratingModal) {
-            ratingModal.style.display = "none";
-        }
-    };
+        const rateButton = document.querySelector(".rate-button");
+        rateButton.addEventListener('click', () => this.displayRatingModal());
 
-    // Get all star elements
-    const stars = document.querySelectorAll('.star');
+        const closeLearnMoreButton = document.querySelector('#learnMore-button');
+        closeLearnMoreButton.addEventListener('click', () => modal.style.display = 'none');
 
-    // Add click event listener to each star
-    stars.forEach(function(star) {
-        star.addEventListener('click', function() {
-            const rating = parseInt(star.getAttribute('data-rating'));
 
-            // Mark all stars with a rating less than or equal to the clicked star as clicked
-            stars.forEach(function(s) {
-                const sRating = parseInt(s.getAttribute('data-rating'));
-                if (sRating <= rating) {
-                    s.classList.add('clicked');
-                } else {
-                    s.classList.remove('clicked');
-                }
+        modal.style.display = "block";
+    }
+
+    displayRatingModal() {
+        const ratingModal = document.getElementById("ratingModal");
+        ratingModal.style.display = "block";
+
+        const closeButton = ratingModal.querySelector(".close");
+        closeButton.onclick = () => ratingModal.style.display = "none";
+
+        window.onclick = function(event) {
+            if (event.target === ratingModal) {
+                ratingModal.style.display = "none";
+            }
+        };
+
+        const stars = document.querySelectorAll('.star');
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const rating = parseInt(star.getAttribute('data-rating'));
+                    stars.forEach(s => {
+                        const sRating = parseInt(s.getAttribute('data-rating'));
+                        if (sRating <= rating) {
+                            s.classList.add('clicked');
+                        } else {
+                            s.classList.remove('clicked');
+                        }
+                    });
+                });
             });
-        });
-    });
 
-    const submitButton = document.querySelector('.submit-rating');
-    submitButton.addEventListener('click', function() {
-        // Close the rating modal
-        const ratingModal = document.getElementById('ratingModal');
-        ratingModal.style.display = 'none';
+        const submitButton = document.querySelector('.submit-rating');
+        submitButton.addEventListener('click', () => ratingModal.style.display = 'none');
 
-        // Show the learn more modal (assuming its ID is "myModal")
-        const learnMoreModal = document.getElementById('myModal');
-        learnMoreModal.style.display = 'block';
-    });
+
+    }
+
+
+    displayConfirmationMessage() {
+        const confirmationModal = document.getElementById('confirmation-message');
+        confirmationModal.style.display = 'block';
+
+        const closeButton = confirmationModal.querySelector(".close");
+        closeButton.onclick = () => confirmationModal.style.display = "none";
+
+        window.onclick = function(event) {
+            if (event.target === confirmationModal) {
+                confirmationModal.style.display = "none";
+            }
+        };
+
+        const closeMessageButton = document.querySelector('.close-button');
+        closeMessageButton.addEventListener('click', () => confirmationModal.style.display = 'none');
+
+    }
+
+
+
 }
 
-// Function to handle search button click
-function handleSearchButtonClick() {
-    console.log("Search button clicked");
-    filterCoaches();
-}
-
-// Add event listener to the search button
-const searchButton = document.querySelector('.search-button');
-searchButton.addEventListener('click', handleSearchButtonClick);
-
-// Call filterCoaches() initially to display all coaches
-filterCoaches();
+// Initialize the FitnessTrainerSearch class on window load
+window.onload = () => new FitnessTrainerSearch();
