@@ -128,3 +128,11 @@ body {
 .pic-container .pic-grid:nth-child(even) {
     margin-left: auto;
 }
+
+/* Footer Styles */
+footer {
+    margin-top: 20px;
+    background-color: rgba(142, 142, 142, 0.43);
+    color: #090808;
+    padding: 10px;
+}

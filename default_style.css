@@ -69,3 +69,12 @@ nav {
     border-radius: 20px;
     color: #8E8E8E;
 }
+
+/* Footer Styles */
+footer {
+    margin-top: 20px;
+    background-color: rgba(142, 142, 142, 0.43);
+    color: #090808;
+    border-radius: 10px;
+    padding: 10px;
+}

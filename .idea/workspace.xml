@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="final sign up">
-      <change afterPath="$PROJECT_DIR$/pics/31 Inspirational Quotes That Will Make You Think And Grow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/A good coach can change a game_ A great coach can change a life - Gift for Coaches  - Inspirational.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/Fitness Brand Photography.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/Free Photo _ Dumbbells and towel on colorful background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/_Sports Clipart_ Black Word __Coach__ in Collegiate Block Type with Baseball or Softball as Letter __O__ for Coaches - Digital Download SVG &amp; PNG_.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/sports coach stands with his back.jpg" afterDir="false" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="pics added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/default_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findCoach_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/myAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/myAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myAccount_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myAccount_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sign_up.js" beforeDir="false" afterPath="$PROJECT_DIR$/sign_up.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/signIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signUp_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/signUp_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/sign_up.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +85,7 @@
       <workItem from="1707512376717" duration="1190000" />
       <workItem from="1707636442859" duration="21897000" />
       <workItem from="1707726550061" duration="211000" />
-      <workItem from="1707739001282" duration="52316000" />
+      <workItem from="1707739001282" duration="54480000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -259,7 +255,47 @@
       <option name="project" value="LOCAL" />
       <updated>1708025322725</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="final sign up">
+      <option name="closed" value="true" />
+      <created>1708027602885</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708027602885</updated>
+    </task>
+    <task id="LOCAL-00023" summary="final my account">
+      <option name="closed" value="true" />
+      <created>1708027641976</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708027641976</updated>
+    </task>
+    <task id="LOCAL-00024" summary="final find coach">
+      <option name="closed" value="true" />
+      <created>1708027709079</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1708027709079</updated>
+    </task>
+    <task id="LOCAL-00025" summary="home update">
+      <option name="closed" value="true" />
+      <created>1708027724164</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1708027724164</updated>
+    </task>
+    <task id="LOCAL-00026" summary="pics added">
+      <option name="closed" value="true" />
+      <created>1708027741803</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708027741803</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +318,10 @@
     <MESSAGE value="styles update + pics added" />
     <MESSAGE value="final sign in" />
     <MESSAGE value="final sign up" />
-    <option name="LAST_COMMIT_MESSAGE" value="final sign up" />
+    <MESSAGE value="final my account" />
+    <MESSAGE value="final find coach" />
+    <MESSAGE value="home update" />
+    <MESSAGE value="pics added" />
+    <option name="LAST_COMMIT_MESSAGE" value="pics added" />
   </component>
 </project>
