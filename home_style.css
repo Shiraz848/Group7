@@ -192,3 +192,11 @@ img {
 .section-title:hover h3 {
     transform: rotateY(180deg);
 }
+
+/* Footer Styles */
+.siteFooter {
+    margin-top: 20px;
+    background-color: rgba(142, 142, 142, 0.43);
+    color: #090808;
+    padding: 10px;
+}
