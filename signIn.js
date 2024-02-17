@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = registeredUsers.find(user => user.email === email && user.password === password);
 
         if (user) {
+            // Store signed-in user data in local storage
+            localStorage.setItem('signedInUser', JSON.stringify(user));
             // Redirect to the Find Coach page if user is found
             window.location.href = "findCoach.html";
         } else {
