@@ -75,11 +75,17 @@ const handleSubmit = (event) => {
     if (user) {
         // Do something with the user object, like sending it to a server
         console.log(user);
-        localStorage.setItem('user', JSON.stringify(user));
+
+        // Store the user data in local storage
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        registeredUsers.push(user);
+        localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+
         alert("Registration successful!");
         document.getElementById("registrationForm").reset();
         window.location.href = "signIn.html"; // Redirect to sign-in page
     }
 };
+
 
 document.getElementById("registrationForm").addEventListener("submit", handleSubmit);

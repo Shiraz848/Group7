@@ -6,7 +6,6 @@
 body {
     background-color: #A2C2C9;
     line-height: 1.8;
-    margin: 20px;
 }
 
 header {
@@ -72,7 +71,7 @@ nav {
 
 /* Footer Styles */
 footer {
-    margin-top: 20px;
+    margin: 20px 0 0 0;
     background-color: rgba(142, 142, 142, 0.43);
     color: #090808;
     border-radius: 10px;
