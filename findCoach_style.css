@@ -91,6 +91,7 @@ body {
 .coach {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px; /* Increased padding for more spacing */
+    display: flex; /* Added to align items */
     align-items: center;
     margin: 40px;
 }
@@ -388,6 +389,20 @@ body {
 
 #confirmation-message .modal-buttons button:hover {
     background-color: #6E6E6E;
+}
+
+/* Added media query for smaller screens */
+@media (max-width: 768px) {
+    .coach {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center align items */
+    }
+
+    .coach .coach-name,
+    .coach .stars,
+    .coach .class-type {
+        margin: 10px; /* Reduce margin for smaller screens */
+    }
 }
 
 

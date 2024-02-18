@@ -1,4 +1,3 @@
-// script.js
 const coaches = [
     {
         name: "John Doe",
@@ -40,31 +39,29 @@ const coaches = [
         certification: "Ramat Hasharon Tennis Center Certified",
         address: "54 Wingate St. Beer-Sheva"
     }
-    // Add more coaches as needed
 ];
 
-class FitnessTrainerSearch {
+class coachesSearch {
     constructor() {
         this.initialize();
     }
 
-    initialize() {
+    initialize = () => {
         const searchButton = document.querySelector('.search-button');
-        searchButton.addEventListener('click', () => this.searchTrainers());
+        searchButton.addEventListener('click', this.searchTrainers);
         this.displaySearchResults(coaches);
 
         const contactMeButton = document.getElementById("contact-me-button");
-        contactMeButton.addEventListener('click', () => this.displayConfirmationMessage());
+        contactMeButton.addEventListener('click', this.onContactMeButtonClick);
 
-    }
+    };
 
-    searchTrainers() {
+    searchTrainers = () => {
         const classTypeInput = document.getElementById("training-type").value.toLowerCase();
         const trainingTimeInput = document.querySelector('input[name="training-time"]:checked').value.toLowerCase();
         const trainingLevelInput = document.getElementById("training-level").value.toLowerCase();
         const locationInput = document.querySelector('input[name="location"]:checked').value;
 
-        // Filter coaches based on the search inputs
         const filteredCoaches = coaches.filter(coach => {
             const coachClassType = coach.classType.toLowerCase();
             const coachTrainingTime = coach.trainingTime.toLowerCase();
@@ -75,20 +72,15 @@ class FitnessTrainerSearch {
                 (locationInput === "current" || this.isNearMyAddress(coach.address));
         });
 
-        // Display the filtered coaches
         this.displaySearchResults(filteredCoaches);
-    }
+    };
 
-    isNearMyAddress(coachAddress) {
-        // Implement your logic to check if the coach's address is near the user's address
-        // This can involve geocoding and distance calculation based on coordinates
-        // For now, let's assume all coaches are near the user's address
-        return true;
-    }
+    isNearMyAddress = (coachAddress) => {
+        return true; // Placeholder logic
+    };
 
-    displaySearchResults(coachesToShow) {
+    displaySearchResults = (coachesToShow) => {
         const searchResultsList = document.getElementById("search-results-list");
-
         searchResultsList.innerHTML = "";
 
         coachesToShow.forEach(coach => {
@@ -111,31 +103,23 @@ class FitnessTrainerSearch {
 
         const contactMeButton = document.getElementById("contact-me-button");
         contactMeButton.style.display = "block";
-    }
+    };
 
-    generateStars(rating) {
-        let stars = '';
-        for (let i = 0; i < 5; i++) {
-            stars += i < rating ? "★" : "☆";
-        }
-        return stars;
-    }
-
-    addToFavorites(coach) {
+    addToFavorites = (coach) => {
         const storedFavoriteCoaches = JSON.parse(localStorage.getItem('favoriteCoaches')) || [];
         const isDuplicate = storedFavoriteCoaches.some(favoriteCoach => favoriteCoach.name === coach.name);
 
         if (!isDuplicate) {
             storedFavoriteCoaches.push(coach);
             localStorage.setItem('favoriteCoaches', JSON.stringify(storedFavoriteCoaches));
-            // Add your logic to update favorite coaches UI here
             console.log("Coach added to favorites:", coach);
         } else {
             alert("Coach is already in favorites!");
         }
-    }
+    };
 
-    displayCoachDetails(coach) {
+
+    displayCoachDetails = (coach) => {
         const modal = document.getElementById("myModal");
         const coachName = document.getElementById("coach-name");
         const coachType = document.getElementById("coach-type");
@@ -143,6 +127,7 @@ class FitnessTrainerSearch {
         const coachCertification = document.getElementById("coach-certification");
         const coachAddress = document.getElementById("coach-address");
         const ratingContainer = document.getElementById("rating-container");
+
 
         coachName.textContent = coach.name;
         coachType.textContent = coach.classType;
@@ -166,11 +151,18 @@ class FitnessTrainerSearch {
         const closeLearnMoreButton = document.querySelector('#learnMore-button');
         closeLearnMoreButton.addEventListener('click', () => modal.style.display = 'none');
 
-
         modal.style.display = "block";
-    }
+    };
 
-    displayRatingModal() {
+    generateStars = (rating) => {
+        let stars = '';
+        for (let i = 0; i < 5; i++) {
+            stars += i < rating ? "★" : "☆";
+        }
+        return stars;
+    };
+
+    displayRatingModal = () => {
         const ratingModal = document.getElementById("ratingModal");
         ratingModal.style.display = "block";
 
@@ -184,28 +176,25 @@ class FitnessTrainerSearch {
         };
 
         const stars = document.querySelectorAll('.star');
-            stars.forEach(star => {
-                star.addEventListener('click', () => {
-                    const rating = parseInt(star.getAttribute('data-rating'));
-                    stars.forEach(s => {
-                        const sRating = parseInt(s.getAttribute('data-rating'));
-                        if (sRating <= rating) {
-                            s.classList.add('clicked');
-                        } else {
-                            s.classList.remove('clicked');
-                        }
-                    });
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                stars.forEach(s => {
+                    const sRating = parseInt(s.getAttribute('data-rating'));
+                    if (sRating <= rating) {
+                        s.classList.add('clicked');
+                    } else {
+                        s.classList.remove('clicked');
+                    }
                 });
             });
+        });
 
         const submitButton = document.querySelector('.submit-rating');
         submitButton.addEventListener('click', () => ratingModal.style.display = 'none');
+    };
 
-
-    }
-
-
-    displayConfirmationMessage() {
+    displayConfirmationMessage = () => {
         const confirmationModal = document.getElementById('confirmation-message');
         confirmationModal.style.display = 'block';
 
@@ -220,12 +209,17 @@ class FitnessTrainerSearch {
 
         const closeMessageButton = document.querySelector('.close-button');
         closeMessageButton.addEventListener('click', () => confirmationModal.style.display = 'none');
+    };
 
-    }
-
-
+    onContactMeButtonClick = () => {
+    const selectedCoaches = document.querySelectorAll('.coach input[type="checkbox"]:checked');
+        if (selectedCoaches.length === 0) {
+            alert("Please select one or more coaches before contacting.");
+        } else {
+            this.displayConfirmationMessage();
+        }
+    };
 
 }
 
-// Initialize the FitnessTrainerSearch class on window load
-window.onload = () => new FitnessTrainerSearch();
+window.onload = () => new coachesSearch();

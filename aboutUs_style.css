@@ -1,32 +1,44 @@
 /* aboutUs_style.css */
 
-.flex-navbar a:nth-child(4){
+/* Highlight the navbar link for About Us */
+.flex-navbar a:nth-child(4) {
     background-color: rgba(0, 0, 0, 50%);
-    border-radius:20px;
+    border-radius: 20px;
 }
+
 /* Styles for the container */
 .container {
     display: flex;
-    flex-direction: row; /* Arrange items horizontally */
-    justify-content: space-between; /* Space between content and images */
-    align-items: flex-start; /* Align items at the top */
-    margin: 20px; /* Add margin around the container */
+    flex-direction: column; /* Change direction to column for smaller screens */
+    margin: 20px;
 }
 
 /* Styles for the about-us-content */
 .about-us-content {
-    flex-basis: 60%; /* Set width for content */
+    margin-bottom: 20px; /* Add margin between content and images */
 }
 
 /* Styles for the about-us-images */
-.about-us-images {
-    flex-basis: 30%; /* Set width for images */
-}
-
-/* Styles for the images */
 .about-us-images img {
     width: 100%; /* Make images take full width of container */
-    max-width: 300px; /* Limit maximum width of images */
     display: block; /* Prevent inline spacing */
-    margin-top: 20px; /* Add margin between images */
+    margin-bottom: 20px; /* Add margin between images */
+}
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 768px) {
+    /* Adjust layout for larger screens */
+    .container {
+        flex-direction: row; /* Change direction back to row */
+        justify-content: space-between; /* Space between content and images */
+    }
+
+    .about-us-content {
+        flex-basis: 60%; /* Set width for content */
+        margin-bottom: 0; /* Reset margin */
+    }
+
+    .about-us-images {
+        flex-basis: 30%; /* Set width for images */
+    }
 }

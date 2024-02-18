@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="updated sat 17/2">
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="updated sat 17/2 new">
+      <change afterPath="$PROJECT_DIR$/pics/woman with rope.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aboutUs_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/aboutUs_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/favorites_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCoach_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/findCoach_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/home_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myAccount_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/myAccount_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signIn_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/signIn_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signUp_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/signUp_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +89,7 @@
       <workItem from="1707512376717" duration="1190000" />
       <workItem from="1707636442859" duration="21897000" />
       <workItem from="1707726550061" duration="211000" />
-      <workItem from="1707739001282" duration="59612000" />
+      <workItem from="1707739001282" duration="73629000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -309,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708183561348</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="updated sat 17/2 new">
+      <option name="closed" value="true" />
+      <created>1708184689711</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1708184689711</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +360,7 @@
     <MESSAGE value="pics added" />
     <MESSAGE value="footer added" />
     <MESSAGE value="updated sat 17/2" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated sat 17/2" />
+    <MESSAGE value="updated sat 17/2 new" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated sat 17/2 new" />
   </component>
 </project>

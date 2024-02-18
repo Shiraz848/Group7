@@ -17,10 +17,10 @@ body {
 }
 
 img {
-    float: right;
+    float: right; /* Align images to the right */
     width: 200px; /* Set the width to the desired size */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 200px; /* Adjust the value as needed */
+    margin-right: 20px; /* Adjust spacing between images */
 }
 
 /* Header Styles */

@@ -7,20 +7,18 @@
 body {
     font-family: "Segoe UI", sans-serif;
     color: black;
-    /*
-    Photo by <a href="https://unsplash.com/@yellowteapot?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Meghan Holmes</a> on <a href="https://unsplash.com/photos/two-person-inside-gym-exercising-buWcS7G1_28?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-    */
-    background-image: url('pics/meghan-holmes-buWcS7G1_28-unsplash.jpg'); /* Add the path to your background image */
+    background-image: url('pics/woman with rope.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: top; /* Position the background image at the top */
     background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure the body covers the full height of the viewport */
+    position: relative; /* Positioning context for the footer */
 }
 
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    /*background-color: #D9D9D9;*/
     background-color: rgba(162, 194, 201, 0.76);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -125,7 +123,9 @@ h3 {
 
 /* Footer Styles */
 footer {
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: rgba(142, 142, 142, 0.43);
     color: #090808;
     padding: 10px;
