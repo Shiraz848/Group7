@@ -9,10 +9,8 @@ body {
     color: black;
     background-image: url('pics/woman with rope.jpeg');
     background-size: cover;
-    background-position: top; /* Position the background image at the top */
+    background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh; /* Ensure the body covers the full height of the viewport */
-    position: relative; /* Positioning context for the footer */
 }
 
 .container {
@@ -40,6 +38,7 @@ h2 {
     font-size: 24px;
     color: black;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .content {
@@ -112,7 +111,7 @@ h3 {
 
 .register-btn {
     font-size: 16px;
-    color: #8E8E8E;
+    color: #384c60;
     text-decoration: none;
 }
 
@@ -121,7 +120,6 @@ h3 {
     color: rgb(121, 121, 121);
 }
 
-/* Footer Styles */
 footer {
     position: absolute;
     bottom: 0;
@@ -129,4 +127,11 @@ footer {
     background-color: rgba(142, 142, 142, 0.43);
     color: #090808;
     padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        text-align: center;
+    }
 }
