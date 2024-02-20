@@ -48,7 +48,7 @@ class FavoriteCoaches {
     };
 
     displayCoachDetails = (coach) => {
-        const modal = document.getElementById("myModal");
+        const modal = document.getElementById("details-modal");
         const coachName = document.getElementById("coach-name");
         const coachType = document.getElementById("coach-type");
         const coachExperience = document.getElementById("coach-experience");

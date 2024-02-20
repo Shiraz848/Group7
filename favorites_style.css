@@ -3,54 +3,35 @@
     border-radius: 20px;
 }
 
-/* Style for favorites list */
 #favorites-list {
     margin: 20px;
 }
 
-/* Style for each coach row */
 .favorite-coach {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 20px; /* Increased padding for more spacing */
-    display: flex; /* Added to align items */
+    padding-bottom: 20px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 40px;
 }
 
-/* Style for coach name */
 .favorite-coach .coach-name {
     font-weight: bold;
-    align-items: center;
-    margin: 40px;
+    margin: 20px;
 }
 
-/* Style for rating stars */
 .favorite-coach .stars {
-    color: #ffd700; /* Set star color */
-    align-items: center;
-    margin: 40px;
+    color: #ffd700;
 }
 
-/* Style for class type */
-.favorite-coach .class-type {
-    align-items: center;
-    margin: 40px;
-}
-
-/* Style for "Learn More" button */
 .favorite-coach .learn-more-button {
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 14px;
     cursor: pointer;
-    font-family: Segoe UI, sans-serif; /* Changed font */
-    align-items: center;
-    margin: 40px;
 }
 
 .favorite-coach .learn-more-button:hover {
@@ -63,22 +44,15 @@
     border: none;
     color: white;
     padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 14px;
     cursor: pointer;
-    font-family: Segoe UI, sans-serif; /* Changed font */
-    align-items: center;
-    margin: 40px;
 }
 
 .favorite-coach .delete-button:hover {
     background-color: #da190b;
 }
 
-/*/modal style/*/
-.modal {
+#details-modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -102,16 +76,12 @@
 
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
-    font-weight: bold;
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
     color: black;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -127,27 +97,20 @@
 
 .map-section {
     flex: 1;
-    border: 2px solid #8E8E8E; /* Add border */
-    border-radius: 20px;
-    padding: 10px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in width calculation */
-    max-width: 300px; /* Set maximum width */
-    height: 200px; /* Set fixed height */
-    margin-left: 20px; /* Add margin for spacing */
+    border: 2px solid #8E8E8E;
+    max-width: 300px;
+    height: 200px;
+    margin-left: 20px;
 }
 
-
-
 .modal-buttons {
-    /* New styles */
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
 .modal-buttons button {
-    /* New styles */
-    margin: 0 5px; /* Adjust margin as needed */
+    margin: 0 5px;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -156,28 +119,23 @@
 }
 
 .rate-button {
-    /* New styles */
     background-color: #8E8E8E;
     color: #fff;
 }
 
 .close-button {
-    /* New styles */
     background-color: #ccc;
     color: #000;
 }
 
-/* Hover styles */
 .modal-buttons button:hover {
     background-color: #6E6E6E;
 }
 
-/*---------------------------------------*/
-
 .rating-modal {
     display: none;
     position: fixed;
-    z-index: 1001; /* Above the learn more modal */
+    z-index: 1001;
     left: 0;
     top: 0;
     width: 100%;
@@ -206,11 +164,10 @@
     cursor: pointer;
 }
 
-/* Add styles for the star shapes */
 .star {
-    font-size: 70px; /* Adjust size as needed */
+    font-size: 70px;
     cursor: pointer;
-    color: #ccc; /* Default color for unfilled stars */
+    color: #ccc;
     display: inline-block;
 }
 
@@ -220,14 +177,13 @@
 
 .star:hover,
 .star.clicked {
-    color: gold; /* Color for filled stars */
+    color: gold;
 }
 
 
 .submit-rating {
-    /*margin-top: 20px;*/
-    display: block; /* Ensure the button takes up the full width */
-    margin: 20px auto; /* Center the button horizontally */
+    display: block;
+    margin: 20px auto;
     background-color: #8E8E8E;
     color: #fff;
     border: none;
@@ -242,16 +198,14 @@
     background-color: #6E6E6E;
 }
 
-/* Added media query for smaller screens */
 @media (max-width: 768px) {
     .favorite-coach {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        text-align: center; /* Center align items */
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
     }
 
-    .favorite-coach .coach-name,
-    .favorite-coach .stars,
-    .favorite-coach .class-type {
-        margin: 10px; /* Reduce margin for smaller screens */
+    .favorite-coach .delete-button {
+        margin: 10px;
     }
 }
