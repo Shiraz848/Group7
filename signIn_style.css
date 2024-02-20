@@ -134,4 +134,8 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+
+    footer {
+        position: relative;
+    }
 }
