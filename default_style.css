@@ -4,26 +4,27 @@
 }
 
 body {
+    font-family: Segoe UI, sans-serif;
+    color: black;
     background-color: #A2C2C9;
     line-height: 1.8;
 }
 
 header {
-    background-image: url('pics/field-fixed.jpg'); /* Add the path to your background image */
+    background-image: url('pics/Why Im Glad I Trained with a Run Coach for My First Marathon.jpg');
     border-radius: 10px;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     height: 200px;
 }
 
 
-.main-title{
+.main-title {
     font-family: "Segoe Script", sans-serif;
     font-size: 30px;
     text-align: left;
     padding-left: 20px;
-    /*text-transform: uppercase;*/
 }
 
 .nav-text-font {
@@ -69,11 +70,16 @@ nav {
     color: #8E8E8E;
 }
 
-/* Footer Styles */
 footer {
-    margin: 20px 0 0 0;
+    margin-top: 400px;
     background-color: rgba(142, 142, 142, 0.43);
     color: #090808;
     border-radius: 10px;
     padding: 10px;
+}
+
+@media (min-width: 768px) {
+    footer {
+        margin-top: 600px;
+    }
 }
