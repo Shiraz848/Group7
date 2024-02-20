@@ -1,44 +1,46 @@
-/* aboutUs_style.css */
-
-/* Highlight the navbar link for About Us */
 .flex-navbar a:nth-child(4) {
     background-color: rgba(0, 0, 0, 50%);
     border-radius: 20px;
 }
 
-/* Styles for the container */
 .container {
     display: flex;
-    flex-direction: column; /* Change direction to column for smaller screens */
-    margin: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+    padding: 30px;
+
 }
 
-/* Styles for the about-us-content */
-.about-us-content {
-    margin-bottom: 20px; /* Add margin between content and images */
+.about-us-content p {
+    margin-bottom: 80px;
 }
 
-/* Styles for the about-us-images */
+
+.about-us-images {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
 .about-us-images img {
-    width: 100%; /* Make images take full width of container */
-    display: block; /* Prevent inline spacing */
-    margin-bottom: 20px; /* Add margin between images */
+    padding: 20px;
 }
 
-/* Media queries for responsiveness */
-@media only screen and (min-width: 768px) {
-    /* Adjust layout for larger screens */
+@media (max-width: 768px) {
+
     .container {
-        flex-direction: row; /* Change direction back to row */
-        justify-content: space-between; /* Space between content and images */
+        flex-direction: column;
     }
 
     .about-us-content {
-        flex-basis: 60%; /* Set width for content */
-        margin-bottom: 0; /* Reset margin */
+        flex-basis: 80%;
     }
 
     .about-us-images {
-        flex-basis: 30%; /* Set width for images */
+        display: inline-block;
     }
+
 }
