@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="updated sun 18/2" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="readMe file added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,8 +50,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\shira\PycharmProjects\Group7\pics" />
       <recent name="C:\Users\shira\PycharmProjects\Group7" />
+      <recent name="C:\Users\shira\PycharmProjects\Group7\pics" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -73,7 +75,8 @@
       <workItem from="1707512376717" duration="1190000" />
       <workItem from="1707636442859" duration="21897000" />
       <workItem from="1707726550061" duration="211000" />
-      <workItem from="1707739001282" duration="74797000" />
+      <workItem from="1707739001282" duration="76488000" />
+      <workItem from="1708343381415" duration="49697000" />
     </task>
     <task id="LOCAL-00001" summary="part A added">
       <option name="closed" value="true" />
@@ -331,23 +334,149 @@
       <option name="project" value="LOCAL" />
       <updated>1708252578569</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="updated sun 18/2">
+      <option name="closed" value="true" />
+      <created>1708252950365</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1708252950365</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updated sun 18/2">
+      <option name="closed" value="true" />
+      <created>1708253325999</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1708253325999</updated>
+    </task>
+    <task id="LOCAL-00035" summary="sign in final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708366530880</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1708366530880</updated>
+    </task>
+    <task id="LOCAL-00036" summary="about us final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708431773020</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1708431773020</updated>
+    </task>
+    <task id="LOCAL-00037" summary="sign in final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708432053004</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1708432053004</updated>
+    </task>
+    <task id="LOCAL-00038" summary="find coach final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708435635948</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1708435635948</updated>
+    </task>
+    <task id="LOCAL-00039" summary="find coach final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708435815785</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1708435815785</updated>
+    </task>
+    <task id="LOCAL-00040" summary="favorites final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708437068627</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437068627</updated>
+    </task>
+    <task id="LOCAL-00041" summary="home final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708437171651</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437171651</updated>
+    </task>
+    <task id="LOCAL-00042" summary="home final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708437183364</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437183364</updated>
+    </task>
+    <task id="LOCAL-00043" summary="pics updated">
+      <option name="closed" value="true" />
+      <created>1708437949243</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1708437949243</updated>
+    </task>
+    <task id="LOCAL-00044" summary="my account final!!!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708444812447</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1708444812447</updated>
+    </task>
+    <task id="LOCAL-00045" summary="default final!!!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708451701177</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1708451701177</updated>
+    </task>
+    <task id="LOCAL-00046" summary="sign up final!!!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708451740638</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1708451740638</updated>
+    </task>
+    <task id="LOCAL-00047" summary="my account final!!!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708451765523</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1708451765523</updated>
+    </task>
+    <task id="LOCAL-00048" summary="pics update">
+      <option name="closed" value="true" />
+      <created>1708451793090</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1708451793090</updated>
+    </task>
+    <task id="LOCAL-00049" summary="readMe file added">
+      <option name="closed" value="true" />
+      <created>1708452864780</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1708452864780</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="part A added" />
-    <MESSAGE value="first try" />
-    <MESSAGE value="welcome edit" />
-    <MESSAGE value="welcome final+sign up" />
-    <MESSAGE value="sign up update" />
-    <MESSAGE value="all combines first update" />
-    <MESSAGE value="mt account added" />
-    <MESSAGE value="updated from sunday session" />
-    <MESSAGE value="favorites-learn_more-rate update" />
-    <MESSAGE value="favorites-learn_more-rate update + name-change" />
     <MESSAGE value="find-coach and favorites update and connection" />
     <MESSAGE value="find-coach style update" />
     <MESSAGE value="styles update" />
@@ -362,6 +491,17 @@
     <MESSAGE value="updated sat 17/2" />
     <MESSAGE value="updated sat 17/2 new" />
     <MESSAGE value="updated sun 18/2" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated sun 18/2" />
+    <MESSAGE value="about us final!!!!!!!" />
+    <MESSAGE value="sign in final!!!!!!!" />
+    <MESSAGE value="find coach final!!!!!!!" />
+    <MESSAGE value="favorites final!!!!!!!" />
+    <MESSAGE value="home final!!!!!!!" />
+    <MESSAGE value="pics updated" />
+    <MESSAGE value="default final!!!!!!!!!" />
+    <MESSAGE value="sign up final!!!!!!!!!" />
+    <MESSAGE value="my account final!!!!!!!!!" />
+    <MESSAGE value="pics update" />
+    <MESSAGE value="readMe file added" />
+    <option name="LAST_COMMIT_MESSAGE" value="readMe file added" />
   </component>
 </project>
