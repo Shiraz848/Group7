@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="readMe file added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="final!!!!!!!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,15 +74,7 @@
       <workItem from="1707636442859" duration="21897000" />
       <workItem from="1707726550061" duration="211000" />
       <workItem from="1707739001282" duration="76488000" />
-      <workItem from="1708343381415" duration="49697000" />
-    </task>
-    <task id="LOCAL-00001" summary="part A added">
-      <option name="closed" value="true" />
-      <created>1706104996256</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1706104996256</updated>
+      <workItem from="1708343381415" duration="50513000" />
     </task>
     <task id="LOCAL-00002" summary="part A added">
       <option name="closed" value="true" />
@@ -470,14 +460,21 @@
       <option name="project" value="LOCAL" />
       <updated>1708452864780</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="final!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1708453247629</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1708453247630</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="find-coach and favorites update and connection" />
     <MESSAGE value="find-coach style update" />
     <MESSAGE value="styles update" />
     <MESSAGE value="styles update + pics added" />
@@ -502,6 +499,7 @@
     <MESSAGE value="my account final!!!!!!!!!" />
     <MESSAGE value="pics update" />
     <MESSAGE value="readMe file added" />
-    <option name="LAST_COMMIT_MESSAGE" value="readMe file added" />
+    <MESSAGE value="final!!!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="final!!!!!!!" />
   </component>
 </project>
