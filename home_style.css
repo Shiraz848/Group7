@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -10,192 +9,148 @@ body {
     color: #090808;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.title-font {
+    font-family: "Segoe Script", sans-serif;
+    font-size: 80px;
+    text-align: left;
 }
 
-img {
-    float: right; /* Align images to the right */
-    width: 200px; /* Set the width to the desired size */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Adjust spacing between images */
+.text-font {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 15px;
 }
 
-/* Header Styles */
-.header {
+.flex-navbar, .nav-text-font {
     background-color: #8E8E8E;
-    color: #fff;
-    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
 }
 
-.header .logo {
-    font-size: 24px;
-}
-
-.navbar ul {
-    list-style-type: none;
-}
-
-.navbar ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.navbar ul li a {
-    color: #fff;
+.flex-navbar a {
     text-decoration: none;
-}
-
-/* Hero Section Styles */
-.hero {
-    background-color: #A2C2C9;
-    color: #090808;
-    padding: 100px 0;
+    color: white;
     text-align: center;
+    flex-basis: 600px;
+    padding: 10px;
+    margin: 10px;
 }
 
-.hero h2 {
+.flex-navbar a:hover {
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+    color: #8E8E8E;
+}
+
+/*---------------------------*/
+
+.main-content-background {
+    background-image: url("pics/meghan-holmes-buWcS7G1_28-unsplash.jpg");
+    background-size: cover;
+    background-position: bottom; /* Position the background image at the top */
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Main content section */
+.main-content {
+    background-color: rgba(162, 194, 201, 0.53);
+    border-radius: 20px;
+    padding: 50px 0;
+    text-align: center;
+    margin: 150px 40px;
+}
+
+.main-content h2 {
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-.hero p {
+.main-content p {
     font-size: 18px;
     margin-bottom: 30px;
 }
 
-.hero .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #D9D9D9;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
+.box {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 200px 20px;
 }
 
-/* How It Works Section Styles */
-.how-it-works {
-    padding: 100px 0;
+.container {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.how-it-works h3 {
+/* Section titles */
+.section-title h3 {
+    max-width: 1200px;
+    margin: 0 auto;
     font-size: 36px;
-    margin-bottom: 30px;
 }
 
-/* Benefits Section Styles */
-.benefits {
-    padding: 100px 0;
+.section-content {
+    font-size: 18px;
 }
 
-.benefits h3 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.benefits ul {
-    list-style-type: disc;
-    padding-left: 20px;
+img {
+    float: right;
+    width: 200px;
+    margin-right: 60px;
 }
 
 /* Testimonials Section Styles */
-.testimonials {
-    padding: 100px 0;
-}
-
-.testimonials h3 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.testimonials blockquote {
+#testimonials blockquote {
     font-style: italic;
     margin-bottom: 20px;
 }
 
-.testimonials blockquote p {
+#testimonials blockquote p {
     font-size: 18px;
 }
 
-.testimonials blockquote footer {
+#testimonials blockquote footer {
     font-weight: bold;
 }
 
 /* Contact Section Styles */
-.contact {
-    padding: 100px 0;
-}
-
-.contact h3 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.contact p {
+#contact p {
     font-size: 18px;
     margin-bottom: 15px;
 }
 
-/* Footer Styles */
-.footer {
-    background-color: #8E8E8E;
+/*Footer*/
+.siteFooter {
+    background-color: rgba(142, 142, 142, 0.43);
     color: #090808;
-    padding: 20px 0;
+    padding: 10px;
 }
 
-/* Add this CSS to apply flip animation on hover */
-.section-image img {
-    transition: transform 0.5s ease;
-}
-
-.section-title h3:hover + .section-wrapper .section-image img {
-    transform: rotateY(180deg);
-}
-
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #8E8E8E;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.register-block {
-    margin-top: 10px;
-}
-
-.register-btn {
-    font-size: 16px;
-    color: #A2C2C9;
-    text-decoration: none;
-}
-
-.register-btn:hover {
-    text-decoration: underline;
-}
-
-/* Add this CSS to apply flip animation on hover */
 .section-title {
     position: relative;
     cursor: pointer;
     display: inline-block;
 }
 
-.section-title h3 {
-    transition: transform 0.5s ease;
+.section-title {
+    transition: transform 0.5s;
 }
 
-.section-title:hover h3 {
-    transform: rotateY(180deg);
+.section-title:hover {
+    transform: rotateY(360deg);
 }
 
-/* Footer Styles */
-.siteFooter {
-    background-color: rgba(142, 142, 142, 0.43);
-    color: #090808;
-    padding: 10px;
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .section-content {
+        margin-bottom: 20px;
+    }
 }
