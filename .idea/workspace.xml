@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="final!!!!!!!" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="final part B">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +50,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partB" />
       <recent name="C:\Users\shira\PycharmProjects\Group7" />
       <recent name="C:\Users\shira\PycharmProjects\Group7\pics" />
     </key>
@@ -74,15 +77,7 @@
       <workItem from="1707636442859" duration="21897000" />
       <workItem from="1707726550061" duration="211000" />
       <workItem from="1707739001282" duration="76488000" />
-      <workItem from="1708343381415" duration="50513000" />
-    </task>
-    <task id="LOCAL-00002" summary="part A added">
-      <option name="closed" value="true" />
-      <created>1706203325086</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1706203325086</updated>
+      <workItem from="1708343381415" duration="51454000" />
     </task>
     <task id="LOCAL-00003" summary="first try">
       <option name="closed" value="true" />
@@ -468,14 +463,21 @@
       <option name="project" value="LOCAL" />
       <updated>1708453247630</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="final part B">
+      <option name="closed" value="true" />
+      <created>1708454510031</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1708454510031</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="find-coach style update" />
     <MESSAGE value="styles update" />
     <MESSAGE value="styles update + pics added" />
     <MESSAGE value="final sign in" />
@@ -500,6 +502,7 @@
     <MESSAGE value="pics update" />
     <MESSAGE value="readMe file added" />
     <MESSAGE value="final!!!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="final!!!!!!!" />
+    <MESSAGE value="final part B" />
+    <option name="LAST_COMMIT_MESSAGE" value="final part B" />
   </component>
 </project>
