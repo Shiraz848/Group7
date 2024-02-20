@@ -20,29 +20,41 @@ const validateForm = () => {
     const confirmPassword = document.querySelector('input[name="confirmPassword"]').value.trim();
     const locationAccess = document.querySelector('input[name="locationAccess"]').checked;
 
-    // Validate form fields
-    if (!firstName || !lastName || !email || !phoneNumber || !city || !password || !confirmPassword) {
-        displayError("Please fill in all fields!");
+    // form fields
+    if (!isValidName(firstName)) {
+        displayError("First name must be more than 3 characters and contain only English letters");
         return null;
     }
 
-    if (password !== confirmPassword) {
-        displayError("Passwords do not match!");
+    // last name
+    if (!isValidName(lastName)) {
+        displayError("Last name must be more than 3 characters and contain only English letters");
         return null;
     }
 
+    // email
     if (!isValidEmail(email)) {
-        displayError("Please enter a valid email address!");
+        displayError("Please enter a valid email address");
         return null;
     }
 
+    // phone number
     if (!isValidPhoneNumber(phoneNumber)) {
-        displayError("Please enter a valid phone number!");
+        displayError("Please enter a valid phone number");
         return null;
     }
 
-    // Clear any existing error messages
-    // clearError();
+    // city
+    if (!isValidCity(city)) {
+        displayError("Please enter a valid city in Israel!");
+        return null;
+    }
+
+    // Confirm password
+    if (password !== confirmPassword) {
+        displayError("Passwords do not match");
+        return null;
+    }
 
     return new User(firstName, lastName, email, phoneNumber, city, password, locationAccess);
 };
@@ -57,6 +69,10 @@ const displayError = (message) => {
     }, 5000);
 };
 
+const isValidName = (name) => {
+    return /^[A-Za-z]{3,}$/.test(name);
+};
+
 const isValidEmail = (email) => {
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -64,16 +80,23 @@ const isValidEmail = (email) => {
 };
 
 const isValidPhoneNumber = (phoneNumber) => {
-    // Regular expression for phone number validation (10 digits starting with 0)
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phoneNumber);
 };
+
+// Define a list of Israeli cities
+const israeliCities = ['Jerusalem', 'Tel Aviv', 'Haifa', 'Rishon LeZion', 'Petah Tikva', 'Ashdod', 'Netanya', 'Beer Sheva', 'Holon', 'Bnei Brak', 'Ramat Gan', 'Ashkelon', 'Bat Yam', 'Herzliya', 'Kfar Saba', 'Modiin', 'Nahariya', 'Hadera', 'Raanana', 'Lod', 'Ramla', 'Larnaca', 'Petah Tikva', 'Holon', 'Herzliya'];
+
+const isValidCity = (city) => {
+    const lowerCaseCity = city.toLowerCase();
+    return israeliCities.some(c => c.toLowerCase() === lowerCaseCity);
+};
+
 
 const handleSubmit = (event) => {
     event.preventDefault();
     const user = validateForm();
     if (user) {
-        // Do something with the user object, like sending it to a server
         console.log(user);
 
         // Store the user data in local storage
@@ -86,6 +109,5 @@ const handleSubmit = (event) => {
         window.location.href = "signIn.html"; // Redirect to sign-in page
     }
 };
-
 
 document.getElementById("registrationForm").addEventListener("submit", handleSubmit);

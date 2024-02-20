@@ -3,93 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-<!--    <link rel="stylesheet" href="default_style.css">-->
     <link rel="stylesheet" href="signUp_style.css">
 </head>
 <body>
-    <header class="main-title">
-        <h1>Welcome to find my coach!</h1>
-    </header>
+<header class="main-title">
+    <h1>Welcome to find my coach!</h1>
+</header>
 
-    <div class="second-title">
-            <h2>Register now to enjoy our services:</h2>
-    </div>
+<div class="second-title">
+    <h2>Register now to enjoy our services:</h2>
+</div>
 
-    <div class="container text-font">
+<div class="container text-font">
 
-        <div class="item">
-            <form id="registrationForm" action="" method="get">
-                <div class="msg"></div>
-                <div class="form-fields">
-                    <label>First Name:</label>
-                    <input type="text" name="firstName" placeholder="Enter your first name" required minlength="3" pattern="[A-Za-z]+" title="First name must be more than 3 characters and contain only English letters">
-                </div>
+    <div class="item">
+        <form id="registrationForm" action="" method="get">
+            <div class="msg"></div>
+            <div class="form-fields">
+                <label>First Name:</label>
+                <input type="text" name="firstName" placeholder="Enter your first name" required>
+            </div>
 
-                <div class="form-fields">
-                    <label>Last Name:</label>
-                    <input type="text" name="lastName" placeholder="Enter your last name" required minlength="3" pattern="[A-Za-z]+" title="Last name must be more than 3 characters and contain only English letters">
-                </div>
+            <div class="form-fields">
+                <label>Last Name:</label>
+                <input type="text" name="lastName" placeholder="Enter your last name" required>
+            </div>
 
-                <div class="form-fields">
-                    <label>Email:</label>
-                    <input type="email" name="Email" placeholder="Enter your email" required title="Please enter a valid email address">
-                </div>
+            <div class="form-fields">
+                <label>Email:</label>
+                <input type="email" name="Email" placeholder="Enter your email" required>
+            </div>
 
-                <div class="form-fields">
-                    <label>Phone Number:</label>
-                    <input type="tel" name="phoneNumber" placeholder="Enter your phone number (e.g., 0123456789)" required pattern="0\d{9}" title="Phone number must start with 0 and have 10 digits">
-                </div>
+            <div class="form-fields">
+                <label>Phone Number:</label>
+                <input type="tel" name="phoneNumber" placeholder="Enter your phone number (e.g., 0123456789)" required>
+            </div>
 
 
-                <div class="form-fields">
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
-                </div>
+            <div class="form-fields">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
 
-                <div class="form-fields">
-                    <label>Password:</label>
-                    <input type="password" name="password" placeholder="Choose your password" required pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#$%^&*()_+}{:;'?/><,.\[\]-]).{8,}" title="Password must contain at least one digit, one lowercase and one uppercase letter, one special character, and be at least 8 characters long">
-                </div>
+            <div class="form-fields">
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Choose your password" required>
+            </div>
 
-                <div class="form-fields">
-                    <label>Confirm Password:</label>
-                    <input type="password" name="confirmPassword" placeholder="Enter your password again" required>
-                </div>
+            <div class="form-fields">
+                <label>Confirm Password:</label>
+                <input type="password" name="confirmPassword" placeholder="Enter your password again" required>
+            </div>
 
-                <div class="form-fields">
-                    <label>Location:</label>
+            <div class="form-fields">
+                <label>Location:</label>
+                <div class="location-flex">
                     <input type="checkbox" name="locationAccess">
                     <label>Allow location access</label>
                 </div>
-
-                <div class="form-btn">
-                    <input type="submit" value="Register">
-                </div>
-
-            </form>
-
-        </div>
-
-        <div class="item pic-container">
-            <div class="pic-grid">
-                <img src="pics/pilates.jpg" height="180" width="240"/>
             </div>
-            <div class="pic-grid">
-                <img src="pics/pilates 2.jpg" height="180" width="240"/>
+
+            <div class="form-btn btn-flex">
+                <input type="submit" value="Register">
             </div>
-            <div class="pic-grid">
-                <img src="pics/yoga.jpg" height="140" width="240"/>
+
+        </form>
+
+        <div class="backBtn-flex btn-flex ">
+            <div class="back-btn">
+                <a href="signIn.html">Sign In</a>
             </div>
-            <div class="pic-grid">
-                <img src="pics/yoga 2.jpg" height="180" width="240"/>
+
+            <div class="back-btn">
+                <a href="home.html">Home Page</a>
             </div>
+
         </div>
 
     </div>
 
-    <!-- Footer Section -->
-    <footer>&copy; Group7 WEB course 2024</footer>
+    <div class="item pic-container">
+        <div class="pic-grid">
+            <img src="pics/woman%20with%20rope.jpeg"/>
+        </div>
+        <div class="pic-grid">
+            <img src="pics/Fitness%20Brand%20Photography.jpg"/>
+        </div>
+        <div class="pic-grid">
+            <img src="pics/059.jpg"/>
+        </div>
+        <div class="pic-grid">
+            <img src="pics/a7579bee-b88e-4f5a-9054-7a665b37d38a.jpg"/>
+        </div>
+    </div>
 
-    <script src="sign_up.js"></script>
+</div>
+
+<footer>&copy; Group7 WEB course 2024</footer>
+
+<script src="sign_up.js"></script>
 </body>
 </html>
