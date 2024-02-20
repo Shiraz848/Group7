@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('email').value = signedInUser.email; //email field is disabled
         document.getElementById('phone').value = signedInUser.phoneNumber;
         document.getElementById('city').value = signedInUser.city;
-        document.getElementById('password').value = signedInUser.password;
-        document.getElementById('confirm-password').value = signedInUser.confirmPassword;
 
     }
 
