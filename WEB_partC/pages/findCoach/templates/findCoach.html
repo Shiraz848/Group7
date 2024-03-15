@@ -6,6 +6,7 @@
 {% block page_head_css %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('findCoach.static', filename='css/findCoach.css') }}">
+<link rel="stylesheet" href="{{ url_for('coachDetails.static', filename='css/coachDetails.css') }}">
 {% endblock %}
 
 
@@ -79,7 +80,9 @@
         <span class="stars">{{ coach.rating }}</span>
         <span class="class-type">Type: {{ coach.classType }}</span>
 
-        <a href="{{ url_for('coachDetails.coach_details', phone=coach.phone) }}" class="learn-more-button">Learn More</a>
+
+
+        <button type="button" class="learn-more-button" data-phone="{{ coach.phone }}">Learn More</button>
 
 
     </div>
@@ -109,11 +112,27 @@
     </div>
 </div>
 
-
+{% if show_modal %}
+  <div id="details-modal" style="display: block;">
+    {% include 'coachDetails.html' %}
+  </div>
+{% endif %}
 
 {% endblock %}
 
 {% block page_body_js %}
-<script src="{{ url_for('findCoach.static', filename='js/findCoach.js') }}"></script>
-{% endblock %}
 
+<!--{% if show_modal %}-->
+<!--&lt;!&ndash;  <script>&ndash;&gt;-->
+<!--&lt;!&ndash;    // JavaScript to open the modal immediately after page load&ndash;&gt;-->
+<!--&lt;!&ndash;    window.onload = function() {&ndash;&gt;-->
+<!--&lt;!&ndash;      // The modal should have an ID that you can use to select it&ndash;&gt;-->
+<!--&lt;!&ndash;      const modal = document.getElementById('details-modal');&ndash;&gt;-->
+<!--&lt;!&ndash;      modal.style.display = 'block';&ndash;&gt;-->
+<!--&lt;!&ndash;    };&ndash;&gt;-->
+<!--&lt;!&ndash;  </script>&ndash;&gt;-->
+<!--{% endif %}-->
+
+<script src="{{ url_for('findCoach.static', filename='js/findCoach.js') }}"></script>
+
+{% endblock %}

@@ -17,6 +17,7 @@ app.register_blueprint(favorites_bp)
 from components.coachDetails.coachDetails import coachDetails_bp
 app.register_blueprint(coachDetails_bp)
 
+
 from pages.signIn.signIn import signIn_bp
 app.register_blueprint(signIn_bp)
 

@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="gitignore added">
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="coach details working">
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/js/coachDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/coachDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/db_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/db_connector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +26,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,6 +44,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Shiraz848"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="57bba6f2-435c-4796-a405-8935b95b6c40" />
+        <option name="url" value="https://github.com/Shiraz848/Group7.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -84,11 +101,11 @@
       <recent name="C:\Users\shira\PycharmProjects\Group7\static\media\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\components\coachDetails\static\js" />
+      <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\components\coachDetails\static\css" />
       <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\components\coachDetails\templates" />
       <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\pages\findCoach\templates" />
       <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\pages\homePage\templates" />
-      <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\static\media\img" />
-      <recent name="C:\Users\shira\PycharmProjects\Group7\WEB_partC\pages\signUp\static\media\img" />
     </key>
   </component>
   <component name="RunManager" selected="Flask server.Flask (WEB_partC/app.py)">
@@ -297,15 +314,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="28404000" />
-    </task>
-    <task id="LOCAL-00006" summary="welcome final+sign up">
-      <option name="closed" value="true" />
-      <created>1707080446550</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1707080446550</updated>
+      <workItem from="1710434052150" duration="39510000" />
     </task>
     <task id="LOCAL-00007" summary="sign up update">
       <option name="closed" value="true" />
@@ -691,14 +700,21 @@
       <option name="project" value="LOCAL" />
       <updated>1710507350668</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="coach details working">
+      <option name="closed" value="true" />
+      <created>1710513609824</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1710513609824</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="final sign in" />
     <MESSAGE value="final sign up" />
     <MESSAGE value="final my account" />
     <MESSAGE value="final find coach" />
@@ -723,7 +739,8 @@
     <MESSAGE value="final part B" />
     <MESSAGE value="part c 15.3 first version" />
     <MESSAGE value="gitignore added" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore added" />
+    <MESSAGE value="coach details working" />
+    <option name="LAST_COMMIT_MESSAGE" value="coach details working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group7$app.coverage" NAME="app Coverage Results" MODIFIED="1710023758001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />

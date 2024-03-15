@@ -27,6 +27,16 @@ def find_coach():
     coaches_list = get_filtered_coaches()
     return render_template('findCoach.html', name=name, coaches=coaches_list)
 
+@findCoach_bp.route('/coach/<string:phone>')
+def coach_details(phone):
+    coach = coaches_col.find_one({'phone': phone})
+    if coach:
+        # Add 'show_modal' flag to the context
+        return render_template('findCoach.html', coach=coach, show_modal=True)
+    else:
+        return "Coach not found", 404
+
+
 
 # Route for getting the details of a coach
 # @findCoach_bp.route('/coach/<string:phone>')
