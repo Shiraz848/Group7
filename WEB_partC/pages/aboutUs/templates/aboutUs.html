@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'About Us' %}
+
+{% block page_head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('aboutUs.static', filename='css/aboutUs.css') }}">
+{% endblock %}
+
+
+{% block page_second_title %}
+<div class="second-title">
+    <h2>About Us</h2>
+</div>
+{% endblock %}
+
+
+{% block main %}
+    <div class="container text-font">
+        <div class="about-us-content">
+            <h2>Welcome to Our Fitness Coaching Platform</h2>
+            <p>
+                Our platform aims to connect fitness enthusiasts with unique and experienced coaches and trainers that can
+                not be found easily.
+                Whether you're just starting your fitness journey or you're looking to take your training to the next level,
+                we're here to help you find the perfect coach to meet your needs.
+            </p>
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is to empower individuals to achieve their fitness goals by providing access to high-quality
+                coaching and personalized training plans.
+                We believe that with the right guidance and support, anyone can unlock their full potential and lead a
+                healthier, happier life.
+            </p>
+            <h3>Get in Touch</h3>
+            <p>
+                Have questions or feedback? We'd love to hear from you! Feel free to reach out to us at:
+                <a href="mailto:info@fitnesscoaching.com">info@fitnesscoaching.com</a>
+            </p>
+        </div>
+
+        <div class="about-us-images">
+            <img src="../static/media/img/coach_shirt_parent.jpg"
+                 alt="Placeholder Image 1">
+            <img src="../static/media/img/tennis_coach.jpg" alt="Placeholder Image 2">
+        </div>
+    </div>
+
+{% endblock %}

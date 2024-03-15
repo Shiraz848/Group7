@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Find Coach' %}
+
+{# CSS #}
+{% block page_head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('findCoach.static', filename='css/findCoach.css') }}">
+{% endblock %}
+
+
+{% block main %}
+
+
+<h2>Hello {{ name }}!</h2>
+
+
+{% block page_second_title %}
+<div class="second-title">
+    <h2>Choose the coaches you are interested with, so they can contact you:</h2>
+</div>
+{% endblock %}
+
+
+<form action="{{ url_for('findCoach.find_coach') }}" method="GET">
+    <div class="search-form text-font">
+        <div class="search-input">
+            <label for="training-type">Training Type:</label>
+            <select name="training-type" id="training-type">
+                <option value="cardio">Cardio</option>
+                <!--<option value="weight-lifting">Weight Lifting</option>-->
+                <option value="yoga">Yoga</option>
+                <option value="tennis">Tennis</option>
+                <option value="pilates">Pilates</option>
+                <!--<option value="crossfit">Crossfit</option>-->
+            </select>
+        </div>
+        <div class="search-input">
+            <label>Training Time:</label>
+            <div>
+                <input class="radio" type="radio" id="morning" name="training-time" value="morning">
+                <label class="label-option" for="morning">Morning</label>
+            </div>
+            <div>
+                <input class="radio" type="radio" id="evening" name="training-time" value="evening">
+                <label class="label-option" for="evening">Afternoon/Evening</label>
+            </div>
+        </div>
+        <div class="search-input">
+            <label for="training-level">Training Level:</label>
+            <select name="training-level" id="training-level">
+                <option value="beginner">Beginner</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+        <div class="search-input">
+            <label class="label-category">Training Location:</label>
+            <div>
+                <input class="radio" type="radio" id="geolocation" name="location" value="current" checked>
+                <label class="label-option" for="geolocation">Use My Current Location</label>
+            </div>
+            <div>
+                <input class="radio" type="radio" id="cityLocation" name="location" value="city">
+                <label class="label-option" for="cityLocation">In My City</label>
+            </div>
+        </div>
+
+        <input type="hidden" name="latitude" value="">
+        <input type="hidden" name="longitude" value="">
+        <button type="submit" class="search-button">Search</button>
+    </div>
+</form>
+
+<div id="search-results-list">
+    {% for coach in coaches %}
+    <div class="coach">
+        <input type="checkbox">
+        <span class="coach-name">{{ coach.name }}</span>
+        <span class="stars">{{ coach.rating }}</span>
+        <span class="class-type">Type: {{ coach.classType }}</span>
+        <button class="learn-more-button">Learn More</button>
+        <button class="addToFavorites-button">Add To Favorites</button>
+    </div>
+    {% endfor %}
+</div>
+
+<button id="contact-me-button">Contact Me</button>
+
+<!-- Confirmation message container -->
+<div id="confirmation-message">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <h1 class="main-title">Your details have been sent!</h1>
+            <div class="content-section">
+                <p>Happy to help!
+                    <br>
+                    We have sent your details to all the coaches requested.
+                    <br>
+                    Have fun and let us know about your experience!
+                </p>
+            </div>
+            <div class="modal-buttons">
+                <button class="close-button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Learn More Coach Details container -->
+<div id="details-modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <div class="content-section">
+                <h1 class="main-title">Coach Details</h1>
+                <div class="coach-info">
+                    <h2 id="coach-name">Coach Name</h2>
+                    <div class="rating" id="rating-container">
+                        <!-- Rating stars will be added dynamically -->
+                    </div>
+                    <p class="text-font">Type of Coach: <span id="coach-type"></span></p>
+                    <p class="text-font">Experience: <span id="coach-experience"></span></p>
+                    <p class="text-font">Certification: <span id="coach-certification"></span></p>
+                    <p class="text-font">Address: <span id="coach-address"></span></p>
+                    <div class="modal-buttons">
+                        <button class="rate-button">Rate Coach Now</button>
+                        <button class="close-button" id="learnMore-button">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="map-section">
+                <!--<img id="map" src="" alt="Map">-->
+                <!--we don't have an api key, so the map is not changing dynamically-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.646579144993!2d34.80139681455099!3d31.26256836092087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502665f2e01c71b%3A0x15ca4db0c140b893!2sOlympic%20Banquet%20Bang-Bang%20Ben-Gurion%20Blvd.!5e0!3m2!1sen!2suk!4v1645320678886!5m2!1sen!2suk"
+                        width="100%" height="100%" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rating Modal -->
+<div id="ratingModal" class="rating-modal">
+    <div class="rating-modal-content">
+        <span class="close">&times;</span>
+        <h1 class="main-title">Rate Coach</h1>
+        <div id="ratingStars">
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+        <button class="submit-rating">Submit</button>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('findCoach.static', filename='js/findCoach.js') }}"></script>
+{% endblock %}
+

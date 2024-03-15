@@ -1,0 +1,46 @@
+.flex-navbar a:nth-child(4) {
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+    padding: 30px;
+
+}
+
+.about-us-content p {
+    margin-bottom: 80px;
+}
+
+
+.about-us-images {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.about-us-images img {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .about-us-content {
+        flex-basis: 80%;
+    }
+
+    .about-us-images {
+        display: inline-block;
+    }
+
+}

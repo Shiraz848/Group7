@@ -1,0 +1,19 @@
+:root {
+    /* Colors */
+    --body-background-color: #A2C2C9;
+    --font-primary: 'Segoe UI', sans-serif;
+    --font-secondary: 'Segoe Script', sans-serif;
+    --nav-background-color: #8E8E8E;
+    --nav-text-color: white;
+    --footer-margin-top: 400px;
+    --footer-background-color: rgba(142, 142, 142, 0.43);
+    --footer-text-color: #090808;
+    --link-hover-background: rgba(0, 0, 0, 50%);
+    --link-hover-color: #8E8E8E;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --footer-margin-top: 600px;
+    }
+}

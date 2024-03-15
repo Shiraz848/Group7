@@ -1,0 +1,65 @@
+.flex-navbar a:nth-child(2){
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+}
+
+#favorites-list {
+    margin: 20px;
+}
+
+.favorite-coach {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.favorite-coach .coach-name {
+    font-weight: bold;
+    margin: 20px;
+}
+
+.favorite-coach .stars {
+    color: #ffd700;
+}
+
+.favorite-coach .learn-more-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.favorite-coach .learn-more-button:hover {
+    background-color: #45a049;
+}
+
+/* Style for "Delete" button */
+.favorite-coach .delete-button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.favorite-coach .delete-button:hover {
+    background-color: #da190b;
+}
+
+@media (max-width: 768px) {
+    .favorite-coach {
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .favorite-coach .delete-button {
+        margin: 10px;
+    }
+}

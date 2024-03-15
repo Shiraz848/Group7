@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Sign Up' %}
+
+{% block page_head_css %}
+<link rel="stylesheet" href="{{ url_for('signUp.static', filename='css/signUp.css') }}">
+{% endblock %}
+
+{% block header %} {% endblock %}
+{% block main %}
+<header class="main-title">
+    <h1>Welcome to find my coach!</h1>
+</header>
+
+<div class="second-title">
+    <h2>Register now to enjoy our services:</h2>
+</div>
+
+<div class="container text-font">
+
+    <div class="item">
+        <form id="registrationForm" action="/findCoach" method="POST">
+            <div class="msg"></div>
+            <div class="form-fields">
+                <label>First Name:</label>
+                <input type="text" name="firstName" placeholder="Enter your first name" required>
+            </div>
+
+            <div class="form-fields">
+                <label>Last Name:</label>
+                <input type="text" name="lastName" placeholder="Enter your last name" required>
+            </div>
+
+            <div class="form-fields">
+                <label>Email:</label>
+                <input type="email" name="Email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-fields">
+                <label>Phone Number:</label>
+                <input type="tel" name="phoneNumber" placeholder="Enter your phone number (e.g., 0123456789)" required>
+            </div>
+
+
+            <div class="form-fields">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+
+            <div class="form-fields">
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Choose your password" required>
+            </div>
+
+            <div class="form-fields">
+                <label>Confirm Password:</label>
+                <input type="password" name="confirmPassword" placeholder="Enter your password again" required>
+            </div>
+
+            <div class="form-fields">
+                <label>Location:</label>
+                <div class="location-flex">
+                    <input type="checkbox" name="locationAccess">
+                    <label>Allow location access</label>
+                </div>
+            </div>
+
+            <div class="form-btn btn-flex">
+                <input type="submit" value="Register">
+            </div>
+
+        </form>
+
+        <div class="backBtn-flex btn-flex ">
+            <div class="back-btn">
+                <a href="/signIn">Sign In</a>
+            </div>
+
+            <div class="back-btn">
+                <a href="/">Home Page</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="item pic-container">
+        <div class="pic-grid">
+            <img src="../../../static/media/img/woman_with_rope.jpeg"/>
+        </div>
+        <div class="pic-grid">
+            <img src="../../../static/media/img/woman_squat.jpg"/>
+        </div>
+        <div class="pic-grid">
+            <img src="../../../static/media/img/woman_trainer_pilates.jpg"/>
+        </div>
+        <div class="pic-grid">
+            <img src="../../../static/media/img/woman_trainer_running.jpg"/>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+{% block page_body_js %}
+<!--<script src="{{ url_for('static', filename='js/base.js') }}"></script>-->
+{% endblock %}

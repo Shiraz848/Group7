@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    color: black;
+    background-image: url('../../../../static/media/img/woman_with_rope.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(162, 194, 201, 0.76);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-family: "Segoe Script", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: black;
+}
+
+h2 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.msg {
+    color: red;
+    font-size: 20px;
+}
+
+.text-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-fields {
+    margin-bottom: 20px;
+}
+
+.form-fields label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-fields input[type="email"],
+.form-fields input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #8E8E8E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(121, 121, 121);
+
+}
+
+.register-block {
+    margin-top: 10px;
+}
+
+.register-btn {
+    font-size: 16px;
+    color: #384c60;
+    text-decoration: none;
+}
+
+.register-btn:hover {
+    text-decoration: underline;
+    color: rgb(121, 121, 121);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(142, 142, 142, 0.43);
+    color: #090808;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        position: relative;
+    }
+}

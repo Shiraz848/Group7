@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Segoe UI, sans-serif;
+    background-color: #A2C2C9;
+    color: #090808;
+}
+
+header {
+background-color: #4CAF50;
+}
+
+.title-font {
+    font-family: "Segoe Script", sans-serif;
+    font-size: 80px;
+    text-align: left;
+}
+
+.text-font {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 15px;
+}
+
+.flex-navbar, .nav-text-font {
+    background-color: #8E8E8E;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+.flex-navbar a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    flex-basis: 600px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.flex-navbar a:hover {
+    background-color: rgba(0, 0, 0, 50%);
+    border-radius: 20px;
+    color: #8E8E8E;
+}
+
+/*---------------------------*/
+
+.main-content-background {
+    background-image: url("../media/woman_rope_background.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Main content section */
+.main-content {
+    background-color: rgba(162, 194, 201, 0.53);
+    border-radius: 20px;
+    padding: 50px 0;
+    text-align: center;
+    margin: 150px 40px;
+}
+
+.main-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.box {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 200px 20px;
+}
+
+.container {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Section titles */
+.section-title h3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 36px;
+}
+
+.section-content {
+    font-size: 18px;
+}
+
+img {
+    float: right;
+    width: 200px;
+    margin-right: 60px;
+}
+
+/* Testimonials Section Styles */
+#testimonials blockquote {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+#testimonials blockquote p {
+    font-size: 18px;
+}
+
+#testimonials blockquote footer {
+    font-weight: bold;
+}
+
+/* Contact Section Styles */
+#contact p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.section-title {
+    transition: transform 0.5s;
+}
+
+.section-title:hover {
+    transform: rotateY(360deg);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .section-content {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Favorites' %}
+
+
+{% block page_head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('favorites.static', filename='css/favorites.css') }}">
+{% endblock %}
+
+{% block main %}
+
+{% block page_second_title %}
+<div class="second-title">
+    <h2>Your Favorite Coaches:</h2>
+</div>
+{% endblock %}
+
+
+<div id="favorites-list">
+    <!-- Favorite coaches will be displayed here -->
+</div>
+
+
+
+{% endblock %}
+
+<!-- Learn More Coach Details container -->
+
+
+
+
+{% block page_body_js %}
+<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Home Page' %}
+
+
+{% block page_head_css %}
+<link rel="stylesheet" href="{{ url_for('homePage.static', filename='css/homePage.css') }}">
+{% endblock %}
+
+
+
+{% block header %}
+{% include 'home_header.html' %}
+{% endblock %}
+
+
+{% block main %}
+
+<div class="main-content-background">
+    <div class="main-content">
+        <h2>Find the Perfect Coach for Your Needs</h2>
+        <p>Discover personal sports trainers from various fields and choose the best fit for you.</p>
+    </div>
+</div>
+
+
+<div class="box" id="how-it-works">
+    <div class="section-title">
+        <h3>How It Works</h3>
+    </div>
+    <div class="container">
+
+        <div class="section-content">
+            <p> When having a hard time finding the right personal trainer for your needs, we are here for you!</p>
+            <p> Our Service specializes in finding the best fit trainer for your preferences! </p>
+        </div>
+
+        <div class="section-content section-image">
+            <img src="../static/media/howitworks.jpg" alt="How It Works Image">
+        </div>
+    </div>
+</div>
+
+
+<!-- Benefits Section -->
+<div class="box" id="benefits">
+    <div class="section-title">
+        <h3>Benefits</h3>
+    </div>
+    <div class="container">
+
+        <div class="section-content">
+            <ul>
+                <li>Find coaches according to your needs</li>
+                <li>Create a list of favorite trainers for quick search</li>
+                <li>Send your details to specific coaches so they can contact you</li>
+            </ul>
+        </div>
+
+        <div class="section-content section-image">
+            <img class="flippable" src="../static/media/benefits.jpg" alt="Benefits Image">
+        </div>
+    </div>
+</div>
+
+
+<!-- Testimonials Section -->
+<div class="box" id="testimonials">
+    <div class="section-title">
+        <h3>What Our Clients Say</h3>
+    </div>
+    <div class="container">
+        <div class="section-content">
+            <blockquote>
+                <p>"I found my perfect coach through Find My Coach! Highly recommended."</p>
+                <footer>- John Doe</footer>
+            </blockquote>
+            <blockquote>
+                <p>"The platform is easy to use, and I'm very happy with the results!"</p>
+                <footer>- Jane Smith</footer>
+            </blockquote>
+        </div>
+
+        <div class="section-content section-image">
+            <img class="flippable" src="../static/media/clients.jpg" alt="Testimonials Image">
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="box" id="contact">
+
+    <div class="section-title">
+        <h3>Contact Us</h3>
+    </div>
+    <div class="container">
+
+        <div class="section-content">
+            <p>Have questions or need assistance? Contact our support team:</p>
+            <p>Email: support@findmycoach.com</p>
+            <p>Phone: 0549059942</p>
+        </div>
+
+        <div class="section-content section-image">
+            <img src="../static/media/contact.jpg" alt="Contact Image">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block page_body_js %}
+<!--        <script src="{{ url_for('static', filename='js/base.js') }}"></script>-->
+{% endblock %}
