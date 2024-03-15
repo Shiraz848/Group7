@@ -4,65 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="final part B">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/coachDetails.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/db_connector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/mongodb_drafts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/aboutUs/aboutUs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/aboutUs/static/css/aboutUs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/aboutUs/static/media/img/coach_shirt_parent.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/aboutUs/static/media/img/tennis_coach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/aboutUs/templates/aboutUs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/static/css/favorites.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/static/js/favorites.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/homePage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/css/homePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/media/benefits.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/media/clients.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/media/contact.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/media/howitworks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/media/woman_rope_background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/templates/homePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/templates/home_header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/myAccount.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/static/css/myAccount.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/static/js/myAccount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/templates/myAccount.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signIn/signIn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signIn/static/css/signIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signIn/static/js/signIn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signIn/templates/signIn.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signUp/signUp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signUp/static/css/signUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signUp/static/js/signUp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/pages/signUp/templates/signUp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/css/Variables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/js/Base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/media/img/signUp_background_pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/media/img/woman_squat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/media/img/woman_trainer_pilates.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/media/img/woman_trainer_rope.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/media/img/woman_trainer_running.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/static/media/img/woman_with_rope.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/templates/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/templates/mongodb.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/templates/styles.html" afterDir="false" />
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="part c 15.3 first version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PartA_final.docx" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partA/PartA_final.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,15 +291,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="20972000" />
-    </task>
-    <task id="LOCAL-00004" summary="welcome edit">
-      <option name="closed" value="true" />
-      <created>1707045340212</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1707045340212</updated>
+      <workItem from="1710434052150" duration="22109000" />
     </task>
     <task id="LOCAL-00005" summary="welcome edit">
       <option name="closed" value="true" />
@@ -742,14 +677,21 @@
       <option name="project" value="LOCAL" />
       <updated>1708455374317</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="part c 15.3 first version">
+      <option name="closed" value="true" />
+      <created>1710506584460</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1710506584460</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="styles update" />
     <MESSAGE value="styles update + pics added" />
     <MESSAGE value="final sign in" />
     <MESSAGE value="final sign up" />
@@ -774,7 +716,8 @@
     <MESSAGE value="readMe file added" />
     <MESSAGE value="final!!!!!!!" />
     <MESSAGE value="final part B" />
-    <option name="LAST_COMMIT_MESSAGE" value="final part B" />
+    <MESSAGE value="part c 15.3 first version" />
+    <option name="LAST_COMMIT_MESSAGE" value="part c 15.3 first version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group7$app.coverage" NAME="app Coverage Results" MODIFIED="1710023758001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
