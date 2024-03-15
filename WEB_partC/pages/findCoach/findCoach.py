@@ -1,5 +1,5 @@
-from flask import Blueprint, request, render_template, session, json, jsonify
-from WEB_partC.db_connector import get_filtered_coaches, get_coaches_near_location, registered_users_col
+from flask import Blueprint, request, render_template, session, json, jsonify, redirect, url_for
+from WEB_partC.db_connector import get_filtered_coaches, coaches_col
 
 findCoach_bp = Blueprint(
     'findCoach',
@@ -18,26 +18,35 @@ def find_coach():
         training_type = request.form['training-type']
         training_time = request.form['training-time']
         training_level = request.form['training-level']
-        location_preference = request.form['location']
-        # latitude = request.form.get('latitude', type=float)  # Get latitude as float if present
-        # longitude = request.form.get('longitude', type=float)  # Get longitude as float if present
 
-        # Update session with the current user's location if available
-        # if latitude and longitude:
-        #     session['latitude'] = latitude
-        #     session['longitude'] = longitude
-
-        coaches_list = get_filtered_coaches(training_type, training_time, training_level, location_preference)
-
-        if location_preference == 'current' and 'latitude' in session and 'longitude' in session:
-            # Use session latitude and longitude
-            coaches_list = get_coaches_near_location(session['latitude'], session['longitude'])
+        coaches_list = get_filtered_coaches(training_type, training_time, training_level)
 
         return render_template('findCoach.html',name=name,  coaches=coaches_list)
 
     # For a GET request or if the form is not submitted, display all coaches
     coaches_list = get_filtered_coaches()
     return render_template('findCoach.html', name=name, coaches=coaches_list)
+
+
+# Route for getting the details of a coach
+# @findCoach_bp.route('/coach/<string:phone>')
+# def coach_details(phone):
+#     print("coach_details route was called.")
+#     coach = coaches_col.find_one({'phone': phone})
+#     if coach is None:
+#         return "Coach not found", 404
+#     return render_template('findCoach.html', coach=coach)
+
+# Route for adding a coach to favorites (You'll need to replace `user` with the correct way to get the current user)
+# @findCoach_bp.route('/add_to_favorites', methods=['POST'])
+# def add_to_favorites():
+#     phone = request.form['phone']
+#     user = get_current_user()  # Implement this function based on how you determine the current user
+#     # Logic to add the coach to the user's favorites
+#     # ...
+#     return redirect(url_for('find_coaches'))
+
+
 
 
 # @findCoach_bp.route('/contact_coaches', methods=['GET', 'POST'])

@@ -6,14 +6,23 @@
             <div class="content-section">
                 <h1 class="main-title">Coach Details</h1>
                 <div class="coach-info">
-                    <h2 id="coach-name">Coach Name</h2>
+                    <!-- Dynamically insert coach name -->
+                    <h2 id="coach-name">{{ coach.name }}</h2>
+                    <!-- Generate star ratings -->
                     <div class="rating" id="rating-container">
-                        <!-- Rating stars will be added dynamically -->
+                        {% for star in range(coach.rating) %}
+                            <span class="star">&#9733;</span> <!-- Filled star -->
+                        {% endfor %}
+                        {% for star in range(5 - coach.rating) %}
+                            <span class="star">&#9734;</span> <!-- Empty star -->
+                        {% endfor %}
                     </div>
-                    <p class="text-font">Type of Coach: <span id="coach-type"></span></p>
-                    <p class="text-font">Experience: <span id="coach-experience"></span></p>
-                    <p class="text-font">Certification: <span id="coach-certification"></span></p>
-                    <p class="text-font">Address: <span id="coach-address"></span></p>
+                    <!-- Dynamically insert coach details -->
+                    <p class="text-font">Type of Coach: <span id="coach-type">{{ coach.classType }}</span></p>
+                    <p class="text-font">Experience: <span id="coach-experience">{{ coach.experience }}</span></p>
+                    <p class="text-font">Certification: <span id="coach-certification">{{ coach.certification }}</span></p>
+                    <p class="text-font">City: <span id="coach-city">{{ coach.city }}</span></p>
+                    <p class="text-font">Address: <span id="coach-address">{{ coach.address }}</span></p>
                     <div class="modal-buttons">
                         <button class="rate-button">Rate Coach Now</button>
                         <button class="close-button" id="learnMore-button">Close</button>

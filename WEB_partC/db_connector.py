@@ -187,11 +187,9 @@ def initialize_db():
 
     insert_coaches(coaches)
     insert_users(registered_users)
-    # coaches_col.create_index([("location", pymongo.GEOSPHERE)])
-    # registered_users_col.create_index([("location", pymongo.GEOSPHERE)])
 
 
-def get_filtered_coaches(training_type=None, training_time=None, training_level=None, location=None):
+def get_filtered_coaches(training_type=None, training_time=None, training_level=None):
     # Construct query based on provided parameters
     query = {}
     if training_type:
@@ -200,36 +198,9 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
         query['trainingTime'] = training_time
     if training_level:
         query['trainingLevel'] = training_level
-    if location:
-        query['Location'] = location
-    # Include other conditions based on location_preference if necessary
 
     # Execute the query on the MongoDB collection
     return list(coaches_col.find(query))
-
-
-def get_coaches_near_location(lat, lng):
-    # Convert lat and lng to float if they are not already
-    lat = float(lat)
-    lng = float(lng)
-
-    # Use the correct MongoDB query with the 'location' field
-    coaches = coaches_col.find({
-        'location': {
-            '$nearSphere': {
-                '$geometry': {
-                    'type': 'Point',
-                    'coordinates': [lng, lat]  # Again, longitude comes first in GeoJSON
-                },
-                '$maxDistance': 15000  # within 15 km
-            }
-        }
-    })
-    return list(coaches)
-
-
-def get_all_users():
-    return list(registered_users_col.find({}))
 
 
 # Run the initialize_db function if this script is executed directly
