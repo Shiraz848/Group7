@@ -2,7 +2,6 @@
 
 {% set page_head_title = 'Find Coach' %}
 
-{# CSS #}
 {% block page_head_css %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('findCoach.static', filename='css/findCoach.css') }}">
@@ -75,19 +74,26 @@
 <div id="search-results-list">
     {% for coach in coaches %}
     <div class="coach">
-        <input type="checkbox">
         <span class="coach-name">{{ coach.name }}</span>
-        <span class="stars">{{ coach.rating }}</span>
+        <div class="stars" id="rating-container">
+            {% for star in range(coach.rating) %}
+            <span>&#9733;</span> <!-- Filled star -->
+            {% endfor %}
+            {% for star in range(5 - coach.rating) %}
+            <span>&#9734;</span> <!-- Empty star -->
+            {% endfor %}
+        </div>
         <span class="class-type">Type: {{ coach.classType }}</span>
-
-
-
-        <button type="button" class="learn-more-button" data-phone="{{ coach.phone }}">Learn More</button>
-
-
+        <!-- Add an onclick event to handle showing the modal -->
+        <button onclick="showModal('{{ coach.phone }}')" class="learn-more-button">Learn More</button>
+    </div>
+    <!-- Placeholder for coach details modal -->
+    <div id="details-modal-{{ coach.phone }}" class="details-modal" style="display: none;">
+        {% include 'coachDetails.html' %}
     </div>
     {% endfor %}
 </div>
+
 
 <button id="contact-me-button">Contact Me</button>
 
@@ -112,27 +118,9 @@
     </div>
 </div>
 
-{% if show_modal %}
-  <div id="details-modal" style="display: block;">
-    {% include 'coachDetails.html' %}
-  </div>
-{% endif %}
-
 {% endblock %}
 
 {% block page_body_js %}
-
-<!--{% if show_modal %}-->
-<!--&lt;!&ndash;  <script>&ndash;&gt;-->
-<!--&lt;!&ndash;    // JavaScript to open the modal immediately after page load&ndash;&gt;-->
-<!--&lt;!&ndash;    window.onload = function() {&ndash;&gt;-->
-<!--&lt;!&ndash;      // The modal should have an ID that you can use to select it&ndash;&gt;-->
-<!--&lt;!&ndash;      const modal = document.getElementById('details-modal');&ndash;&gt;-->
-<!--&lt;!&ndash;      modal.style.display = 'block';&ndash;&gt;-->
-<!--&lt;!&ndash;    };&ndash;&gt;-->
-<!--&lt;!&ndash;  </script>&ndash;&gt;-->
-<!--{% endif %}-->
-
 <script src="{{ url_for('findCoach.static', filename='js/findCoach.js') }}"></script>
-
 {% endblock %}
+
