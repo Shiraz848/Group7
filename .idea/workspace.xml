@@ -10,12 +10,11 @@
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/static/css/confirmationMsg.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/templates/confirmationMsg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/myAccount/myAccount.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/myAccount.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/myAccount/templates/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/templates/myAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/components/rateForm/static/css/rateForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/static/css/rateForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/homePage/homePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/homePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/css/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/static/css/homePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/homePage/templates/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/homePage/templates/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,15 +315,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="86303000" />
-    </task>
-    <task id="LOCAL-00012" summary="mt account added">
-      <option name="closed" value="true" />
-      <created>1707643625351</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1707643625351</updated>
+      <workItem from="1710434052150" duration="88246000" />
     </task>
     <task id="LOCAL-00013" summary="updated from sunday session">
       <option name="closed" value="true" />
@@ -710,7 +701,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710625224676</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="favorites working!!!! sat upd">
+      <option name="closed" value="true" />
+      <created>1710627992781</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1710627992781</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

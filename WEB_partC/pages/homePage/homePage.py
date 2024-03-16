@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template
 from flask import Blueprint
 
 homePage_bp = Blueprint(
     'homePage',
     __name__,
     static_folder='static',
+    static_url_path='/',
     template_folder='templates'
 )
 

@@ -9,10 +9,6 @@ body {
     color: #090808;
 }
 
-header {
-background-color: #4CAF50;
-}
-
 .title-font {
     font-family: "Segoe Script", sans-serif;
     font-size: 80px;
@@ -49,7 +45,7 @@ background-color: #4CAF50;
 /*---------------------------*/
 
 .main-content-background {
-    background-image: url("../media/woman_rope_background.jpg");
+    background-image: url("../media/img/woman_rope_background.jpg");
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
