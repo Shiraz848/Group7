@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="coach details working">
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="coach details working friday upd">
       <change afterPath="$PROJECT_DIR$/WEB_partC/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,15 +306,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="42937000" />
-    </task>
-    <task id="LOCAL-00008" summary="sign up update">
-      <option name="closed" value="true" />
-      <created>1707413150222</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1707413150222</updated>
+      <workItem from="1710434052150" duration="44520000" />
     </task>
     <task id="LOCAL-00009" summary="sign up update">
       <option name="closed" value="true" />
@@ -705,14 +692,21 @@
       <option name="project" value="LOCAL" />
       <updated>1710524530738</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="coach details working friday upd">
+      <option name="closed" value="true" />
+      <created>1710545198447</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1710545198447</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="final sign up" />
     <MESSAGE value="final my account" />
     <MESSAGE value="final find coach" />
     <MESSAGE value="home update" />
@@ -737,7 +731,8 @@
     <MESSAGE value="part c 15.3 first version" />
     <MESSAGE value="gitignore added" />
     <MESSAGE value="coach details working" />
-    <option name="LAST_COMMIT_MESSAGE" value="coach details working" />
+    <MESSAGE value="coach details working friday upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="coach details working friday upd" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group7$app.coverage" NAME="app Coverage Results" MODIFIED="1710023758001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
