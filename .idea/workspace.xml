@@ -6,7 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="coach details working friday upd">
       <change afterPath="$PROJECT_DIR$/WEB_partC/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/confirmationMsg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/static/css/confirmationMsg.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/templates/confirmationMsg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/db_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/db_connector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/signIn/signIn.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/signIn/signIn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -66,6 +80,7 @@
     "Flask server.Flask (WEB_partC/app.py).executor": "Run",
     "Flask server.Flask (app.py).executor": "Run",
     "Python.app.executor": "Run",
+    "Python.db_connector (1).executor": "Run",
     "Python.db_connector.executor": "Run",
     "Python.findCoach.executor": "Run",
     "Python.mongodb_drafts (1).executor": "Run",
@@ -116,6 +131,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_partC/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="db_connector (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Group7" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WEB_partC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WEB_partC/db_connector.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,29 +231,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mongodb_drafts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Group7" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\shira\PycharmProjects\Group7\WEB_partC\mongodb_drafts.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="python.exe" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Group7" />
       <option name="ENV_FILES" value="" />
@@ -261,19 +276,19 @@
     <list>
       <item itemvalue="Flask server.Flask (WEB_partC/app.py)" />
       <item itemvalue="Python.python.exe" />
+      <item itemvalue="Python.db_connector (1)" />
       <item itemvalue="Python.app" />
       <item itemvalue="Python.db_connector" />
       <item itemvalue="Python.findCoach" />
-      <item itemvalue="Python.mongodb_drafts" />
       <item itemvalue="Python.mongodb_drafts (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.db_connector (1)" />
         <item itemvalue="Python.mongodb_drafts (1)" />
         <item itemvalue="Python.db_connector" />
         <item itemvalue="Python.findCoach" />
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.mongodb_drafts" />
       </list>
     </recent_temporary>
   </component>
@@ -306,15 +321,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="44520000" />
-    </task>
-    <task id="LOCAL-00009" summary="sign up update">
-      <option name="closed" value="true" />
-      <created>1707413210482</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1707413210482</updated>
+      <workItem from="1710434052150" duration="70830000" />
     </task>
     <task id="LOCAL-00010" summary="all combines first update">
       <option name="closed" value="true" />
@@ -700,11 +707,30 @@
       <option name="project" value="LOCAL" />
       <updated>1710545198447</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="coach details working friday upd">
+      <option name="closed" value="true" />
+      <created>1710578708247</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1710578708247</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="final my account" />
@@ -736,11 +762,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group7$app.coverage" NAME="app Coverage Results" MODIFIED="1710023758001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
-    <SUITE FILE_PATH="coverage/Group7$mongodb_drafts__1_.coverage" NAME="mongodb_drafts (1) Coverage Results" MODIFIED="1710432782453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
+    <SUITE FILE_PATH="coverage/Group7$mongodb_drafts__1_.coverage" NAME="mongodb_drafts (1) Coverage Results" MODIFIED="1710598901702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
     <SUITE FILE_PATH="coverage/Group7$db_connector.coverage" NAME="db_connector Coverage Results" MODIFIED="1710261898792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC/utilities" />
     <SUITE FILE_PATH="coverage/Group7$findCoach.coverage" NAME="findCoach Coverage Results" MODIFIED="1710086077686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC/pages/findCoach" />
     <SUITE FILE_PATH="coverage/Group7$Flask__app_py_.coverage" NAME="Flask (WEB_partC/app.py) Coverage Results" MODIFIED="1710261928189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Group7$Flask__WEB_partC_app_py_.coverage" NAME="Flask (WEB_partC/app.py) Coverage Results" MODIFIED="1710499024029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Group7$db_connector__1_.coverage" NAME="db_connector (1) Coverage Results" MODIFIED="1710608493775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
+    <SUITE FILE_PATH="coverage/Group7$Flask__WEB_partC_app_py_.coverage" NAME="Flask (WEB_partC/app.py) Coverage Results" MODIFIED="1710610427449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Group7$mongodb_drafts.coverage" NAME="mongodb_drafts Coverage Results" MODIFIED="1709992118682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

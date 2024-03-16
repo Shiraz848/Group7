@@ -52,6 +52,7 @@ def initialize_db():
             'trainingLevel': 'Beginner',
             'experience': '5 years',
             'certification': 'ACE Certified',
+            'city': 'Beer Sheva',
             'address': 'Ben-Gurion University Sports Center',
             'phone': '054-444-5555',
             'location': {
@@ -67,7 +68,8 @@ def initialize_db():
             'trainingLevel': 'Advanced',
             'experience': '8 years',
             'certification': 'NASM Certified',
-            'address': '2 Yaakov Cohen st. Beer Sheva',
+            'city': 'Beer Sheva',
+            'address': '2 Yaakov Cohen st.',
             'phone': '054-555-5555',
             'location': {
                 'type': 'Point',
@@ -82,7 +84,8 @@ def initialize_db():
             'trainingLevel': 'Beginner',
             'experience': '10 years',
             'certification': 'Wingate Certified',
-            'address': '1 Yanush Korchak st. Hod Hasharon',
+            'city': 'Hod Hasharon',
+            'address': '1 Yanush Korchak st.',
             'phone': '052-555-5455',
             'location': {
                 'type': 'Point',
@@ -97,7 +100,8 @@ def initialize_db():
             'trainingLevel': 'Advanced',
             'experience': '18 years',
             'certification': 'Ramat Hasharon Tennis Center Certified',
-            'address': '7 Levontin st. Tel Aviv-Yafo',
+            'city': 'Tel Aviv-Yafo',
+            'address': '7 Levontin st.',
             'phone': '054-555-5905',
             'location': {
                 'type': 'Point',
@@ -112,7 +116,8 @@ def initialize_db():
             'trainingLevel': 'Advanced',
             'experience': '18 years',
             'certification': 'Ramat Hasharon Tennis Center Certified',
-            'address': '11 Mordechai Street Ramat Hasharon',
+            'city': 'Ramat Hasharon',
+            'address': '11 Mordechai Street ',
             'phone': '054-555-5988',
             'location': {
                 'type': 'Point',
@@ -124,7 +129,8 @@ def initialize_db():
     registered_users = [
 
         {
-            'name': 'Johny Boy',
+            'firstName': 'Johny',
+            'lastName': 'Boy',
             'email': 'jhonyboy@gmail.com',
             'phone': '050-666-1234',
             'city': 'Tel Aviv-Yafo',
@@ -133,10 +139,13 @@ def initialize_db():
                 'type': 'Point',
                 'coordinates': [34.7818, 32.0853]  # Note: longitude comes first in GeoJSON
             },
-            'locationAccess': 'true'
+            'locationAccess': 'true',
+            'contacted_coaches': []
+
         },
         # {
-        #     'name': 'Alice Smith',
+        #     'firstName': 'Alice',
+        #     'lastName': 'Smith',
         #     'email': 'alice.smith@yahoo.com',
         #     'phone': '053-444-1234',
         #     'city': 'Jerusalem',
@@ -145,10 +154,14 @@ def initialize_db():
         #         'type': 'Point',
         #         'coordinates': [35.2137, 31.7683]  # Note: longitude comes first in GeoJSON
         #     },
-        #     'locationAccess': 'false'
+        #     'locationAccess': 'false',
+        #             'contacted_coaches': []
+        #
         # },
         # {
-        #     'name': 'Michael Johnson',
+        #
+        #     'firstName': 'Michael',
+        #     'lastName': 'Johnson',
         #     'email': 'michael.johnson@hotmail.com',
         #     'phone': '052-345-2222',
         #     'city': 'Haifa',
@@ -157,10 +170,13 @@ def initialize_db():
         #         'type': 'Point',
         #         'coordinates': [34.9896, 32.7940]  # Note: longitude comes first in GeoJSON
         #     },
-        #     'locationAccess': 'true'
+        #     'locationAccess': 'true',
+        #             'contacted_coaches': []
+        #
         # },
         {
-            'name': 'Emily Davis',
+            'firstName': 'Emily',
+            'lastName': 'Davis',
             'email': 'emily.davis@outlook.com',
             'phone': '054-345-1233',
             'city': 'Tel Aviv-Yafo',
@@ -169,10 +185,13 @@ def initialize_db():
                 'type': 'Point',
                 'coordinates': [34.77369, 32.06154]  # Note: longitude comes first in GeoJSON
             },
-            'locationAccess': 'false'
+            'locationAccess': 'false',
+            'contacted_coaches': []
+
         },
         {
-            'name': 'David Brown',
+            'firstName': 'Emily',
+            'lastName': 'Brown',
             'email': 'david.brown@aol.com',
             'phone': '053-443-2343',
             'city': 'Beersheba',
@@ -181,7 +200,9 @@ def initialize_db():
                 'type': 'Point',
                 'coordinates': [34.7915, 31.2518]  # Note: longitude comes first in GeoJSON
             },
-            'locationAccess': 'true'
+            'locationAccess': 'true',
+            'contacted_coaches': []
+
         }
     ]
 

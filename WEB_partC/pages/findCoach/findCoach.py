@@ -1,5 +1,5 @@
-from flask import Blueprint, request, render_template, session, json, jsonify, redirect, url_for
-from WEB_partC.db_connector import get_filtered_coaches, coaches_col
+from flask import Blueprint, request, render_template, session, json, jsonify, redirect, url_for, flash
+from WEB_partC.db_connector import get_filtered_coaches, coaches_col, registered_users_col
 
 findCoach_bp = Blueprint(
     'findCoach',
@@ -13,68 +13,84 @@ findCoach_bp = Blueprint(
 @findCoach_bp.route('/findCoach/', methods=['GET', 'POST'])
 def find_coach():
     name = session.get('name', 'Guest')
+    user_email = session.get('email')
+    user = registered_users_col.find_one({"email": user_email})
+    favorites = user.get('favorites', []) if user else []
+
     if request.method == 'POST':
         # Extract form data
-        training_type = request.form['training-type']
-        training_time = request.form['training-time']
-        training_level = request.form['training-level']
+        training_type = request.form.get('training-type')
+        training_time = request.form.get('training-time')
+        training_level = request.form.get('training-level')
 
         coaches_list = get_filtered_coaches(training_type, training_time, training_level)
+    else:
+        coaches_list = get_filtered_coaches()
 
-        return render_template('findCoach.html',name=name,  coaches=coaches_list)
+    # Enhance the coaches list with 'is_favorite' information
+    for coach in coaches_list:
+        coach['is_favorite'] = coach['phone'] in favorites
 
-    # For a GET request or if the form is not submitted, display all coaches
-    coaches_list = get_filtered_coaches()
-    return render_template('findCoach.html', name=name, coaches=coaches_list)
+    return render_template('findCoach.html', name=name, coaches=coaches_list, favorites=favorites)
+
+
+
 
 @findCoach_bp.route('/coach/<string:phone>')
 def coach_details(phone):
     coach = coaches_col.find_one({'phone': phone})
     if coach:
         # Add 'show_modal' flag to the context
-        return render_template('findCoach.html', coach=coach, show_modal=True)
+        return render_template('findCoach.html', coach=coach)
     else:
         return "Coach not found", 404
 
 
+@findCoach_bp.route('/findCoach/contact', methods=['POST'])
+def contact_coaches():
+    selected_coaches = request.form.getlist('selected_coaches')
+    if not selected_coaches:
+        # Handle the case where no coaches are selected.
+        # You might want to redirect back and show an error message.
+        flash('Please select at least one coach.')
+        return redirect(url_for('findCoach.find_coach'))
+    # Assuming the user's email is stored in session when they log in
+    user_email = session.get('email')
 
-# Route for getting the details of a coach
-# @findCoach_bp.route('/coach/<string:phone>')
-# def coach_details(phone):
-#     print("coach_details route was called.")
-#     coach = coaches_col.find_one({'phone': phone})
-#     if coach is None:
-#         return "Coach not found", 404
-#     return render_template('findCoach.html', coach=coach)
+    # # This should be the name attribute of your checkboxes
+    # selected_coaches = request.form.getlist('selected_coaches')
 
-# Route for adding a coach to favorites (You'll need to replace `user` with the correct way to get the current user)
-# @findCoach_bp.route('/add_to_favorites', methods=['POST'])
-# def add_to_favorites():
-#     phone = request.form['phone']
-#     user = get_current_user()  # Implement this function based on how you determine the current user
-#     # Logic to add the coach to the user's favorites
-#     # ...
-#     return redirect(url_for('find_coaches'))
+    # Retrieve the user's document using their email
+    user = registered_users_col.find_one({"email": user_email})
+
+    if user:
+        # Add the list of selected coaches' phone numbers to the user's document
+        # Use $addToSet to avoid duplicates
+        registered_users_col.update_one(
+            {"email": user_email},
+            {"$addToSet": {"selected_coaches": {"$each": selected_coaches}}}
+        )
+
+        # Redirect to a confirmation page or back to the coaches list with a success message
+        return render_template('findCoach.html', show_confirmation=True)
+    else:
+        # Handle the case where the user is not found
+        return "User not found", 404
 
 
+@findCoach_bp.route('/add_to_favorites/<coach_id>', methods=['POST'])
+def add_to_favorites(coach_id):
+    user_email = session.get('email')
+    result = registered_users_col.update_one(
+        {"email": user_email},
+        {'$addToSet': {'favorites': coach_id}}
+    )
+
+    if result.modified_count > 0:
+        flash('Coach added to favorites!', 'success')
+    else:
+        flash('Coach is already in your favorites or an error occurred.', 'info')
+
+    return redirect(url_for('findCoach.find_coach'))
 
 
-# @findCoach_bp.route('/contact_coaches', methods=['GET', 'POST'])
-# def contact_coaches():
-#     user_email = session.get('user_email')  # assuming the user's email is stored in session
-#     selected_coach_ids = request.form.get('selected_coaches')
-#
-#     if selected_coach_ids and user_email:
-#         selected_coach_ids = json.loads(selected_coach_ids)
-#
-#         # Update the user's document in the database with the selected coaches
-#         registered_users_col.update_one(
-#             {'email': user_email},
-#             {'$set': {'coaches_to_contact': selected_coach_ids}}
-#         )
-#
-#         # Return a success response
-#         return jsonify({'status': 'success', 'message': 'Your details have been sent!'})
-#     else:
-#         # Return an error response
-#         return jsonify({'status': 'error', 'message': 'There was an issue processing your request.'})

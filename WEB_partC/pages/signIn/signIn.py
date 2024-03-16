@@ -20,20 +20,21 @@ def login():
             password = request.form['password']
             # Query the database for the user by email
             user = registered_users_col.find_one({"email": email})
+            print('hiiiiii')
             print(user)
             if user and user.get('password') == password:
                 session['email'] = email
-                session['name'] = user.get('name', 'Guest')  # Use 'Guest' as a default if name is not found
+                session['name'] = user.get('firstName', 'Guest')  # Use 'Guest' as a default if name is not found
                 session['logged_in'] = True
                 print("Session set:", session)  # Check what's being set in the session
-                print(f"Logged in as: {user['name']}")
+                print(f"Logged in as: {user['firstName']}")
                 return redirect(url_for('findCoach.find_coach'))
             else:
-                    print('Wrong email or password')
-                #     # You can use the flash function to show the error message in the template
-                #     flash('Invalid email or password, please try again.', 'error')
-                    return redirect(url_for('signIn.login'))
-                # return render_template('signIn.html')
+                print('Wrong email or password')
+            #     # You can use the flash function to show the error message in the template
+            #     flash('Invalid email or password, please try again.', 'error')
+                return redirect(url_for('signIn.login'))
+            # return render_template('signIn.html')
 
     # For a GET request, just render the signIn page
     return render_template('signIn.html')
