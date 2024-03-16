@@ -8,14 +8,15 @@
 {% endblock %}
 
 
+
+{% block main %}
 {% block page_second_title %}
 <div class="second-title">
-    <h2>My Account Details:</h2>
+    <h2>Your Account Details:</h2>
 </div>
 {% endblock %}
 
-{% block main %}
-<h2>Hello {{ session.get('name') }}!</h2>
+
 <div class="content text-font">
     <form action="{{ url_for('myAccount.update_account') }}" method="POST" class="account-form">
         <div class="{% if updated %} msg-success {% else %} msg-error {% endif %}">
@@ -32,13 +33,13 @@
             </div>
             <div class="input-group">
                 <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" value="{{ user.name }}"
+                <input type="text" id="first-name" name="first-name" value="{{ user.firstName }}"
                        placeholder="Enter your first name" required>
             </div>
-            <!--                <div class="input-group">-->
-            <!--                    <label for="last-name">Last Name:</label>-->
-            <!--                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>-->
-            <!--                </div>-->
+            <div class="input-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" value="{{ user.lastName }}" placeholder="Enter your last name" required>
+            </div>
             <div class="input-group">
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" value="{{ user.phone }}" placeholder="Enter your phone number"

@@ -3,6 +3,11 @@
     border-radius: 20px;
 }
 
+.hello-user {
+    text-align: center;
+    color: #6E6E6E;
+}
+
 .search-form {
     display: flex;
     flex-direction: row;

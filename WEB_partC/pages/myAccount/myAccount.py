@@ -30,7 +30,8 @@ def update_account():
             # If passwords match, update the user details
             # Update user details based on form input
             # You need to add validation and proper updating logic here
-            user['name'] = request.form['first-name']  # Make sure to match the form field names
+            user['firstName'] = request.form['first-name']  # Make sure to match the form field names
+            user['lastName'] = request.form['last-name']  # Make sure to match the form field names
             user['phone'] = request.form['phone']  # Make sure to match the form field names
             user['city'] = request.form['city']  # Make sure to match the form field names
             user['password'] = request.form['password']  # Make sure to match the form field names
@@ -39,7 +40,8 @@ def update_account():
             registered_users_col.update_one({"email": user_email}, {"$set": user})
 
             # Optionally, update the session details if they are changed
-            session['name'] = user['name']
+            session['firstName'] = user['firstName']
+            session['lastName'] = user['lastName']
             session['phone'] = user['phone']
             session['city'] = user['city']
             session['password'] = user['password']

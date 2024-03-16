@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="favorites and find coach working sat upd">
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="favorites working!!!! sat upd">
       <change afterPath="$PROJECT_DIR$/WEB_partC/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/confirmationMsg.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/static/css/confirmationMsg.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/templates/confirmationMsg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/rateForm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/static/css/rateForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/static/js/rateForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/templates/rateForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/js/coachDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/js/coachDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/db_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/db_connector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/myAccount/myAccount.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/myAccount.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/myAccount/templates/myAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/myAccount/templates/myAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,15 +316,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="83442000" />
-    </task>
-    <task id="LOCAL-00011" summary="all combines first update">
-      <option name="closed" value="true" />
-      <created>1707636584954</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1707636584954</updated>
+      <workItem from="1710434052150" duration="86303000" />
     </task>
     <task id="LOCAL-00012" summary="mt account added">
       <option name="closed" value="true" />
@@ -717,7 +702,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710612300802</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="favorites working!!!! sat upd">
+      <option name="closed" value="true" />
+      <created>1710625224676</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1710625224676</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,7 +728,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="final find coach" />
     <MESSAGE value="home update" />
     <MESSAGE value="pics added" />
     <MESSAGE value="footer added" />
@@ -760,7 +752,8 @@
     <MESSAGE value="coach details working" />
     <MESSAGE value="coach details working friday upd" />
     <MESSAGE value="favorites and find coach working sat upd" />
-    <option name="LAST_COMMIT_MESSAGE" value="favorites and find coach working sat upd" />
+    <MESSAGE value="favorites working!!!! sat upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="favorites working!!!! sat upd" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group7$app.coverage" NAME="app Coverage Results" MODIFIED="1710023758001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />

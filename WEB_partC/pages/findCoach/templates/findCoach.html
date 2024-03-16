@@ -12,9 +12,7 @@
 
 {% block main %}
 
-
-<h2>Hello {{ name }}!</h2>
-
+<h2 class="hello-user">Hello {{ session.get('name') }}!</h2>
 
 {% block page_second_title %}
 <div class="second-title">
