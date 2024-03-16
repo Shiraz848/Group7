@@ -224,6 +224,43 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
     return list(coaches_col.find(query))
 
 
+# Assume that you have imported your coaches_col from the MongoDB setup
+
+def update_coach_rating(coach_phone, user_rating):
+    try:
+        # Find the coach document by phone number
+        coach = coaches_col.find_one({'phone': coach_phone})
+        if coach:
+            # Calculate the new average rating
+            current_rating = coach.get('rating', 0)
+            current_rating_count = coach.get('rating_count', 0)
+            new_avg_rating = ((current_rating * current_rating_count) + user_rating) / (current_rating_count + 1)
+
+            # Update the coach document with the new average rating and increment the rating count
+            update_result = coaches_col.update_one(
+                {'phone': coach_phone},
+                {
+                    '$set': {
+                        'rating': new_avg_rating,
+                        'rating_count': current_rating_count + 1
+                    }
+                }
+            )
+
+            if update_result.modified_count == 0:
+                print("No documents were updated")
+                return False, None
+
+            print(f"Updated coach with new rating: {new_avg_rating}")
+            return True, new_avg_rating
+        else:
+            print("Coach not found")
+            return False, None
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False, None
+
+
 # Run the initialize_db function if this script is executed directly
 if __name__ == '__main__':
     initialize_db()

@@ -12,7 +12,7 @@ favorites_bp = Blueprint(
 )
 
 
-@favorites_bp.route('/favorites')
+@favorites_bp.route('/favorites', methods=['GET', 'POST'])
 def show_favorites():
     user_email = session.get('email')  # Get the user's email from the session
     user = registered_users_col.find_one({'email': user_email})

@@ -17,9 +17,11 @@ app.register_blueprint(favorites_bp)
 from components.coachDetails.coachDetails import coachDetails_bp
 app.register_blueprint(coachDetails_bp)
 
+from components.rateForm.rateForm import rateForm_bp
+app.register_blueprint(rateForm_bp)
+
 from components.confirmationMsg.confirmationMsg import confirmationMsg_bp
 app.register_blueprint(confirmationMsg_bp)
-
 
 from pages.signIn.signIn import signIn_bp
 app.register_blueprint(signIn_bp)

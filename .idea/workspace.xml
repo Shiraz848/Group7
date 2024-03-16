@@ -4,23 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="coach details working friday upd">
+    <list default="true" id="c325ce51-a8d4-400b-9407-018646be1faa" name="Changes" comment="favorites and find coach working sat upd">
       <change afterPath="$PROJECT_DIR$/WEB_partC/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/confirmationMsg.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/static/css/confirmationMsg.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WEB_partC/components/confirmationMsg/templates/confirmationMsg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/rateForm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/static/css/rateForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/static/js/rateForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WEB_partC/components/rateForm/templates/rateForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/coachDetails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/css/coachDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/js/coachDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/static/js/coachDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/components/coachDetails/templates/coachDetails.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/db_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/db_connector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/favorites.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/favorites/templates/favorites.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/findCoach.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/css/findCoach.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/static/js/findCoach.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/findCoach/templates/findCoach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WEB_partC/pages/signIn/signIn.py" beforeDir="false" afterPath="$PROJECT_DIR$/WEB_partC/pages/signIn/signIn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +32,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -321,15 +323,7 @@
       <workItem from="1709537308024" duration="25000" />
       <workItem from="1709627219410" duration="114565000" />
       <workItem from="1710332526484" duration="35907000" />
-      <workItem from="1710434052150" duration="70830000" />
-    </task>
-    <task id="LOCAL-00010" summary="all combines first update">
-      <option name="closed" value="true" />
-      <created>1707493191539</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1707493191539</updated>
+      <workItem from="1710434052150" duration="83442000" />
     </task>
     <task id="LOCAL-00011" summary="all combines first update">
       <option name="closed" value="true" />
@@ -715,7 +709,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710578708247</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="favorites and find coach working sat upd">
+      <option name="closed" value="true" />
+      <created>1710612300802</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1710612300802</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -733,7 +735,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="final my account" />
     <MESSAGE value="final find coach" />
     <MESSAGE value="home update" />
     <MESSAGE value="pics added" />
@@ -758,7 +759,8 @@
     <MESSAGE value="gitignore added" />
     <MESSAGE value="coach details working" />
     <MESSAGE value="coach details working friday upd" />
-    <option name="LAST_COMMIT_MESSAGE" value="coach details working friday upd" />
+    <MESSAGE value="favorites and find coach working sat upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="favorites and find coach working sat upd" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Group7$app.coverage" NAME="app Coverage Results" MODIFIED="1710023758001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
@@ -766,8 +768,8 @@
     <SUITE FILE_PATH="coverage/Group7$db_connector.coverage" NAME="db_connector Coverage Results" MODIFIED="1710261898792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC/utilities" />
     <SUITE FILE_PATH="coverage/Group7$findCoach.coverage" NAME="findCoach Coverage Results" MODIFIED="1710086077686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC/pages/findCoach" />
     <SUITE FILE_PATH="coverage/Group7$Flask__app_py_.coverage" NAME="Flask (WEB_partC/app.py) Coverage Results" MODIFIED="1710261928189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Group7$db_connector__1_.coverage" NAME="db_connector (1) Coverage Results" MODIFIED="1710608493775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
-    <SUITE FILE_PATH="coverage/Group7$Flask__WEB_partC_app_py_.coverage" NAME="Flask (WEB_partC/app.py) Coverage Results" MODIFIED="1710610427449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Group7$db_connector__1_.coverage" NAME="db_connector (1) Coverage Results" MODIFIED="1710621618149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WEB_partC" />
+    <SUITE FILE_PATH="coverage/Group7$Flask__WEB_partC_app_py_.coverage" NAME="Flask (WEB_partC/app.py) Coverage Results" MODIFIED="1710624306936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Group7$mongodb_drafts.coverage" NAME="mongodb_drafts Coverage Results" MODIFIED="1709992118682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

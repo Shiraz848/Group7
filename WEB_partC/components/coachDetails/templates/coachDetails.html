@@ -1,7 +1,7 @@
 <!-- Learn More Coach Details container -->
-<div id="details-modal">
+<div id="details-modal-{{ coach.phone }}" class="details-modal" style="display: none;">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" onclick="hideLearnMore('{{ coach.phone }}')">&times;</span>
         <div class="modal-body">
             <div class="content-section">
                 <h1 class="main-title">Coach Details</h1>
@@ -10,23 +10,27 @@
                     <h2 id="coach-name">{{ coach.name }}</h2>
                     <!-- Generate star ratings -->
                     <div class="rating" id="rating-container">
-                        {% for star in range(coach.rating) %}
-                            <span>&#9733;</span> <!-- Filled star -->
+                        {% for X in range(coach.rating | int) %}
+                        <span>&#9733;</span> <!-- Filled star -->
                         {% endfor %}
-                        {% for star in range(5 - coach.rating) %}
-                            <span>&#9734;</span> <!-- Empty star -->
+                        {% for X in range(5 - (coach.rating | int)) %}
+                        <span>&#9734;</span> <!-- Empty star -->
                         {% endfor %}
                     </div>
                     <!-- Dynamically insert coach details -->
                     <p class="text-font">Type: <span id="coach-type">{{ coach.classType }}</span></p>
                     <p class="text-font">Experience: <span id="coach-experience">{{ coach.experience }}</span></p>
-                    <p class="text-font">Certification: <span id="coach-certification">{{ coach.certification }}</span></p>
+                    <p class="text-font">Certification: <span id="coach-certification">{{ coach.certification }}</span>
+                    </p>
                     <p class="text-font">Mobile: <span id="phone-number">{{ coach.phone }}</span></p>
                     <p class="text-font">City: <span id="coach-city">{{ coach.city }}</span></p>
                     <p class="text-font">Address: <span id="coach-address">{{ coach.address }}</span></p>
                     <div class="modal-buttons">
-                        <button class="rate-button">Rate Coach Now</button>
-                        <button class="close-button" id="learnMore-button">Close</button>
+                        <button type="button" onclick="showRating('{{ coach.phone }}')" class="rate-button">Rate Coach Now</button>
+
+                        <button class="close-button" onclick="hideLearnMore('{{ coach.phone }}')" id="learnMore-button">
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>
@@ -40,21 +44,8 @@
             </div>
         </div>
     </div>
+
 </div>
 
-<!-- Rating Modal -->
-<div id="ratingModal" class="rating-modal">
-    <div class="rating-modal-content">
-        <span class="close">&times;</span>
-        <h1 class="main-title">Rate Coach</h1>
-        <div id="ratingStars">
-            <span class="star" data-rating="1">&#9733;</span>
-            <span class="star" data-rating="2">&#9733;</span>
-            <span class="star" data-rating="3">&#9733;</span>
-            <span class="star" data-rating="4">&#9733;</span>
-            <span class="star" data-rating="5">&#9733;</span>
-        </div>
-        <button class="submit-rating">Submit</button>
-    </div>
-</div>
 
+{% include 'rateForm.html' %}
