@@ -1,7 +1,7 @@
 __pycache__
 .idea
 .venv
-WEB_partC/.env
+.env
 .pytest_cache
 .coverage
 
