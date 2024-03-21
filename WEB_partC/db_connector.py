@@ -42,6 +42,30 @@ def insert_users(users_list):
             print(f"user already exists: {user['email']}")
 
 
+def add_new_user(first_name, last_name, email, phone, city, password, location_access):
+    # Create the new user document
+    new_user = {
+        'firstName': first_name,
+        'lastName': last_name,
+        'email': email,
+        'phone': phone,
+        'city': city,
+        'password': password,
+        'locationAccess': location_access == 'on',  # Convert checkbox value to boolean
+        'contacted_coaches': []  # Initialize with an empty list
+    }
+    # Check if the user already exists
+    if registered_users_col.find_one({'email': email}):
+        return False, "User already exists with that email."
+
+    if registered_users_col.find_one({'phone': phone}):
+        return False, "User already exists with that phone number."
+
+    # Insert the new user into the database
+    registered_users_col.insert_one(new_user)
+    return True, "User registered successfully."
+
+
 # Define a function to initialize the database
 def initialize_db():
     coaches = [
