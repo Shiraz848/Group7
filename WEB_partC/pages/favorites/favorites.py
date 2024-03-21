@@ -1,7 +1,7 @@
 from flask import Blueprint, session, flash
 from flask import render_template,redirect,url_for
 
-from WEB_partC.db_connector import registered_users_col, coaches_col
+from WEB_partC.db_connector import get_user_favorite_coaches, remove_from_favorites
 
 favorites_bp = Blueprint(
     'favorites',
@@ -12,27 +12,17 @@ favorites_bp = Blueprint(
 )
 
 
-@favorites_bp.route('/favorites', methods=['GET', 'POST'])
+@favorites_bp.route('/favorites', methods=['GET'])
 def show_favorites():
     user_email = session.get('email')  # Get the user's email from the session
-    user = registered_users_col.find_one({'email': user_email})
-    favorite_coaches_ids = user.get('favorites', [])
-    favorite_coaches = coaches_col.find({'phone': {'$in': favorite_coaches_ids}})
-    favorite_coaches_list = list(favorite_coaches)  # Convert the cursor to a list
+    favorite_coaches_list = get_user_favorite_coaches(user_email)
 
     return render_template('favorites.html', favorite_coaches=favorite_coaches_list)
 
-
-@favorites_bp.route('/delete_favorite/<coach_id>', methods=['POST'])
-def delete_favorite(coach_id):
+@favorites_bp.route('/delete_favorite/string:<coach_phone>', methods=['POST'])
+def delete_favorite(coach_phone):
     user_email = session.get('email')
-    # Remove the coach from the user's favorites list
-    result = registered_users_col.update_one(
-        {'email': user_email},
-        {'$pull': {'favorites': coach_id}}
-    )
-
-    if result.modified_count > 0:
+    if remove_from_favorites(user_email, coach_phone):
         flash('Coach removed from favorites successfully!', 'success')
     else:
         flash('Failed to remove coach from favorites.', 'error')

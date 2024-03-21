@@ -211,9 +211,9 @@ def initialize_db():
     insert_users(registered_users)
 
 
-def get_filtered_coaches(training_type=None, training_time=None, training_level=None, location_preference=None,
-                         latitude=None, longitude=None):
-    # Construct query based on provided parameters
+# Function to get filtered coaches based on user preferences and location
+def get_filtered_coaches(training_type=None, training_time=None, training_level=None, user_location=None,
+                         user_city=None):
     query = {}
     if training_type:
         query['classType'] = training_type
@@ -222,25 +222,39 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
     if training_level:
         query['trainingLevel'] = training_level
 
-    if location_preference == 'city':
-        # Assuming 'city' field in both user and coach collections and the user's city is stored in the session
-        user_city = session.get('city')
+    # If user_location is provided, you might want to filter by proximity,
+    # which would require geospatial queries that MongoDB supports.
+    # if user_location:
+    #     query['location'] = { some geospatial query here }
+
+    if user_city:
         query['city'] = user_city
-    elif location_preference == 'current_location' and latitude and longitude:
-        # Assuming you have geospatial indexing set up in MongoDB
-        query['location'] = {
-            '$near': {
-                '$geometry': {
-                    'type': 'Point',
-                    'coordinates': [float(longitude), float(latitude)]
-                }
-            }
-        }
 
-        # Query the MongoDB database
-    coaches_list = list(coaches_col.find(query))
+    return list(coaches_col.find(query))
 
-    return render_template('findCoach.html', coaches=coaches_list)
+
+def get_user_favorite_coaches(user_email):
+    user = registered_users_col.find_one({'email': user_email})
+    favorite_coaches_ids = user.get('favorites', [])
+    favorite_coaches = coaches_col.find({'phone': {'$in': favorite_coaches_ids}})
+    favorite_coaches_list = list(favorite_coaches)  # Convert the cursor to a list
+    return favorite_coaches_list
+
+
+def add_to_user_favorites(user_email, coach_phone):
+    result = registered_users_col.update_one(
+        {"email": user_email},
+        {'$addToSet': {'favorites': coach_phone}}
+    )
+    return result.modified_count > 0
+
+
+def remove_from_favorites(user_email, coach_phone):
+    result = registered_users_col.update_one(
+        {"email": user_email},
+        {'$pull': {'favorites': coach_phone}}
+    )
+    return result.modified_count > 0
 
 
 def update_coach_rating(coach_phone, user_rating):

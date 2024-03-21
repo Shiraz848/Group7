@@ -34,7 +34,7 @@
         <span class="class-type">Type: {{ coach.classType }}</span>
         <button class="learn-more-button" onclick="showLearnMore('{{ coach.phone }}')">Learn More</button>
         <!-- Delete button with an action that points to your delete route -->
-        <form action="{{ url_for('favorites.delete_favorite', coach_id=coach.phone) }}" method="post">
+        <form action="{{ url_for('favorites.delete_favorite', coach_phone=coach.phone) }}" method="post">
             <button type="submit" class="delete-button">Delete</button>
         </form>
 
