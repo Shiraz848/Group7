@@ -25,10 +25,10 @@
         <span class="coach-name">{{ coach.name }}</span>
         <div class="stars" id="rating-container">
             {% for star in range(coach.rating|int) %}
-            <span>&#9733;</span> <!-- Filled star -->
+                <span>&#9733;</span> <!-- Filled star -->
             {% endfor %}
             {% for star in range(5 - coach.rating|int) %}
-            <span>&#9734;</span> <!-- Empty star -->
+                <span>&#9734;</span> <!-- Empty star -->
             {% endfor %}
         </div>
         <span class="class-type">Type: {{ coach.classType }}</span>

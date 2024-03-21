@@ -19,7 +19,7 @@ def login():
             email = request.form['email']
             password = request.form['password']
             # Query the database for the user by email
-            user = registered_users_col.find_one({"email": email})
+            user = registered_users_col.find_one({'email': email})
             print('hiiiiii')
             print(user)
             if user and user.get('password') == password:
