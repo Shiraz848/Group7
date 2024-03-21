@@ -1,5 +1,6 @@
 import os
 import pymongo
+from flask import session, render_template
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -210,7 +211,8 @@ def initialize_db():
     insert_users(registered_users)
 
 
-def get_filtered_coaches(training_type=None, training_time=None, training_level=None):
+def get_filtered_coaches(training_type=None, training_time=None, training_level=None, location_preference=None,
+                         latitude=None, longitude=None):
     # Construct query based on provided parameters
     query = {}
     if training_type:
@@ -220,11 +222,26 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
     if training_level:
         query['trainingLevel'] = training_level
 
-    # Execute the query on the MongoDB collection
-    return list(coaches_col.find(query))
+    if location_preference == 'city':
+        # Assuming 'city' field in both user and coach collections and the user's city is stored in the session
+        user_city = session.get('city')
+        query['city'] = user_city
+    elif location_preference == 'current_location' and latitude and longitude:
+        # Assuming you have geospatial indexing set up in MongoDB
+        query['location'] = {
+            '$near': {
+                '$geometry': {
+                    'type': 'Point',
+                    'coordinates': [float(longitude), float(latitude)]
+                }
+            }
+        }
 
+        # Query the MongoDB database
+    coaches_list = list(coaches_col.find(query))
 
-# Assume that you have imported your coaches_col from the MongoDB setup
+    return render_template('findCoach.html', coaches=coaches_list)
+
 
 def update_coach_rating(coach_phone, user_rating):
     try:
