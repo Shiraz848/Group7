@@ -245,28 +245,18 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
 
 
 def add_to_user_contacted(user_email, coach_phone):
-    print(f"Adding {coach_phone} to {user_email}'s contacted coaches.")  # Debugging print
     result = registered_users_col.update_one(
         {"email": user_email},
-        {'$addToSet': {'contacted_coaches': coach_phone}}
+        {"$addToSet": {"contacted_coaches": coach_phone}}
     )
-    if result.modified_count > 0:
-        print(f"Successfully added {coach_phone} to contacted coaches.")
-    else:
-        print(f"Failed to add {coach_phone} to contacted coaches.")
     return result.modified_count > 0
 
 
 def add_user_to_coach_interested(coach_phone, user_email):
-    print(f"Adding {user_email} to {coach_phone}'s interested users.")  # Debugging print
-    result = registered_users_col.update_one(
+    result = coaches_col.update_one(
         {"phone": coach_phone},
-        {'$addToSet': {'interested_users': user_email}}
+        {"$addToSet": {"interested_users": user_email}}
     )
-    if result.modified_count > 0:
-        print(f"Successfully added {coach_phone} to contacted coaches.")
-    else:
-        print(f"Failed to add {coach_phone} to contacted coaches.")
     return result.modified_count > 0
 
 

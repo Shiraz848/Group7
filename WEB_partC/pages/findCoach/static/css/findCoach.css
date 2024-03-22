@@ -129,6 +129,18 @@
 
 }
 
+.already-contacted {
+  color: #555; /* Dark grey text color */
+  background-color: #dff0d8; /* Light green background for a subtle hint */
+  border-left: 4px solid #3c763d; /* Green left border for emphasis */
+  padding: 0.5rem 1rem; /* Some padding around the text */
+  margin: 0.5rem 0; /* Some margin above and below the alert */
+  border-radius: 4px; /* Rounded corners */
+  display: inline-block; /* Inline block level */
+  font-size: 0.9rem; /* Slightly smaller font size than the content text */
+}
+
+
 @media (max-width: 768px) {
     .coach {
         flex-direction: column;

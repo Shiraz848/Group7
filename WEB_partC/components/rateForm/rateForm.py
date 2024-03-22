@@ -18,6 +18,7 @@ def rate_coach():
     coach_phone = request.form['coach_phone']
     print(f'coach is: {coach_phone}')
     user_rating = int(request.form.get('rating'))  # Convert the rating to an integer
+    return_url = request.form.get('return_url')  # Fallback to home page if not provided
     # ... proceed with your logic to update the coach rating ...
     success, new_rating = update_coach_rating(coach_phone, user_rating)
 
@@ -26,4 +27,4 @@ def rate_coach():
     else:
         flash('Failed to update coach rating.', 'error')
 
-    return redirect(url_for('favorites.show_favorites'))
+    return redirect(return_url)  # Redirect back to the page the user came from

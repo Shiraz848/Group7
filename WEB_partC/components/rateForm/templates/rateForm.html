@@ -6,10 +6,10 @@
             <h1 class="main-title">Rate Coach</h1>
             <div id="ratingStars">
                 {% for i in range(1, 6) %}
-                <label>
-                    <input type="radio" name="rating" value="{{ i }}" class="star-input">
-                    <span class="star">&#9733;</span>
-                </label>
+                    <label>
+                        <input type="radio" name="rating" value="{{ i }}" class="star-input">
+                        <span class="star">&#9733;</span>
+                    </label>
                 {% endfor %}
 
             </div>
@@ -17,6 +17,7 @@
             <input type="hidden" name="coach_phone" id="coachPhoneInput">
             <!-- Hidden input to store the selected rating -->
             <input type="hidden" name="rating" id="ratingInput">
+            <input type="hidden" name="return_url" value="{{ request.url }}"> <!-- Store the current URL -->
 
             <button type="submit" class="submit-rating">Submit</button>
         </form>

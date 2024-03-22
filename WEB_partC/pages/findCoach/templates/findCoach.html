@@ -72,64 +72,69 @@
         </div>
     </form>
 
-    <form id="coaches-form" action="{{ url_for('findCoach.contact_coaches') }}" method="POST">
-        <div id="search-results-list">
-            {% for coach in coaches %}
-                <div class="coach">
-                    <input type="checkbox" name="selected_coaches" value="{{ coach.phone }}">
-                    <span class="coach-name">{{ coach.name }}</span>
-                    <div class="stars" id="rating-container">
-                        {% for star in range(coach.rating|int) %}
-                            <span>&#9733;</span> <!-- Filled star -->
-                        {% endfor %}
-                        {% for star in range(5 - coach.rating|int) %}
-                            <span>&#9734;</span> <!-- Empty star -->
-                        {% endfor %}
+    <div id="search-results-list">
+        {% for coach in coaches %}
+            <div class="coach">
+                {% if coach.phone in already_contacted %}
+                    <div class="already-contacted">
+                        contacted
                     </div>
-
-                    <span class="class-type">Type: {{ coach.classType }}</span>
-
-                    <button type="button" onclick="showLearnMore('{{ coach.phone }}')" class="learn-more-button">Learn
-                        More
-                    </button>
-
-                    {% if coach not in favorites %}
-
-                        <form action="{{ url_for('findCoach.add_to_favorites', coach_phone=coach.phone) }}"
-                              method="POST">
-                            <button class="addToFavorites-button" type="submit">Add to Favorites</button>
-                        </form>
-                    {% else %}
-                        <span class="in-favorites">In Favorites</span>
-                    {% endif %}
-
-                    {% include 'coachDetails.html' %}
-
+                {% else %}
+                    <input type="checkbox" class="selected-coach-checkbox" name="selected_coaches"
+                           value="{{ coach.phone }}">
+                {% endif %}
+                <span class="coach-name">{{ coach.name }}</span>
+                <div class="stars" id="rating-container">
+                    {% for star in range(coach.rating|int) %}
+                        <span>&#9733;</span> <!-- Filled star -->
+                    {% endfor %}
+                    {% for star in range(5 - coach.rating|int) %}
+                        <span>&#9734;</span> <!-- Empty star -->
+                    {% endfor %}
                 </div>
-            {% else %}
-                <p>Unfortunately there are no matching coaches.</p>
 
-            {% endfor %}
-        </div>
-{#        {% include 'confirmationMsg.html' %}#}
+                <span class="class-type">Type: {{ coach.classType }}</span>
 
-        <button type="submit" id="contact-me-button">Contact Me</button>
+                <button type="button" onclick="showLearnMore('{{ coach.phone }}')" class="learn-more-button">Learn
+                    More
+                </button>
 
+                {% if coach not in favorites %}
 
+                    <form action="{{ url_for('findCoach.add_to_favorites', coach_phone=coach.phone) }}"
+                          method="POST">
+                        <button class="addToFavorites-button" type="submit">Add to Favorites</button>
+                    </form>
+                {% else %}
+                    <span class="in-favorites">In Favorites</span>
+                {% endif %}
+
+                {% include 'coachDetails.html' %}
+
+            </div>
+
+        {% endfor %}
+    </div>
+    <!-- Contact Coaches Form -->
+    <form id="coaches-form" action="{{ url_for('findCoach.contact_coaches') }}" method="POST">
+        <!-- Hidden inputs will be populated by JavaScript when form submits -->
+        {% for coach in coaches %}
+            <input type="hidden" name="selected_coaches" id="hidden-{{ coach.phone }}">
+        {% endfor %}
+        <button id="contact-me-button" type="submit">Contact Me</button>
     </form>
 
-    {% if contact_made %}
-        showConfirmationMsg()
 
-    {% endif %}
+    {% include 'confirmationMsg.html' %}
 
 
 {% endblock %}
-
 {% block page_body_js %}
     {{ super() }}
     <script src="{{ url_for('findCoach.static', filename='js/findCoach.js') }}"></script>
     <script src="{{ url_for('coachDetails.static', filename='js/coachDetails.js') }}"></script>
     <script src="{{ url_for('rateForm.static', filename='js/rateForm.js') }}"></script>
-    <script src="{{ url_for('confirmationMsg.static', filename='js/confirmationMsg.js') }}"></script>
+    {% if contact_made %}
+        <script src="{{ url_for('confirmationMsg.static', filename='js/confirmationMsg.js') }}"></script>
+    {% endif %}
 {% endblock %}
