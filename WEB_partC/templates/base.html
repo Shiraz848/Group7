@@ -34,6 +34,17 @@
 {% include('header.html') %}
 {% endblock %}
 
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div id="flash-messages">
+      {% for category, message in messages %}
+        <div class="flash-message flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
 
 {% block main %}
 
@@ -50,6 +61,5 @@
     {% block page_body_js %}
         <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     {% endblock %}
-
 </body>
 </html>

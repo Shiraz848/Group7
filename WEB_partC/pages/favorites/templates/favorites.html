@@ -4,56 +4,57 @@
 
 
 {% block page_head_css %}
-{{ super() }}
-<link rel="stylesheet" href="{{ url_for('favorites.static', filename='css/favorites.css') }}">
-<link rel="stylesheet" href="{{ url_for('coachDetails.static', filename='css/coachDetails.css') }}">
-<link rel="stylesheet" href="{{ url_for('rateForm.static', filename='css/rateForm.css') }}">
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('favorites.static', filename='css/favorites.css') }}">
+    <link rel="stylesheet" href="{{ url_for('coachDetails.static', filename='css/coachDetails.css') }}">
+    <link rel="stylesheet" href="{{ url_for('rateForm.static', filename='css/rateForm.css') }}">
 {% endblock %}
 
 {% block main %}
 
-{% block page_second_title %}
-<div class="second-title">
-    <h2>Your Favorite Coaches:</h2>
-</div>
-{% endblock %}
-
-
-<div id="favorites-list">
-    {% for coach in favorite_coaches %}
-    <div class="favorite-coach">
-        <span class="coach-name">{{ coach.name }}</span>
-        <div class="stars" id="rating-container">
-            {% for star in range(coach.rating|int) %}
-                <span>&#9733;</span> <!-- Filled star -->
-            {% endfor %}
-            {% for star in range(5 - coach.rating|int) %}
-                <span>&#9734;</span> <!-- Empty star -->
-            {% endfor %}
+    {% block page_second_title %}
+        <div class="second-title">
+            <h2>Your Favorite Coaches:</h2>
         </div>
-        <span class="class-type">Type: {{ coach.classType }}</span>
-        <button class="learn-more-button" onclick="showLearnMore('{{ coach.phone }}')">Learn More</button>
-        <!-- Delete button with an action that points to your delete route -->
-        <form action="{{ url_for('favorites.delete_favorite', coach_phone=coach.phone) }}" method="post">
-            <button type="submit" class="delete-button">Delete</button>
-        </form>
+    {% endblock %}
 
 
-        {% include 'coachDetails.html' %}
+    <div id="favorites-list">
+        {% for coach in favorite_coaches %}
+            <div class="favorite-coach">
+                <span class="coach-name">{{ coach.name }}</span>
+                <div class="stars" id="rating-container">
+                    {% for star in range(coach.rating|int) %}
+                        <span>&#9733;</span> <!-- Filled star -->
+                    {% endfor %}
+                    {% for star in range(5 - coach.rating|int) %}
+                        <span>&#9734;</span> <!-- Empty star -->
+                    {% endfor %}
+                </div>
+                <span class="class-type">Type: {{ coach.classType }}</span>
+                <button class="learn-more-button" onclick="showLearnMore('{{ coach.phone }}')">Learn More</button>
+                <!-- Delete button with an action that points to your delete route -->
+                <form action="{{ url_for('favorites.delete_favorite', coach_phone=coach.phone) }}" method="post">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
 
 
+                {% include 'coachDetails.html' %}
+
+
+            </div>
+        {% else %}
+            <p>You have no favorite coaches.</p>
+        {% endfor %}
     </div>
-    {% else %}
-    <p>You have no favorite coaches.</p>
-    {% endfor %}
-</div>
 
 
 {% endblock %}
 
 
 {% block page_body_js %}
-<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
-<script src="{{ url_for('coachDetails.static', filename='js/coachDetails.js') }}"></script>
-<script src="{{ url_for('rateForm.static', filename='js/rateForm.js') }}"></script>
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+    <script src="{{ url_for('coachDetails.static', filename='js/coachDetails.js') }}"></script>
+    <script src="{{ url_for('rateForm.static', filename='js/rateForm.js') }}"></script>
 {% endblock %}
