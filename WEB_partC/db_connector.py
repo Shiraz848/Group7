@@ -32,14 +32,14 @@ def insert_coaches(coaches_list):
             print(f"Coach already exists: {coach['name']}")
 
 
-def insert_users(users_list):
-    for user in users_list:
-        # Use the phone number as a unique identifier
-        if not registered_users_col.find_one({'email': user['email']}):
-            registered_users_col.insert_one(user)
-            print(f"Inserted users: {user['email']}")
-        else:
-            print(f"user already exists: {user['email']}")
+# def insert_users(users_list):
+#     for user in users_list:
+#         # Use the phone number as a unique identifier
+#         if not registered_users_col.find_one({'email': user['email']}):
+#             registered_users_col.insert_one(user)
+#             print(f"Inserted users: {user['email']}")
+#         else:
+#             print(f"user already exists: {user['email']}")
 
 
 def add_new_user(first_name, last_name, email, phone, city, password, location_access):
@@ -52,7 +52,6 @@ def add_new_user(first_name, last_name, email, phone, city, password, location_a
         'city': city,
         'password': password,
         'locationAccess': location_access == 'on',  # Convert checkbox value to boolean
-        'contacted_coaches': []  # Initialize with an empty list
     }
     # Check if the user already exists
     if registered_users_col.find_one({'email': email}):
@@ -151,93 +150,87 @@ def initialize_db():
         }
     ]
 
-    registered_users = [
+    # registered_users = [
 
-        {
-            'firstName': 'Johny',
-            'lastName': 'Boy',
-            'email': 'jhonyboy@gmail.com',
-            'phone': '050-666-1234',
-            'city': 'Tel Aviv-Yafo',
-            'password': 'PaSsWoRd123',
-            'location': {
-                'type': 'Point',
-                'coordinates': [34.7818, 32.0853]  # Note: longitude comes first in GeoJSON
-            },
-            'locationAccess': 'true',
-            'contacted_coaches': []
-
-        },
-        # {
-        #     'firstName': 'Alice',
-        #     'lastName': 'Smith',
-        #     'email': 'alice.smith@yahoo.com',
-        #     'phone': '053-444-1234',
-        #     'city': 'Jerusalem',
-        #     'password': 'P@55w0rd',
-        #     'location': {
-        #         'type': 'Point',
-        #         'coordinates': [35.2137, 31.7683]  # Note: longitude comes first in GeoJSON
-        #     },
-        #     'locationAccess': 'false',
-        #             'contacted_coaches': []
-        #
-        # },
-        # {
-        #
-        #     'firstName': 'Michael',
-        #     'lastName': 'Johnson',
-        #     'email': 'michael.johnson@hotmail.com',
-        #     'phone': '052-345-2222',
-        #     'city': 'Haifa',
-        #     'password': 'ComplexPass123',
-        #     'location': {
-        #         'type': 'Point',
-        #         'coordinates': [34.9896, 32.7940]  # Note: longitude comes first in GeoJSON
-        #     },
-        #     'locationAccess': 'true',
-        #             'contacted_coaches': []
-        #
-        # },
-        {
-            'firstName': 'Emily',
-            'lastName': 'Davis',
-            'email': 'emily.davis@outlook.com',
-            'phone': '054-345-1233',
-            'city': 'Tel Aviv-Yafo',
-            'password': 'StrongPassword789',
-            'location': {
-                'type': 'Point',
-                'coordinates': [34.77369, 32.06154]  # Note: longitude comes first in GeoJSON
-            },
-            'locationAccess': 'false',
-            'contacted_coaches': []
-
-        },
-        {
-            'firstName': 'Emily',
-            'lastName': 'Brown',
-            'email': 'david.brown@aol.com',
-            'phone': '053-443-2343',
-            'city': 'Beersheba',
-            'password': 'SecurePass12',
-            'location': {
-                'type': 'Point',
-                'coordinates': [34.7915, 31.2518]  # Note: longitude comes first in GeoJSON
-            },
-            'locationAccess': 'true',
-            'contacted_coaches': []
-
-        }
-    ]
+    #     {
+    #         'firstName': 'Johny',
+    #         'lastName': 'Boy',
+    #         'email': 'jhonyboy@gmail.com',
+    #         'phone': '050-666-1234',
+    #         'city': 'Tel Aviv-Yafo',
+    #         'password': 'PaSsWoRd123',
+    #         'location': {
+    #             'type': 'Point',
+    #             'coordinates': [34.7818, 32.0853]  # Note: longitude comes first in GeoJSON
+    #         },
+    #         'locationAccess': 'true'
+    #
+    #     },
+    #     # {
+    #     #     'firstName': 'Alice',
+    #     #     'lastName': 'Smith',
+    #     #     'email': 'alice.smith@yahoo.com',
+    #     #     'phone': '053-444-1234',
+    #     #     'city': 'Jerusalem',
+    #     #     'password': 'P@55w0rd',
+    #     #     'location': {
+    #     #         'type': 'Point',
+    #     #         'coordinates': [35.2137, 31.7683]  # Note: longitude comes first in GeoJSON
+    #     #     },
+    #     #     'locationAccess': 'false'
+    #     #
+    #     # },
+    #     # {
+    #     #
+    #     #     'firstName': 'Michael',
+    #     #     'lastName': 'Johnson',
+    #     #     'email': 'michael.johnson@hotmail.com',
+    #     #     'phone': '052-345-2222',
+    #     #     'city': 'Haifa',
+    #     #     'password': 'ComplexPass123',
+    #     #     'location': {
+    #     #         'type': 'Point',
+    #     #         'coordinates': [34.9896, 32.7940]  # Note: longitude comes first in GeoJSON
+    #     #     },
+    #     #     'locationAccess': 'true'
+    #     #
+    #     # },
+    #     {
+    #         'firstName': 'Emily',
+    #         'lastName': 'Davis',
+    #         'email': 'emily.davis@outlook.com',
+    #         'phone': '054-345-1233',
+    #         'city': 'Tel Aviv-Yafo',
+    #         'password': 'StrongPassword789',
+    #         'location': {
+    #             'type': 'Point',
+    #             'coordinates': [34.77369, 32.06154]  # Note: longitude comes first in GeoJSON
+    #         },
+    #         'locationAccess': 'false'
+    #
+    #     },
+    #     {
+    #         'firstName': 'Emily',
+    #         'lastName': 'Brown',
+    #         'email': 'david.brown@aol.com',
+    #         'phone': '053-443-2343',
+    #         'city': 'Beersheba',
+    #         'password': 'SecurePass12',
+    #         'location': {
+    #             'type': 'Point',
+    #             'coordinates': [34.7915, 31.2518]  # Note: longitude comes first in GeoJSON
+    #         },
+    #         'locationAccess': 'true'
+    #
+    #     }
+    # ]
 
     insert_coaches(coaches)
-    insert_users(registered_users)
+    # insert_users(registered_users)
 
 
 # Function to get filtered coaches based on user preferences and location
-def get_filtered_coaches(training_type=None, training_time=None, training_level=None, user_location=None,
-                         user_city=None):
+def get_filtered_coaches(training_type=None, training_time=None, training_level=None):
     query = {}
     if training_type:
         query['classType'] = training_type
@@ -246,15 +239,35 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
     if training_level:
         query['trainingLevel'] = training_level
 
-    # If user_location is provided, you might want to filter by proximity,
-    # which would require geospatial queries that MongoDB supports.
-    # if user_location:
-    #     query['location'] = { some geospatial query here }
-
-    if user_city:
-        query['city'] = user_city
+    # Add location filters here if needed
 
     return list(coaches_col.find(query))
+
+
+def add_to_user_contacted(user_email, coach_phone):
+    print(f"Adding {coach_phone} to {user_email}'s contacted coaches.")  # Debugging print
+    result = registered_users_col.update_one(
+        {"email": user_email},
+        {'$addToSet': {'contacted_coaches': coach_phone}}
+    )
+    if result.modified_count > 0:
+        print(f"Successfully added {coach_phone} to contacted coaches.")
+    else:
+        print(f"Failed to add {coach_phone} to contacted coaches.")
+    return result.modified_count > 0
+
+
+def add_user_to_coach_interested(coach_phone, user_email):
+    print(f"Adding {user_email} to {coach_phone}'s interested users.")  # Debugging print
+    result = registered_users_col.update_one(
+        {"phone": coach_phone},
+        {'$addToSet': {'interested_users': user_email}}
+    )
+    if result.modified_count > 0:
+        print(f"Successfully added {coach_phone} to contacted coaches.")
+    else:
+        print(f"Failed to add {coach_phone} to contacted coaches.")
+    return result.modified_count > 0
 
 
 def get_user_favorite_coaches(user_email):

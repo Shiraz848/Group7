@@ -66,7 +66,6 @@ const validateForm = () => {
     return true;
 }
 
-
 const displayError = (message) => {
     const msg = document.querySelector('.msg');
     msg.innerHTML = message;

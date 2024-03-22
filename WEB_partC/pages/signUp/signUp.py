@@ -21,7 +21,7 @@ def register():
         city = request.form['city']
         password = request.form['password']
         confirm_password = request.form['confirmPassword']
-        location_access = 'locationAccess' in request.form
+        location_access = request.form['locationAccess']
 
         # Add new user to the database
         success, message = add_new_user(first_name, last_name, email, phone, city, password, location_access)

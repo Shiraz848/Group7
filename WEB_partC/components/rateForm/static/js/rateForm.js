@@ -1,4 +1,4 @@
-// Function to show modal
+
 // Function to show modal
 function showRating(phone) {
   // Ensure the hidden input is set to the coach's phone number

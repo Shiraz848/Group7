@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('findCoach.static', filename='css/findCoach.css') }}">
     <link rel="stylesheet" href="{{ url_for('coachDetails.static', filename='css/coachDetails.css') }}">
     <link rel="stylesheet" href="{{ url_for('rateForm.static', filename='css/rateForm.css') }}">
-    {#<link rel="stylesheet" href="{{ url_for('confirmationMsg.static', filename='css/confirmationMsg.css') }}">#}
+    <link rel="stylesheet" href="{{ url_for('confirmationMsg.static', filename='css/confirmationMsg.css') }}">
 {% endblock %}
 
 
@@ -72,7 +72,7 @@
         </div>
     </form>
 
-    <form id="coaches-form" action="{{ url_for('findCoach.contact_coaches') }}" method="GET">
+    <form id="coaches-form" action="{{ url_for('findCoach.contact_coaches') }}" method="POST">
         <div id="search-results-list">
             {% for coach in coaches %}
                 <div class="coach">
@@ -96,34 +96,40 @@
                     {% if coach not in favorites %}
 
                         <form action="{{ url_for('findCoach.add_to_favorites', coach_phone=coach.phone) }}"
-                              method="post">
+                              method="POST">
                             <button class="addToFavorites-button" type="submit">Add to Favorites</button>
                         </form>
                     {% else %}
                         <span class="in-favorites">In Favorites</span>
                     {% endif %}
+
+                    {% include 'coachDetails.html' %}
+
                 </div>
-
-
-                {% include 'coachDetails.html' %}
+            {% else %}
+                <p>Unfortunately there are no matching coaches.</p>
 
             {% endfor %}
         </div>
-
-        {#    <div id="confirmation-message" class="confirmation-message" style="display: none;">#}
-        {#        {% include 'confirmationMsg.html' %}#}
-        </div>
+{#        {% include 'confirmationMsg.html' %}#}
 
         <button type="submit" id="contact-me-button">Contact Me</button>
 
 
     </form>
 
+    {% if contact_made %}
+        showConfirmationMsg()
+
+    {% endif %}
+
 
 {% endblock %}
 
 {% block page_body_js %}
+    {{ super() }}
     <script src="{{ url_for('findCoach.static', filename='js/findCoach.js') }}"></script>
     <script src="{{ url_for('coachDetails.static', filename='js/coachDetails.js') }}"></script>
     <script src="{{ url_for('rateForm.static', filename='js/rateForm.js') }}"></script>
+    <script src="{{ url_for('confirmationMsg.static', filename='js/confirmationMsg.js') }}"></script>
 {% endblock %}
