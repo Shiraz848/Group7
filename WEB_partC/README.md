@@ -51,4 +51,6 @@ This web application is designed to help users search for fitness trainers in th
 
 - **Logout Feature**: Allows users to disconnect and return to the home page.
 
+![logout button Screenshot](readme_screenshots/page_imges/logout.jpg "logout button Screenshot")
+
 
