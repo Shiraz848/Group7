@@ -10,7 +10,7 @@ This web application is designed to help users search for fitness trainers in th
 
 ### Visiting the Home Page
 
-1. Enter the website's URL to navigate to the home page.
+1. Navigate to the home page.
 2. On the home page, you can read about the general details of the service offered.
 
 ### Signing Up
