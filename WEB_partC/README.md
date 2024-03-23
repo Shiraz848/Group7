@@ -26,12 +26,32 @@ This web application is designed to help users search for fitness trainers in th
 
 - **Coach Search Page (findCoach)**: Registered users can:
   - Search for coaches based on preferences.
-  - View specific details of each coach (learn-more button) - in the code it's the coachDetails directory.
-  - Rate coaches - through the learn-more button.
+  - View specific details of each coach (learn-more button) - code is in the coachDetails directory.
+  - Rate coaches - through the learn-more button  - code is in the rateForm directory.
   - Add coaches to their favorite list.
   - Select coaches and send a "Contact Me" request - adds the user's phone number to the intrested-list of each coach.
 
 ![findCoach Page Screenshot](readme_screenshots/page_imges/findCoach.jpg "findCoach Page Screenshot")
+
+
+- **coach details**: Users can view coach details via "learn more" button
+
+![coach details Screenshot](readme_screenshots/page_imges/coachDetails.jpg "coach details Screenshot")
+
+
+- **coach rating**: Users can rate coach  via "rate coach now" button
+
+![rateForm Screenshot](readme_screenshots/page_imges/rateForm.jpg "rateForm Screenshot")
+
+
+- **"Contact Me" request**: Users can send their details to specific coaches
+
+![contactMe Screenshot](readme_screenshots/page_imges/contactMe.jpg "contactMe Screenshot")
+
+
+- **Confirmation message**: After sending their details to specific coaches, the user receives confirmation message. He is not able to select that coach for contacting again.
+
+![confirmationMsg Screenshot](readme_screenshots/page_imges/confirmationMsg.jpg "confirmationMsg Screenshot")
 
 
 - **Favorites Page**: Users can manage their favorite coaches, view coaches details, rate coaches, and remove coaches from the list.
