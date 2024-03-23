@@ -13,7 +13,7 @@
 
 {% block main %}
 
-    <h2 class="hello-user">Hello {{ session.get('name') }}!</h2>
+    <h2 class="hello-user">Hello {{ session.get('firstName') }}!</h2>
 
     {% block page_second_title %}
         <div class="second-title">
@@ -65,8 +65,10 @@
                 </div>
             </div>
 
-            <input type="hidden" name="latitude" id="latitudeInput" value="">
-            <input type="hidden" name="longitude" id="longitudeInput" value="">
+            <!-- Inside the <form> tag in your findCoach.html template -->
+            <input type="hidden" id="latitudeInput" name="latitude">
+            <input type="hidden" id="longitudeInput" name="longitude">
+
 
             <button type="submit" class="search-button">Search</button>
         </div>

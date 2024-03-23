@@ -9,6 +9,7 @@ homePage_bp = Blueprint(
     template_folder='templates'
 )
 
+
 @homePage_bp.route('/', methods=['GET'])
 def homePage_func():
     return render_template('homePage.html')

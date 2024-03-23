@@ -2,64 +2,64 @@
 <html lang="{{ page_lang | default('en', true) }}">
 <head>
     {% block page_head %}
-    <!-- Title -->
-    <title>{{ page_head_title_author | default('Ido and Shiraz', true) }} | {{ page_head_title | default('WEB Group7
+        <!-- Title -->
+        <title>{{ page_head_title_author | default('Ido and Shiraz', true) }} | {{ page_head_title | default('WEB Group7
         project 2024', true) }}</title>
 
-    <!-- Meta tags -->
-    {% block page_head_meta %}
-    <meta charset="UTF-8"/>
-    <meta name="author" content="Ido and Shiraz"/>
-    <meta name="description" content="WEB Group7 project 2024 as a base to start developing on"/>
-    <meta name="keywords"
-          content="flask, lean, skeleton, project, structure, environment, setup, template, fullstack, web, development, app, university, education"/>
+        <!-- Meta tags -->
+        {% block page_head_meta %}
+            <meta charset="UTF-8"/>
+            <meta name="author" content="Ido and Shiraz"/>
+            <meta name="description" content="WEB Group7 project 2024 as a base to start developing on"/>
+            <meta name="keywords"
+                  content="flask, lean, skeleton, project, structure, environment, setup, template, fullstack, web, development, app, university, education"/>
 
-    {% endblock %}
+        {% endblock %}
 
-    <!-- favicon -->
-    <link rel="icon"
-          href="../static/media/img/woman_trainer_rope.jpg"/>
+        <!-- favicon -->
+        <link rel="icon"
+              href="../static/media/img/woman_trainer_rope.jpg"/>
 
-    <!-- CSS -->
-    {% block page_head_css %}
+        <!-- CSS -->
+        {% block page_head_css %}
 
-    {% include('styles.html') %}
+            {% include('styles.html') %}
 
-    {% endblock %}
+        {% endblock %}
     {% endblock %}
 </head>
 <body>
 
 {% block header %}
-{% include('header.html') %}
+    {% include('header.html') %}
 {% endblock %}
 
 <!-- Flash Messages -->
 {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <div id="flash-messages">
-      {% for category, message in messages %}
-        <div class="flash-message flash-{{ category }}">{{ message }}</div>
-      {% endfor %}
-    </div>
-  {% endif %}
+    {% if messages %}
+        <div id="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endwith %}
 
 
 {% block main %}
 
-{% block page_second_title %}
+    {% block page_second_title %}
         <div class="second-title">
-            <h2> {{secondTitle}} </h2>
+            <h2> {{ secondTitle }} </h2>
         </div>
+    {% endblock %}
+
 {% endblock %}
 
-    {% endblock %}
+{% include('footer.html') %}
 
-    {% include('footer.html') %}
-
-    {% block page_body_js %}
-        <script src="{{ url_for('static', filename='js/base.js') }}"></script>
-    {% endblock %}
+{% block page_body_js %}
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+{% endblock %}
 </body>
 </html>

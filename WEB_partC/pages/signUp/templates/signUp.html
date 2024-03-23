@@ -3,10 +3,13 @@
 {% set page_head_title = 'Sign Up' %}
 
 {% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedbackMsg.css') }}">
     <link rel="stylesheet" href="{{ url_for('signUp.static', filename='css/signUp.css') }}">
 {% endblock %}
 
 {% block header %} {% endblock %}
+
+
 {% block main %}
     <header class="main-title">
         <h1>Welcome to find my coach!</h1>
@@ -106,5 +109,6 @@
 
 
 {% block page_body_js %}
+    {{ super() }}
     <script src="{{ url_for('signUp.static', filename='js/signUp.js') }}"></script>
 {% endblock %}

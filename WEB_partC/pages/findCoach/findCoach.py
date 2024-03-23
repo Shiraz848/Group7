@@ -1,7 +1,7 @@
 from flask import Blueprint, request, render_template, session, json, jsonify, redirect, url_for, flash
 from WEB_partC.db_connector import (get_filtered_coaches, get_user_favorite_coaches,
                                     add_to_user_favorites, add_to_user_contacted,
-                                    add_user_to_coach_interested)
+                                    add_user_to_coach_interested, find_one_user)
 
 findCoach_bp = Blueprint(
     'findCoach',
@@ -17,12 +17,29 @@ def find_coach():
     name = session.get('name', 'Guest')
     user_email = session.get('email')
 
-    # Fetch new set of coaches based on filters if any
     training_type = request.args.get('training-type')
     training_time = request.args.get('training-time')
     training_level = request.args.get('training-level')
+    location = request.args.get('location')
 
-    coaches_list = get_filtered_coaches(training_type, training_time, training_level)
+    use_current_location = request.args.get('location') == 'current'
+    latitude = request.args.get('latitude') if use_current_location else None
+    longitude = request.args.get('longitude') if use_current_location else None
+
+    coaches_list = get_filtered_coaches(training_type, training_time, training_level, latitude, longitude,
+                                        use_current_location)
+
+    # user_location = None
+    # if location == 'current':
+    #     user = find_one_user(user_email)
+    #     if user.get('locationAccess'):
+    #         # If location access is permitted, use the current location from the form
+    #         latitude = request.args.get('latitude', type=float)
+    #         longitude = request.args.get('longitude', type=float)
+    #         if latitude and longitude:
+    #             user_location = [longitude, latitude]
+
+    # coaches_list = get_filtered_coaches(training_type, training_time, training_level, user_location)
     favorites = get_user_favorite_coaches(user_email)
     # Check if the current user has already contacted the coaches
     already_contacted = []

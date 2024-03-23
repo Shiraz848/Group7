@@ -8,6 +8,7 @@ aboutUs_bp = Blueprint(
     template_folder='templates'
 )
 
+
 @aboutUs_bp.route('/aboutUs')
-def aboutUs_func():
+def about_us_func():
     return render_template('aboutUs.html')

@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, session, url_for, redirect, request
+from flask import Blueprint, render_template, session, url_for, redirect, request, flash
 
-from WEB_partC.db_connector import registered_users_col
+from WEB_partC.db_connector import  find_one_user, update_one_user
 
 myAccount_bp = Blueprint(
     'myAccount',
@@ -10,34 +10,36 @@ myAccount_bp = Blueprint(
     template_folder='templates'
 )
 
+
 @myAccount_bp.route('/myAccount', methods=['GET', 'POST'])
 def update_account():
-    message = None  # Initialize a message variable
-    updated = False  # Initialize updated flag
+    message = None
+    updated = False
 
     if 'email' not in session:
         # User is not logged in, redirect to sign-in page
         return redirect(url_for('signIn.login'))
 
     user_email = session['email']
-    user = registered_users_col.find_one({"email": user_email})
+    user = find_one_user(user_email)
 
     if request.method == 'POST':
         if request.form['password'] != request.form['confirm-password']:
+            flash('Passwords do not match', 'error')
             message = 'Passwords do not match.'
             updated = False
         else:
             # If passwords match, update the user details
             # Update user details based on form input
             # You need to add validation and proper updating logic here
-            user['firstName'] = request.form['first-name']  # Make sure to match the form field names
-            user['lastName'] = request.form['last-name']  # Make sure to match the form field names
-            user['phone'] = request.form['phone']  # Make sure to match the form field names
-            user['city'] = request.form['city']  # Make sure to match the form field names
-            user['password'] = request.form['password']  # Make sure to match the form field names
+            user['firstName'] = request.form['first-name']
+            user['lastName'] = request.form['last-name']
+            user['phone'] = request.form['phone']
+            user['city'] = request.form['city']
+            user['password'] = request.form['password']
 
             # Save updated user to database
-            registered_users_col.update_one({"email": user_email}, {"$set": user})
+            update_one_user(user_email, user)
 
             # Optionally, update the session details if they are changed
             session['firstName'] = user['firstName']
@@ -45,13 +47,13 @@ def update_account():
             session['phone'] = user['phone']
             session['city'] = user['city']
             session['password'] = user['password']
-            # ... update other session details
+
+            # flash('Details updated successfully!', 'success')
 
             # Redirect to the account page or display a success message
             message = 'Details updated successfully.'
             updated = True
 
-        # return redirect(url_for('.update_account'))  # Redirect to the same page to display updated details
-
-    # For a GET request, display the user details
+    # display the user current details
+    # return render_template('myAccount.html', user=user)
     return render_template('myAccount.html', user=user, message=message, updated=updated)

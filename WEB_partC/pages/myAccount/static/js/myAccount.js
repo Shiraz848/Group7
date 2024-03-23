@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 const isValidForm = () => {
     // Retrieve form values
     const firstName = document.getElementById('first-name').value.trim();
@@ -45,7 +46,7 @@ const isValidForm = () => {
 
 const displayError = (message) => {
     const msg = document.querySelector('.msg');
-    msg.textContent = message; // Use textContent for plain text to prevent HTML injection
+    msg.textContent = message;
     msg.classList.add('error');
     setTimeout(() => {
         msg.textContent = '';
@@ -54,8 +55,6 @@ const displayError = (message) => {
 };
 
 const isValidPhoneNumber = (phoneNumber) => {
-    // Define a regex pattern for a valid phone number
-    // Adjust the pattern to fit the phone number format you need
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phoneNumber);
 };

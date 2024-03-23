@@ -1,6 +1,4 @@
 import os
-import pymongo
-from flask import session, render_template
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -8,20 +6,20 @@ from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
-# get your uri from .env file
+# uri from .env file
 uri = os.environ.get('DB_URI')
 
 cluster = MongoClient(uri, server_api=ServerApi('1'))
 
-# Connect to your database
+# Connection to database
 mydatabase = cluster['mydatabase']
 
-# Define your project-specific collections
+# project collections
 coaches_col = mydatabase['coaches']
 registered_users_col = mydatabase['registered_users']
 
 
-# Define a function to insert coaches
+# function to insert coaches
 def insert_coaches(coaches_list):
     for coach in coaches_list:
         # Use the phone number as a unique identifier
@@ -65,7 +63,7 @@ def add_new_user(first_name, last_name, email, phone, city, password, location_a
     return True, "User registered successfully."
 
 
-# Define a function to initialize the database
+# function to initialize the database
 def initialize_db():
     coaches = [
         {
@@ -229,17 +227,40 @@ def initialize_db():
     # insert_users(registered_users)
 
 
-# Function to get filtered coaches based on user preferences and location
-def get_filtered_coaches(training_type=None, training_time=None, training_level=None):
-    query = {}
-    if training_type:
-        query['classType'] = training_type
-    if training_time:
-        query['trainingTime'] = training_time
-    if training_level:
-        query['trainingLevel'] = training_level
+def find_one_user(user_email):
+    user = registered_users_col.find_one({'email': user_email})
+    return user
 
-    # Add location filters here if needed
+
+def update_one_user(user_email, user):
+    registered_users_col.update_one({"email": user_email}, {"$set": user})
+
+
+# get filtered coaches based on user preferences and location
+def get_filtered_coaches(training_type=None, training_time=None, training_level=None, user_latitude=None,
+                         user_longitude=None, use_current_location=False):
+    query = {}
+    # if training_type:
+    #     query['classType'] = training_type
+    # if training_time:
+    #     query['trainingTime'] = training_time
+    # if training_level:
+    #     query['trainingLevel'] = training_level
+    #
+    # if use_current_location and user_latitude and user_longitude:
+    #     # Include logic to filter based on current location, e.g. using $near
+    #     query['location'] = {
+    #         '$near': {
+    #             '$geometry': {
+    #                 'type': 'Point',
+    #                 'coordinates': [user_longitude, user_latitude]
+    #             },
+    #             '$maxDistance': 10000  # Set max distance in meters
+    #         }
+    #     }
+    # elif not use_current_location:
+    #     user_city = session.get('city')
+    #     query['city'] = user_city
 
     return list(coaches_col.find(query))
 
@@ -264,7 +285,7 @@ def get_user_favorite_coaches(user_email):
     user = registered_users_col.find_one({'email': user_email})
     favorite_coaches_ids = user.get('favorites', [])
     favorite_coaches = coaches_col.find({'phone': {'$in': favorite_coaches_ids}})
-    favorite_coaches_list = list(favorite_coaches)  # Convert the cursor to a list
+    favorite_coaches_list = list(favorite_coaches)
     return favorite_coaches_list
 
 

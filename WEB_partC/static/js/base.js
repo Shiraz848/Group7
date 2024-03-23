@@ -7,6 +7,5 @@ window.addEventListener('load', () => {
                 flashMessagesContainer.style.display = 'none';
             }, 500); // Match the transition duration
         }
-    }, 1500); // Adjust time as needed
+    }, 1500);
 });
-//

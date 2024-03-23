@@ -20,17 +20,16 @@ def register():
         phone = request.form['phoneNumber']
         city = request.form['city']
         password = request.form['password']
-        confirm_password = request.form['confirmPassword']
         location_access = request.form['locationAccess']
 
         # Add new user to the database
         success, message = add_new_user(first_name, last_name, email, phone, city, password, location_access)
 
         if success:
-            flash(message)
-            return redirect(url_for('signIn.login'))  # Adjust the redirection as necessary
+            flash(message, 'success')
+            return redirect(url_for('signIn.login'))
         else:
-            flash(message)
+            flash(message, 'error')
             print("flashhhhh error")
             return redirect(url_for('signUp.register'))
 
