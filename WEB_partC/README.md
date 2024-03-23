@@ -1,7 +1,7 @@
 # WEB course 2024 Part C
 Group 7 - Shiraz Bronstein, Ido Dwek
 
-# Find Coach Web Application
+## Find Coach Web Application
 ## Project Overview
 
 This web application is designed to help users search for fitness trainers in their city or nearby their current location. The application provides an easy and user-friendly platform to connect fitness enthusiasts with professional trainers.
