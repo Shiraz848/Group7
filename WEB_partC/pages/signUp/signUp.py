@@ -9,6 +9,15 @@ signUp_bp = Blueprint(
     template_folder='templates'
 )
 
+# Define a list of Israeli cities
+ISRAELI_CITIES = [
+    'Jerusalem', 'Tel Aviv-Yafo', 'Haifa', 'Rishon LeZion',
+    'Petah Tikva', 'Ashdod', 'Netanya', 'Beer Sheva', 'Holon',
+    'Bnei Brak', 'Ramat Gan', 'Ashkelon', 'Bat Yam', 'Herzliya',
+    'Kfar Saba', 'Modiin', 'Nahariya', 'Hadera', 'Raanana', 'Lod',
+    'Ramla', 'Hod Hasharon', 'Ramat Hasharon'
+]
+
 
 @signUp_bp.route('/signUp', methods=['GET', 'POST'])
 def register():
@@ -33,4 +42,6 @@ def register():
             print("flashhhhh error")
             return redirect(url_for('signUp.register'))
 
-    return render_template('signUp.html')
+    sorted_cities = sorted(ISRAELI_CITIES)
+
+    return render_template('signUp.html', cities=sorted_cities)

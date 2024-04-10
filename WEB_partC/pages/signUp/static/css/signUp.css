@@ -73,7 +73,7 @@ body {
     margin-bottom: 5px;
     margin-right: 5px;
 }
-
+.form-fields select,
 .form-fields input[type="text"],
 .form-fields input[type="password"],
 .form-fields input[type="email"],

@@ -48,7 +48,12 @@
 
                 <div class="form-fields">
                     <label for="city">City:</label>
-                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    <select name="city" id="city" required>
+                        <option value="" selected>Choose City</option>
+                        {% for city in cities %}
+                            <option value="{{ city }}">{{ city }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
 
                 <div class="form-fields">

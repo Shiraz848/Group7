@@ -44,11 +44,11 @@ const validateForm = () => {
         return null;
     }
 
-    // city
-    if (!isValidCity(city)) {
-        displayError("Please enter a valid city in Israel!");
-        return null;
-    }
+    // // city
+    // if (!isValidCity(city)) {
+    //     displayError("Please enter a valid city in Israel!");
+    //     return null;
+    // }
 
     // password
     if (!isValidPassword(password)) {
@@ -92,13 +92,6 @@ const isValidPhoneNumber = (phoneNumber) => {
     return phoneRegex.test(phoneNumber);
 };
 
-// Define a list of Israeli cities
-const israeliCities = ['Jerusalem', 'Tel Aviv-Yafo', 'Haifa', 'Rishon LeZion', 'Petah Tikva', 'Ashdod', 'Netanya', 'Beer Sheva', 'Holon', 'Bnei Brak', 'Ramat Gan', 'Ashkelon', 'Bat Yam', 'Herzliya', 'Kfar Saba', 'Modiin', 'Nahariya', 'Hadera', 'Raanana', 'Lod', 'Ramla', 'Larnaca', 'Petah Tikva', 'Holon', 'Herzliya'];
-
-const isValidCity = (city) => {
-    const lowerCaseCity = city.toLowerCase();
-    return israeliCities.some(c => c.toLowerCase() === lowerCaseCity);
-};
 const isValidPassword = (password) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     return passwordRegex.test(password);
