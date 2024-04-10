@@ -1,30 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchForm = document.getElementById('search-form');
-    const geolocationRadio = document.getElementById('geolocation');
-    const cityLocationRadio = document.getElementById('cityLocation');
-    const latitudeInput = document.getElementById('latitudeInput');
-    const longitudeInput = document.getElementById('longitudeInput');
-
-    searchForm.addEventListener('submit', (e) => {
-        if (geolocationRadio.checked) {
-            e.preventDefault(); // Stop the form from submitting immediately
-
-            navigator.geolocation.getCurrentPosition((position) => {
-                latitudeInput.value = position.coords.latitude;
-                longitudeInput.value = position.coords.longitude;
-                searchForm.submit(); // Submit the form with coordinates
-            }, (error) => {
-                alert('Geolocation is not enabled. Please select "In My City" or enable geolocation.');
-                cityLocationRadio.checked = true; // Fallback to city search
-                searchForm.submit();
-            });
-        }
-        // If "In My City" is checked, the form submits normally without intercepting.
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('coaches-form');
     form.addEventListener('submit', (e) => {
         // Prevent the default form submission
@@ -51,3 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+const getLocationAndUpdateInputs = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            document.getElementById('latitudeInput').value = position.coords.latitude;
+            document.getElementById('longitudeInput').value = position.coords.longitude;
+        }, error => {
+            console.error(error);
+            alert("Error getting location: " + error.message);
+        });
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const locationRadio = document.getElementById('geolocation');
+    locationRadio.addEventListener('change', () => {
+        if(locationRadio.checked) {
+            getLocationAndUpdateInputs();
+        }
+    });
+});

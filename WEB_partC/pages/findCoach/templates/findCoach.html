@@ -27,50 +27,50 @@
             <div class="search-input">
                 <label for="training-type">Training Type:</label>
                 <select name="training-type" id="training-type">
-                    <option value="cardio">Cardio</option>
-                    <!--<option value="weight-lifting">Weight Lifting</option>-->
-                    <option value="yoga">Yoga</option>
-                    <option value="tennis">Tennis</option>
-                    <option value="pilates">Pilates</option>
-                    <!--<option value="crossfit">Crossfit</option>-->
+                    <option value="" selected>Choose Type</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Yoga">Yoga</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="Pilates">Pilates</option>
                 </select>
             </div>
             <div class="search-input">
                 <label>Training Time:</label>
                 <div>
-                    <input class="radio" type="radio" id="morning" name="training-time" value="morning">
+                    <input class="radio" type="radio" id="morning" name="training-time" value="Morning">
                     <label class="label-option" for="morning">Morning</label>
                 </div>
                 <div>
-                    <input class="radio" type="radio" id="evening" name="training-time" value="evening">
+                    <input class="radio" type="radio" id="evening" name="training-time" value="Evening">
                     <label class="label-option" for="evening">Afternoon/Evening</label>
                 </div>
             </div>
             <div class="search-input">
                 <label for="training-level">Training Level:</label>
                 <select name="training-level" id="training-level">
-                    <option value="beginner">Beginner</option>
-                    <option value="advanced">Advanced</option>
+                    <option value="" selected>Choose Level</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Advanced">Advanced</option>
                 </select>
             </div>
             <div class="search-input">
                 <label class="label-category">Training Location:</label>
                 <div>
-                    <input class="radio" type="radio" id="geolocation" name="location" value="current" checked>
+                    <input class="radio" type="radio" id="geolocation" name="location" value="Current">
                     <label class="label-option" for="geolocation">Use My Current Location</label>
                 </div>
                 <div>
-                    <input class="radio" type="radio" id="cityLocation" name="location" value="city">
+                    <input class="radio" type="radio" id="cityLocation" name="location" value="City">
                     <label class="label-option" for="cityLocation">In My City</label>
                 </div>
             </div>
 
-            <!-- Inside the <form> tag in your findCoach.html template -->
             <input type="hidden" id="latitudeInput" name="latitude">
             <input type="hidden" id="longitudeInput" name="longitude">
 
 
-            <button type="submit" class="search-button">Search</button>
+            <button type="submit" name="search" value="1" class="search-button">Search</button>
+            <a href="{{ url_for('findCoach.find_coach') }}" class="clear-filters-button">Clear Filters</a>
         </div>
     </form>
 
