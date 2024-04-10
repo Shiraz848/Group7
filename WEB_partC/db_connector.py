@@ -1,8 +1,9 @@
 import os
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-
 from dotenv import load_dotenv
+from math import radians, cos, sin, asin, sqrt
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -28,16 +29,6 @@ def insert_coaches(coaches_list):
             print(f"Inserted coach: {coach['name']}")
         else:
             print(f"Coach already exists: {coach['name']}")
-
-
-# def insert_users(users_list):
-#     for user in users_list:
-#         # Use the phone number as a unique identifier
-#         if not registered_users_col.find_one({'email': user['email']}):
-#             registered_users_col.insert_one(user)
-#             print(f"Inserted users: {user['email']}")
-#         else:
-#             print(f"user already exists: {user['email']}")
 
 
 def add_new_user(first_name, last_name, email, phone, city, password, location_access):
@@ -148,83 +139,17 @@ def initialize_db():
         }
     ]
 
-    # registered_users = [
-
-    #     {
-    #         'firstName': 'Johny',
-    #         'lastName': 'Boy',
-    #         'email': 'jhonyboy@gmail.com',
-    #         'phone': '050-666-1234',
-    #         'city': 'Tel Aviv-Yafo',
-    #         'password': 'PaSsWoRd123',
-    #         'location': {
-    #             'type': 'Point',
-    #             'coordinates': [34.7818, 32.0853]  # Note: longitude comes first in GeoJSON
-    #         },
-    #         'locationAccess': 'true'
-    #
-    #     },
-    #     # {
-    #     #     'firstName': 'Alice',
-    #     #     'lastName': 'Smith',
-    #     #     'email': 'alice.smith@yahoo.com',
-    #     #     'phone': '053-444-1234',
-    #     #     'city': 'Jerusalem',
-    #     #     'password': 'P@55w0rd',
-    #     #     'location': {
-    #     #         'type': 'Point',
-    #     #         'coordinates': [35.2137, 31.7683]  # Note: longitude comes first in GeoJSON
-    #     #     },
-    #     #     'locationAccess': 'false'
-    #     #
-    #     # },
-    #     # {
-    #     #
-    #     #     'firstName': 'Michael',
-    #     #     'lastName': 'Johnson',
-    #     #     'email': 'michael.johnson@hotmail.com',
-    #     #     'phone': '052-345-2222',
-    #     #     'city': 'Haifa',
-    #     #     'password': 'ComplexPass123',
-    #     #     'location': {
-    #     #         'type': 'Point',
-    #     #         'coordinates': [34.9896, 32.7940]  # Note: longitude comes first in GeoJSON
-    #     #     },
-    #     #     'locationAccess': 'true'
-    #     #
-    #     # },
-    #     {
-    #         'firstName': 'Emily',
-    #         'lastName': 'Davis',
-    #         'email': 'emily.davis@outlook.com',
-    #         'phone': '054-345-1233',
-    #         'city': 'Tel Aviv-Yafo',
-    #         'password': 'StrongPassword789',
-    #         'location': {
-    #             'type': 'Point',
-    #             'coordinates': [34.77369, 32.06154]  # Note: longitude comes first in GeoJSON
-    #         },
-    #         'locationAccess': 'false'
-    #
-    #     },
-    #     {
-    #         'firstName': 'Emily',
-    #         'lastName': 'Brown',
-    #         'email': 'david.brown@aol.com',
-    #         'phone': '053-443-2343',
-    #         'city': 'Beersheba',
-    #         'password': 'SecurePass12',
-    #         'location': {
-    #             'type': 'Point',
-    #             'coordinates': [34.7915, 31.2518]  # Note: longitude comes first in GeoJSON
-    #         },
-    #         'locationAccess': 'true'
-    #
-    #     }
-    # ]
-
     insert_coaches(coaches)
-    # insert_users(registered_users)
+
+
+# Define a list of Israeli cities
+ISRAELI_CITIES = [
+    'Jerusalem', 'Tel Aviv-Yafo', 'Haifa', 'Rishon LeZion',
+    'Petah Tikva', 'Ashdod', 'Netanya', 'Beer Sheva', 'Holon',
+    'Bnei Brak', 'Ramat Gan', 'Ashkelon', 'Bat Yam', 'Herzliya',
+    'Kfar Saba', 'Modiin', 'Nahariya', 'Hadera', 'Raanana', 'Lod',
+    'Ramla', 'Hod Hasharon', 'Ramat Hasharon'
+]
 
 
 def find_one_user(user_email):
@@ -232,37 +157,66 @@ def find_one_user(user_email):
     return user
 
 
+def get_user_city(user_email):
+    user = registered_users_col.find_one({'email': user_email})
+    return user['city']
+
+
 def update_one_user(user_email, user):
     registered_users_col.update_one({"email": user_email}, {"$set": user})
 
 
-# get filtered coaches based on user preferences and location
-def get_filtered_coaches(training_type=None, training_time=None, training_level=None, user_latitude=None,
-                         user_longitude=None, use_current_location=False):
-    query = {}
-    # if training_type:
-    #     query['classType'] = training_type
-    # if training_time:
-    #     query['trainingTime'] = training_time
-    # if training_level:
-    #     query['trainingLevel'] = training_level
-    #
-    # if use_current_location and user_latitude and user_longitude:
-    #     # Include logic to filter based on current location, e.g. using $near
-    #     query['location'] = {
-    #         '$near': {
-    #             '$geometry': {
-    #                 'type': 'Point',
-    #                 'coordinates': [user_longitude, user_latitude]
-    #             },
-    #             '$maxDistance': 10000  # Set max distance in meters
-    #         }
-    #     }
-    # elif not use_current_location:
-    #     user_city = session.get('city')
-    #     query['city'] = user_city
+# Calculate the great circle distance between two points on the earth (specified in decimal degrees)
+def haversine(lon1, lat1, lon2, lat2):
+    # convert decimal degrees to radians
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
 
-    return list(coaches_col.find(query))
+    # haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a))
+    r = 6371 # Radius of earth in kilometers. Use 3956 for miles
+    return c * r
+
+
+def get_filtered_coaches(training_type=None, training_time=None, training_level=None, user_city=None,
+                         user_latitude=None, user_longitude=None, use_current_location=False):
+    # Build the base query with provided filters
+    query = {}
+    if training_type:
+        query['classType'] = training_type
+    if training_time:
+        query['trainingTime'] = training_time
+    if training_level:
+        query['trainingLevel'] = training_level
+
+    if user_city and not use_current_location:
+        query['city'] = user_city
+
+    # Retrieve coaches based on the training filters (and possibly city)
+    coaches = list(coaches_col.find(query))
+
+    if use_current_location and user_latitude and user_longitude:
+        # Convert latitude and longitude to float
+        user_latitude = float(user_latitude)
+        user_longitude = float(user_longitude)
+
+        # Further filter coaches based on location proximity
+        coaches = [
+            coach for coach in coaches
+            if haversine(
+                user_longitude, user_latitude,
+                coach['location']['coordinates'][0], coach['location']['coordinates'][1]
+            ) <= 50  # Distance in kilometers
+        ]
+
+    return coaches
+
+
+def get_all_coaches():
+    all_coaches = list(coaches_col.find({}))
+    return all_coaches
 
 
 def add_to_user_contacted(user_email, coach_phone):
