@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template, flash, redirect, url_for
-from WEB_partC.db_connector import add_new_user
+from WEB_partC.db_connector import add_new_user, ISRAELI_CITIES
 
 signUp_bp = Blueprint(
     'signUp',
@@ -8,15 +8,6 @@ signUp_bp = Blueprint(
     static_url_path='/signUp',
     template_folder='templates'
 )
-
-# Define a list of Israeli cities
-ISRAELI_CITIES = [
-    'Jerusalem', 'Tel Aviv-Yafo', 'Haifa', 'Rishon LeZion',
-    'Petah Tikva', 'Ashdod', 'Netanya', 'Beer Sheva', 'Holon',
-    'Bnei Brak', 'Ramat Gan', 'Ashkelon', 'Bat Yam', 'Herzliya',
-    'Kfar Saba', 'Modiin', 'Nahariya', 'Hadera', 'Raanana', 'Lod',
-    'Ramla', 'Hod Hasharon', 'Ramat Hasharon'
-]
 
 
 @signUp_bp.route('/signUp', methods=['GET', 'POST'])

@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, session, url_for, redirect, request, flash
-
-from WEB_partC.db_connector import  find_one_user, update_one_user
+from WEB_partC.db_connector import find_one_user, update_one_user, ISRAELI_CITIES
 
 myAccount_bp = Blueprint(
     'myAccount',
@@ -22,6 +21,8 @@ def update_account():
 
     user_email = session['email']
     user = find_one_user(user_email)
+
+    sorted_cities = sorted(ISRAELI_CITIES)
 
     if request.method == 'POST':
         if request.form['password'] != request.form['confirm-password']:
@@ -54,6 +55,4 @@ def update_account():
             message = 'Details updated successfully.'
             updated = True
 
-    # display the user current details
-    # return render_template('myAccount.html', user=user)
-    return render_template('myAccount.html', user=user, message=message, updated=updated)
+    return render_template('myAccount.html', user=user, cities=sorted_cities,  message=message, updated=updated)
