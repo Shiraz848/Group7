@@ -16,5 +16,5 @@ function hideConfirmationMsg() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-                showConfirmationMsg();
-            });
+    showConfirmationMsg();
+});
