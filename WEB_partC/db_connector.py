@@ -4,7 +4,6 @@ from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
 from math import radians, cos, sin, asin, sqrt
 
-
 # Load environment variables from .env file
 load_dotenv()
 # uri from .env file
@@ -32,6 +31,7 @@ def insert_coaches(coaches_list):
 
 
 def add_new_user(first_name, last_name, email, phone, city, password, location_access):
+    location_access_bool = location_access == 'true'
     # Create the new user document
     new_user = {
         'firstName': first_name,
@@ -40,7 +40,7 @@ def add_new_user(first_name, last_name, email, phone, city, password, location_a
         'phone': phone,
         'city': city,
         'password': password,
-        'locationAccess': location_access == 'on',  # Convert checkbox value to boolean
+        'locationAccess': location_access_bool  # Convert checkbox value to boolean
     }
     # Check if the user already exists
     if registered_users_col.find_one({'email': email}):
@@ -142,7 +142,7 @@ def initialize_db():
     insert_coaches(coaches)
 
 
-# Define a list of Israeli cities
+# a list of Israeli cities
 ISRAELI_CITIES = [
     'Jerusalem', 'Tel Aviv-Yafo', 'Haifa', 'Rishon LeZion',
     'Petah Tikva', 'Ashdod', 'Netanya', 'Beer Sheva', 'Holon',
@@ -163,7 +163,15 @@ def get_user_city(user_email):
 
 
 def update_one_user(user_email, user):
-    registered_users_col.update_one({"email": user_email}, {"$set": user})
+    # Perform the update operation
+    result = registered_users_col.update_one({"email": user_email}, {"$set": user})
+
+    if result.modified_count == 0:
+        # no information was modified
+        return False, "No changes were made to the user."
+
+    # Successful update
+    return True, "User updated successfully."
 
 
 # Calculate the great circle distance between two points on the earth (specified in decimal degrees)
@@ -174,15 +182,18 @@ def haversine(lon1, lat1, lon2, lat2):
     # haversine formula
     dlon = lon2 - lon1
     dlat = lat2 - lat1
-    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
     c = 2 * asin(sqrt(a))
-    r = 6371 # Radius of earth in kilometers. Use 3956 for miles
+    r = 6371  # Radius of earth in kilometers. Use 3956 for miles
     return c * r
 
 
 def get_filtered_coaches(training_type=None, training_time=None, training_level=None, user_city=None,
                          user_latitude=None, user_longitude=None, use_current_location=False):
-    # Build the base query with provided filters
+
+    coaches = []
+
+    # the base query with provided filters
     query = {}
     if training_type:
         query['classType'] = training_type
@@ -190,26 +201,30 @@ def get_filtered_coaches(training_type=None, training_time=None, training_level=
         query['trainingTime'] = training_time
     if training_level:
         query['trainingLevel'] = training_level
-
     if user_city and not use_current_location:
         query['city'] = user_city
 
-    # Retrieve coaches based on the training filters (and possibly city)
-    coaches = list(coaches_col.find(query))
+    # If location filtering is not used, we add all coaches matching other filters
+    if not use_current_location:
+        coaches = list(coaches_col.find(query))
+    else:
+        # use_current_location is True
+        if user_latitude and user_longitude:
+            # Convert latitude and longitude to float
+            user_latitude = float(user_latitude)
+            user_longitude = float(user_longitude)
 
-    if use_current_location and user_latitude and user_longitude:
-        # Convert latitude and longitude to float
-        user_latitude = float(user_latitude)
-        user_longitude = float(user_longitude)
+            # Retrieve all coaches first
+            all_coaches = list(coaches_col.find(query))
 
-        # Further filter coaches based on location proximity
-        coaches = [
-            coach for coach in coaches
-            if haversine(
-                user_longitude, user_latitude,
-                coach['location']['coordinates'][0], coach['location']['coordinates'][1]
-            ) <= 50  # Distance in kilometers
-        ]
+            # Filter coaches based on location proximity
+            coaches = [
+                coach for coach in all_coaches
+                if haversine(
+                    user_longitude, user_latitude,
+                    coach['location']['coordinates'][0], coach['location']['coordinates'][1]
+                ) <= 50  # Distance in kilometers
+            ]
 
     return coaches
 
