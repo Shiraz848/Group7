@@ -37,6 +37,7 @@ def update_account():
             user['password'] = password
 
             success, message = update_one_user(user_email, user)
+
             if success:
                 flash('Account details updated successfully!', 'success')
                 session['firstName'] = user['firstName']
@@ -47,7 +48,6 @@ def update_account():
 
             else:
                 flash(message, 'error')
-
-            return redirect(url_for('.update_account'))
+                return redirect(url_for('.update_account'))
 
     return render_template('myAccount.html', user=user, cities=sorted_cities)

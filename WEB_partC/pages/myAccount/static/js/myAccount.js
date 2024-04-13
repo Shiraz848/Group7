@@ -15,7 +15,7 @@ const validateForm = () => {
     const password = document.querySelector('input[name="password"]').value;
     const confirmPassword = document.querySelector('input[name="confirm-password"]').value;
 
-    let isValid = true;
+        let isValid = true;
 
     // first name
     if (!isValidName(firstName)) {

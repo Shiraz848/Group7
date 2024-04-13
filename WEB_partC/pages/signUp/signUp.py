@@ -12,6 +12,9 @@ signUp_bp = Blueprint(
 
 @signUp_bp.route('/signUp', methods=['GET', 'POST'])
 def register():
+
+    sorted_cities = sorted(ISRAELI_CITIES)
+
     if request.method == 'POST':
         # Get form data
         first_name = request.form['firstName']
@@ -20,7 +23,7 @@ def register():
         phone = request.form['phoneNumber']
         city = request.form['city']
         password = request.form['password']
-        location_access = request.form['locationAccess']
+        location_access = 'true' if request.form.get('locationAccess') == 'on' else 'false'
 
         # Add new user to the database
         success, message = add_new_user(first_name, last_name, email, phone, city, password, location_access)
@@ -30,9 +33,7 @@ def register():
             return redirect(url_for('signIn.login'))
         else:
             flash(message, 'error')
-            print("flashhhhh error")
-            return redirect(url_for('signUp.register'))
 
-    sorted_cities = sorted(ISRAELI_CITIES)
+        return redirect(url_for('signUp.register'))
 
     return render_template('signUp.html', cities=sorted_cities)
