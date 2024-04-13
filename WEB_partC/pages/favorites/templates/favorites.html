@@ -54,7 +54,7 @@
 
 {% block page_body_js %}
     {{ super() }}
-    <script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+    <script src="{{ url_for('favorites.static', filename='js/favorites.js') }}"></script>
     <script src="{{ url_for('coachDetails.static', filename='js/coachDetails.js') }}"></script>
     <script src="{{ url_for('rateForm.static', filename='js/rateForm.js') }}"></script>
 {% endblock %}
