@@ -16,8 +16,9 @@ findCoach_bp = Blueprint(
 def find_coach():
     name = session.get('name', 'Guest')
     user_email = session.get('email')
+    user_city = get_user_city(user_email)
 
-    # Default to showing all coaches on initial load
+    # Initialize coaches_list to all coaches by default
     coaches_list = get_all_coaches()
 
     # If search parameters are present, use filters
@@ -25,16 +26,29 @@ def find_coach():
         training_type = request.args.get('training-type')
         training_time = request.args.get('training-time')
         training_level = request.args.get('training-level')
-        use_current_location = request.args.get('location') == 'Current'
+        location_filter = request.args.get('location')
 
-        if use_current_location:
+        if location_filter == 'Current':
             latitude = request.args.get('latitude')
             longitude = request.args.get('longitude')
-            coaches_list = get_filtered_coaches(training_type, training_time, training_level, None, latitude, longitude,
-                                                use_current_location)
-        else:
+            coaches_list = get_filtered_coaches(
+                training_type, training_time, training_level,
+                None, latitude, longitude, True
+            )
+        elif location_filter == 'City':
+            # user's city from the database
             city = get_user_city(user_email)
-            coaches_list = get_filtered_coaches(training_type, training_time, training_level, city, None, None, False)
+            print(city)
+            coaches_list = get_filtered_coaches(
+                training_type, training_time, training_level,
+                city, None, None, False
+            )
+        else:
+            # No location filter is selected, ignore the location in the filter
+            coaches_list = get_filtered_coaches(
+                training_type, training_time, training_level,
+                None, None, None, False
+            )
 
     favorites = get_user_favorite_coaches(user_email)
 
@@ -80,7 +94,7 @@ def contact_coaches():
             print(f"Failed to update contact for coach: {coach_phone}")  # Debug print
 
     if contact_made:
-        # Redirect with a special query parameter that triggers the confirmation message
+        # Redirect with a query parameter that triggers the confirmation message
         return redirect(url_for('findCoach.find_coach', contact_made='true'))
     else:
         flash('No coaches were selected or an error occurred.', 'error')

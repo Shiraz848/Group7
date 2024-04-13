@@ -19,32 +19,48 @@ document.addEventListener('DOMContentLoaded', () => {
             hiddenInput.value = checkbox.value;
             form.appendChild(hiddenInput);
         });
-
         // Submit the form after all hidden inputs have been added
         form.submit();
     });
-});
 
-
-const getLocationAndUpdateInputs = () => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            document.getElementById('latitudeInput').value = position.coords.latitude;
-            document.getElementById('longitudeInput').value = position.coords.longitude;
-        }, error => {
-            console.error(error);
-            alert("Error getting location: " + error.message);
-        });
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
     const locationRadio = document.getElementById('geolocation');
-    locationRadio.addEventListener('change', () => {
-        if(locationRadio.checked) {
-            getLocationAndUpdateInputs();
+    locationRadio.addEventListener('change', (event) => {
+        if(event.target.checked) {
+            askForLocationPermission();
         }
     });
 });
+
+
+const askForLocationPermission = () => {
+    // Show a custom confirmation dialog before asking for permission
+    const userAgreed = confirm("We need to access your location to find coaches near you. Is that okay?");
+    if (userAgreed && navigator.geolocation) {
+        // Only if the user agrees, call the function to trigger the browser's permission prompt
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        alert("You have declined location access. We will use your city location instead.");
+    }
+}
+
+function showPosition(position) {
+    document.getElementById('latitudeInput').value = position.coords.latitude;
+    document.getElementById('longitudeInput').value = position.coords.longitude;
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        default:
+            alert("An unknown error occurred.");
+            break;
+    }
+}
