@@ -111,7 +111,7 @@ This web application is designed to help users search for fitness trainers in th
 
 - **User Profile Page**: Users can view and update their personal details (excluding the email which is a permanent identifier).
 
-![myAccount Page Screenshot](readme_screenshots/page_imges/myAccount.jpg "myAccount Page Screenshot")
+![myAccount Page Screenshot](readme_screenshots/page_imges/myAccount1.jpg "myAccount Page Screenshot")
 
 
 - **About Us Page**: Information about the creators and purpose of the application.
