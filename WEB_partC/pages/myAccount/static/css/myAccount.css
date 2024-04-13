@@ -12,16 +12,15 @@
     border-radius: 10px;
 }
 
-.msg-success {
-    color: #437536;
-    font-size: 30px;
-    margin-bottom: 40px;
+.msg {
+    color: red;
+    display: none;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
-.msg-error {
-    color: red;
-    font-size: 20px;
-    margin-bottom: 30px;
+.msg.error {
+    display: block;
 }
 
 .form-fields label {

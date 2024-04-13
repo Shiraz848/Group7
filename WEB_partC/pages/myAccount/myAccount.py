@@ -12,47 +12,42 @@ myAccount_bp = Blueprint(
 
 @myAccount_bp.route('/myAccount', methods=['GET', 'POST'])
 def update_account():
-    message = None
-    updated = False
-
     if 'email' not in session:
-        # User is not logged in, redirect to sign-in page
         return redirect(url_for('signIn.login'))
 
     user_email = session['email']
     user = find_one_user(user_email)
-
     sorted_cities = sorted(ISRAELI_CITIES)
 
     if request.method == 'POST':
-        if request.form['password'] != request.form['confirm-password']:
+        first_name = request.form['first-name']
+        last_name = request.form['last-name']
+        phone = request.form['phone']
+        city = request.form['city']
+        password = request.form['password']
+        confirm_password = request.form['confirm-password']
+
+        if password != confirm_password:
             flash('Passwords do not match', 'error')
-            message = 'Passwords do not match.'
-            updated = False
         else:
-            # If passwords match, update the user details
-            # Update user details based on form input
-            # You need to add validation and proper updating logic here
-            user['firstName'] = request.form['first-name']
-            user['lastName'] = request.form['last-name']
-            user['phone'] = request.form['phone']
-            user['city'] = request.form['city']
-            user['password'] = request.form['password']
+            user['firstName'] = first_name
+            user['lastName'] = last_name
+            user['phone'] = phone
+            user['city'] = city
+            user['password'] = password
 
-            # Save updated user to database
-            update_one_user(user_email, user)
+            success, message = update_one_user(user_email, user)
+            if success:
+                flash('Account details updated successfully!', 'success')
+                session['firstName'] = user['firstName']
+                session['lastName'] = user['lastName']
+                session['phone'] = user['phone']
+                session['city'] = user['city']
+                session['password'] = user['password']
 
-            # Optionally, update the session details if they are changed
-            session['firstName'] = user['firstName']
-            session['lastName'] = user['lastName']
-            session['phone'] = user['phone']
-            session['city'] = user['city']
-            session['password'] = user['password']
+            else:
+                flash(message, 'error')
 
-            # flash('Details updated successfully!', 'success')
+            return redirect(url_for('.update_account'))
 
-            # Redirect to the account page or display a success message
-            message = 'Details updated successfully.'
-            updated = True
-
-    return render_template('myAccount.html', user=user, cities=sorted_cities,  message=message, updated=updated)
+    return render_template('myAccount.html', user=user, cities=sorted_cities)

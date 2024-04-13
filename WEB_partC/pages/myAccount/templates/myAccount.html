@@ -19,11 +19,7 @@
 
     <div class="content text-font">
         <form action="{{ url_for('myAccount.update_account') }}" method="POST" class="account-form">
-            <div class="{% if updated %} msg-success {% else %} msg-error {% endif %}">
-                {% if message %}
-                    <p>{{ message }}</p>
-                {% endif %}
-            </div>
+            <div class="msg"></div>
             <div class="form-fields">
                 <div class="input-group">
                     <label for="email">Email:</label>
@@ -80,5 +76,5 @@
 
 {% block page_body_js %}
     {{ super() }}
-    <script src="{{ url_for('static', filename='js/myAccount.js') }}"></script>
+    <script src="{{ url_for('myAccount.static', filename='js/myAccount.js') }}"></script>
 {% endblock %}
